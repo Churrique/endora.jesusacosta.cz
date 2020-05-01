@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'Aleo Bold', serif;
+    src: url(../fuentes/WebOpenFontFormat/Aleo-Bold.woff);
+}
+@font-face {
+    font-family: 'Aleo Bold Italic', serif;
+    src: url(../fuentes/WebOpenFontFormat/Aleo-BoldItalic.woff);
+}
+@font-face {
+    font-family: 'Aleo Italic', serif;
+    src: url(../fuentes/WebOpenFontFormat/Aleo-Italic.woff);
+}
+@font-face {
+    font-family: 'Aleo Light', serif;
+    src: url(../fuentes/WebOpenFontFormat/Aleo-Light.woff);
+}
+@font-face {
+    font-family: 'Aleo Light Italic', serif;
+    src: url(../fuentes/WebOpenFontFormat/Aleo-LightItalic.woff);
+}
+@font-face {
+    font-family: 'Aleo', serif;
+    src: url(../fuentes/WebOpenFontFormat/Aleo-Regular.woff);
+}
+@font-face {
+    font-family: 'Amarante', cursive;
+    src: url(../fuentes/WebOpenFontFormat/Amarante-Regular.woff);
+}
+@font-face {
+    font-family: 'Anaheim', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Anaheim-Regular.woff);
+}
+@font-face {
+    font-family: 'Amiko', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Amiko-Regular.woff);
+}
+@font-face {
+    font-family: 'Amiko Semi Bold', cursive;
+    src: url(../fuentes/WebOpenFontFormat/Amiko-SemiBold.woff);
+}
+@font-face {
+    font-family: 'Amiko Bold', cursive;
+    src: url(../fuentes/WebOpenFontFormat/Amiko-Bold.woff);
+}
+@font-face {
+    font-family: 'Clicker Script', cursive;
+    src: url(../fuentes/WebOpenFontFormat/ClickerScript-Regular.woff);
+}
+@font-face {
+    font-family: 'Kavoon', cursive;
+    src: url(../fuentes/WebOpenFontFormat/Kavoon-Regular.woff);
+}
+@font-face {
+    font-family: 'Lobster', cursive;
+    src: url(../fuentes/WebOpenFontFormat/Lobster-Regular.woff);
+}
+@font-face {
+    font-family: 'Monoton', cursive;
+    src: url(../fuentes/WebOpenFontFormat/Monoton-Regular.woff);
+}
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-Regular.woff);
+}
+@font-face {
+    font-family: 'Open Sans Bold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-Bold.woff);
+}
+@font-face {
+    font-family: 'Open Sans Extra Bold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-ExtraBold.woff);
+}
+@font-face {
+    font-family: 'Open Sans Extra Bold Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-ExtraBoldItalic.woff);
+}
+@font-face {
+    font-family: 'Open Sans Bold Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-BoldItalic.woff);
+}
+@font-face {
+    font-family: 'Open Sans Semi Bold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-SemiBold.woff);
+}
+@font-face {
+    font-family: 'Open Sans Semi Bold Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-SemiBoldItalic.woff);
+}
+@font-face {
+    font-family: 'Open Sans Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-Italic.woff);
+}
+@font-face {
+    font-family: 'Open Sans Condensada Bold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSansCondensed-Bold.woff);
+}
+@font-face {
+    font-family: 'Open Sans Condensada Light', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSansCondensed-Light.woff);
+}
+@font-face {
+    font-family: 'Open Sans Condensada Light Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSansCondensed-LightItalic.woff);
+}
+@font-face {
+    font-family: 'Open Sans Light', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-Light.woff);
+}
+@font-face {
+    font-family: 'Open Sans Light Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/OpenSans-LightItalic.woff);
+}
+@font-face {
+    font-family: 'Oswal', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Oswald-Regular.woff);
+}
+@font-face {
+    font-family: 'Oswal Bold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Oswald-Bold.woff);
+}
+@font-face {
+    font-family: 'Oswal Semi Bold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Oswald-SemiBold.woff);
+}
+@font-face {
+    font-family: 'Oswal Medium', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Oswald-Medium.woff);
+}
+@font-face {
+    font-family: 'Oswal Light', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Oswald-Light.woff);
+}
+@font-face {
+    font-family: 'Oswal Extra Light', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Oswald-ExtraLight.woff);
+}
+@font-face {
+    font-family: 'Parisienne', cursive;
+    src: url(../fuentes/WebOpenFontFormat/Parisienne-Regular.woff);
+}
+@font-face {
+    font-family: 'Poppins Black', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-Black.woff);
+}
+@font-face {
+    font-family: 'Poppins Black Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-BlackItalic.woff);
+}
+@font-face {
+    font-family: 'Poppins Bold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-Bold.woff);
+}
+@font-face {
+    font-family: 'Poppins Bold Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-BoldItalic.woff);
+}
+@font-face {
+    font-family: 'Poppins Extra Bold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-ExtraBold.woff);
+}
+@font-face {
+    font-family: 'Poppins Extra Bold Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-ExtraBoldItalic.woff);
+}
+@font-face {
+    font-family: 'Poppins Extra Light', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-ExtraLight.woff);
+}
+@font-face {
+    font-family: 'Poppins Extra Light Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-ExtraLightItalic.woff);
+}
+@font-face {
+    font-family: 'Poppins Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-Italic.woff);
+}
+@font-face {
+    font-family: 'Poppins Light', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-Light.woff);
+}
+@font-face {
+    font-family: 'Poppins Ligt Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-LightItalic.woff);
+}
+@font-face {
+    font-family: 'Poppins Medium', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-Medium.woff);
+}
+@font-face {
+    font-family: 'Poppins Medium Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-MediumItalic.woff);
+}
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-Regular.woff);
+}
+@font-face {
+    font-family: 'Poppins Semibold', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-SemiBold.woff);
+}
+@font-face {
+    font-family: 'Poppins Semibold Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-SemiBoldItalic.woff);
+}
+@font-face {
+    font-family: 'Poppins Thin', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-Thin.woff);
+}
+@font-face {
+    font-family: 'Poppins Thin Italic', sans-serif;
+    src: url(../fuentes/WebOpenFontFormat/Poppins-ThinItalic.woff);
+}
+@font-face {
+    font-family: 'Shrikhand', cursive;
+    src: url(../fuentes/WebOpenFontFormat/Shrikhand-Regular.woff);
+}
+@font-face {
+    font-family: 'Spicy Rice', cursive;
+    src: url(../fuentes/WebOpenFontFormat/SpicyRice-Regular.woff);
+}

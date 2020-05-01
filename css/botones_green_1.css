@@ -1,0 +1,97 @@
+@import url(../css/fuenteslocales.css);
+/*--------------------------------*/
+/*--- En tonalidad Verde       ---*/
+/*--------------------------------*/
+.button{
+    font-family: 'Monoton', cursive;
+    background-color: #4CAF50; /* Green */
+    border:  0.125em solid #097563;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    padding: 0.75em 1.75em;
+    border-radius: 0.75em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 11.5em;
+    overflow: hidden;
+    position: relative;
+  }
+.button:hover {
+    background-color: #555555;
+    color: #30df35;
+    box-shadow: 0 0.75em 1em 0 rgba(0,0,0,0.24), 0 1.063em 3.125em 0 rgba(0,0,0,0.19);
+  }
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+.button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -2em !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+/*--------------------------------*/
+/*--- En tonalidad Azul        ---*/
+/*--------------------------------*/
+.button{
+  font-family: 'Monoton', cursive;
+  background-color: #4CAF50; /* Green */
+  border:  0.125em solid #097563;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  padding: 0.75em 1.75em;
+  border-radius: 0.75em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 11.5em;
+  overflow: hidden;
+  position: relative;
+}
+.button:hover {
+  background-color: #555555;
+  color: #30df35;
+  box-shadow: 0 0.75em 1em 0 rgba(0,0,0,0.24), 0 1.063em 3.125em 0 rgba(0,0,0,0.19);
+}
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -2em !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}

@@ -1,0 +1,39 @@
+@import url(../css/fuenteslocales.css);
+.tooltipd {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted #00d789; If you want dots under the hoverable text */
+  }
+.tooltipd .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #0f480f;
+    color: #1ee01e;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    left: 110%;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+.tooltipd .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #0f480f transparent transparent;
+  }
+.tooltipd:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+.tooltipd:hover .tooltiptext::after {
+    opacity: 0.80;
+    transition: opacity 3s;
+  }
