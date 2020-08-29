@@ -1,0 +1,137 @@
+@import url(../css/fuenteslocales.css);
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h1 {
+  padding: 0em;
+  margin: 0em;
+}
+button,
+input,
+label,
+textarea {
+  font-family: 'Parisienne', cursive;
+  font-size: 1.125em;
+}
+button,
+input,
+textarea {
+  color: #666;
+  font-size: 100%;
+  margin: 0;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+input,
+textarea {
+  outline: none;
+}
+textarea {
+  overflow: auto;
+  resize: none;
+  vertical-align: top;
+  border-color: transparent;
+  width: 22.1em;
+}
+#div-padre {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#div-contenido-form {
+  border-style: double;
+  border-width: 0.3em;
+  border-color: rgba(107, 83, 17, 0.836);
+  border-radius: 0.3125em;
+  margin: 0.9375em 0.625em 0.3125em 0.625em;
+  width: 28em;
+  height: 40em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: auto;
+  background-image: url("../img/fondo_floral_modificado.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: contain;
+
+}
+#div-entrada {
+  background-color: rgba(4, 119, 155, 0.76);
+  border-color: transparent;
+  height: 5em;
+  width: 22.81em;
+  margin: 0em 1.5625em 0.625em 1.5625em;
+  padding: 0em 0em 0em 0.625em;
+  transition: all 0.80s;
+}
+#div-entrada:hover {
+  background-color: rgb(4, 120, 155);
+}
+#div-entrada-textarea {
+  background-color: rgba(4, 119, 155, 0.76);
+  border-color: transparent;
+  height: 11em;
+  width: 23.5em;
+  margin: 0em 1.5625em 0.625em 1.2em;
+  padding: 0em 0em 0em 0.625em;
+  transition: all 0.80s;
+}
+#div-entrada-textarea:hover {
+  background-color: rgb(4, 120, 155);
+}
+#div-submit {
+  display: flex;
+  justify-content: center;
+}
+label {
+  color: aliceblue;
+  position: relative;
+  display: block;
+  line-height: 2.8125em;
+  margin-top: 0em;
+  transition: all 0.80s;
+  width: 100%;
+}
+label:hover {
+  color: #00ffff;
+}
+input[type="text"], input[type="email"] {
+  border: 0px solid transparent;
+  background-color: transparent;
+  color: #f3d5ae;
+}
+::placeholder {
+  color: #f3d5ae;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #f3d5ae;
+}
+::-webkit-input-placeholder { /* WebKit */
+  color: #f3d5ae;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #f3d5ae;
+}
+input[type="submit"] {
+  background-color: rgba(107, 83, 17, 0.836);
+  border: 1px solid #8bc34a;
+  color: #8bc34a;
+  padding: 0.3125em 0.9375em;
+  font-size: 1em;
+  margin: 0.9375em auto;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+input[type="submit"]:hover {
+  color: #a71409;
+  background-color: rgba(139, 195, 74, 0.678);
+  border: 0.0625em solid #f13f08;
+}

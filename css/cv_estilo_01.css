@@ -1,0 +1,264 @@
+@import url(../css/fuenteslocales.css);
+/* tbody tr:nth-child(odd) {
+	background-color: #ff33cc;
+  }
+tbody tr:nth-child(even) {
+	background-color: #e495e4;
+} */
+ol {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ol li {
+	background: url('../img/btn_flecha_derecha_ver_2.png') no-repeat left;
+	height: auto;
+	padding-left: 0.9375em;
+	padding-top: 0.0625em;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+ul li {
+	background: url('../img/btn_flecha_derecha.png') no-repeat left center;
+	height: auto;
+	padding-left: 0.9975em;
+	padding-top: 0.0625em;
+}
+table {
+	margin: 0.625em;
+	width: 38.75em;
+	text-align: left;
+	border-collapse: collapse;
+	caption-side: bottom;
+	cursor: grab;
+}
+th {
+	font-family: 'Amiko Bold', cursive;
+	font-size: 0.875em;
+	text-align: center;
+	padding: 0.5em;
+	background: #b9c9fe;
+	border-top: 0.25em solid #aabcfe;
+	border-bottom: 0.0625em solid #fff;
+	color: #039;
+}
+td {
+	font-family: 'Clicker Script', cursive;
+	font-size: 0.8125em;
+	padding: 0.5em;
+	background: #e8edff;
+	border-bottom: 0.0625em solid #fff;
+	color: #669;
+	border-top: 0.0625 solid transparent;
+}
+tr:hover td {
+	background: #d0dafd;
+	color: #339;
+}
+caption {
+	background: #b9c9fe;
+	color: #039;
+	padding: 0.3em;
+	font-family: 'Kavoon', cursive;
+	font-size: 0.875em;
+	text-align: center;
+	border-left: 0.375em solid red;
+}
+caption:hover {
+	background: #b9c9fe;
+	color: #f10a57;
+	cursor: pointer;
+	font-size: 1em;
+	transform: scale(1.05, 1.025);
+	transition: all 1s
+}
+.tabs {
+    position: relative;
+	margin: 2.5em auto;
+	width: 50em;
+}
+.tabs input {
+	position: absolute;
+	z-index: 1000;
+	width: 7.5em;
+	height: 2.5em;
+	left: 0em;
+	top: 0em;
+	opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+	cursor: pointer;
+}
+.tabs input#tab-2{
+	left: 7.5em;
+}
+.tabs input#tab-3{
+	left: 15em;
+}
+.tabs input#tab-4{
+	left: 22.5em;
+}
+.tabs label {
+	background: #5ba4a4;
+	background: -moz-linear-gradient(top, #5ba4a4 0%, #4e8c8a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5ba4a4), color-stop(100%,#4e8c8a));
+	background: -webkit-linear-gradient(top, #5ba4a4 0%,#4e8c8a 100%);
+	background: -o-linear-gradient(top, #5ba4a4 0%,#4e8c8a 100%);
+	background: -ms-linear-gradient(top, #5ba4a4 0%,#4e8c8a 100%);
+	background: linear-gradient(top, #5ba4a4 0%,#4e8c8a 100%);
+	font-family: 'Kavoon', cursive;
+	font-size: 0.875em;
+	line-height: 2.5em;
+	height: 2.5em;
+	position: relative;
+	padding: 0 1.25em;
+    float: left;
+	display: block;
+	width: 5em;
+	color: #385c5b;
+	letter-spacing: 0.0625em;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 0.0625em 0.0625em 0.0625em rgba(255,255,255,0.3);
+    border-radius: 0.1875em 0.1875em 0 0;
+    box-shadow: 0.125em 0 0.125em rgba(0,0,0,0.1), -0.125em 0 0.125em rgba(0,0,0,0.1);
+}
+.tabs label:after {
+    content: '';
+	background: #fff;
+	position: absolute;
+	bottom: -0.125em;
+	left: 0;
+	width: 100%;
+	height: 0.125em;
+	display: block;
+}
+.tabs input:hover + label {
+	background: #5ba4a4;
+}
+.tabs label:first-of-type {
+    z-index: 4;
+    box-shadow: 0.125em 0 0.125em rgba(0,0,0,0.1);
+}
+.tab-label-2 {
+    z-index: 3;
+}
+.tab-label-3 {
+    z-index: 2;
+}
+.tab-label-4 {
+    z-index: 1;
+}
+.tabs input:checked + label {
+    background: #fff;
+	z-index: 6;
+    -webkit-animation: page 0.2s linear;
+    -moz-animation: page 0.2s linear;
+    -ms-animation: page 0.2s linear;
+    -o-animation: page 0.2s linear;
+    animation: page 0.2s linear;
+}
+.clear-shadow {
+	clear: both;
+}
+.content {
+    background: #fff;
+	position: relative;
+    width: 100%;
+	height: 37.5em;
+	z-index: 5;
+	overflow: scroll;
+    box-shadow: 0 -0.125em 0.1875em -0.125em rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.1);
+    border-radius: 0 0.1875em 0.1875em 0.1875em;
+}
+.content div {
+    position: absolute;
+	top: 0;
+	padding: 0.625em 2.5em;
+	z-index: 1;
+    opacity: 0;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
+    -ms-transition: all linear 0.3s;
+    transition: all linear 0.3s;
+}
+.content-1, .content-3 {
+	-webkit-transform: translateX(-15.625em);
+	-moz-transform: translateX(-15.625em);
+	-o-transform: translateX(-15.625em);
+	-ms-transform: translateX(-15.625em);
+	transform: translateX(-15.625em);
+}
+.content-2, .content-4 {
+    -webkit-transform: translateX(15.625em);
+	-moz-transform: translateX(15.625em);
+	-o-transform: translateX(15.625em);
+	-ms-transform: translateX(15.625em);
+	transform: translateX(15.625em);
+}
+.tabs input.tab-selector-1:checked ~ .content .content-1,
+.tabs input.tab-selector-2:checked ~ .content .content-2,
+.tabs input.tab-selector-3:checked ~ .content .content-3,
+.tabs input.tab-selector-4:checked ~ .content .content-4 {
+    -webkit-transform: translateX(0em);
+	-moz-transform: translateX(0em);
+	-o-transform: translateX(0em);
+	-ms-transform: translateX(0em);
+	transform: translateX(0em);
+	z-index: 100;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transition: all ease-out 0.2s 0.1s;
+    -moz-transition: all ease-out 0.2s 0.1s;
+    -o-transition: all ease-out 0.2s 0.1s;
+    -ms-transition: all ease-out 0.2s 0.1s;
+    transition: all ease-out 0.2s 0.1s;
+}
+.content div h2,
+.content div h3{
+	font-family: 'Kavoon', cursive;
+	color: #398080;
+}
+.content div p {
+	font-size: 0.875em;
+	line-height: 1.375em;
+	/* font-style: italic; */
+	text-align: justify;
+	text-indent: 1.5em;
+	margin: 0.9375em 0em 1.25em 0em;
+	color: #777;
+	padding-left: 0.9375em;
+	/* font-family: Cambria, Georgia, serif; */
+	font-family: 'Kavoon', cursive;
+	border-left: 0.5em solid rgba(63,148,148, 0.1);
+}
+@keyframes "page" {
+ 0% {left: 0;}
+ 50% {left: 0.625em;}
+ 100% {left: 0;}
+}
+@-moz-keyframes page {
+ 0% {left: 0;}
+ 50% {left: 0.625em;}
+ 100% {left: 0;}
+}
+@-webkit-keyframes "page" {
+ 0% {left: 0;}
+ 50% {left: 0.625em;}
+ 100% {left: 0;}
+}
+@-ms-keyframes "page" {
+ 0% {left: 0;}
+ 50% {left: 0.625em;}
+ 100% {left: 0;}
+}
+@-o-keyframes "page" {
+ 0% {left: 0;}
+ 50% {left: 0.625em;}
+ 100% {left: 0;}
+}
