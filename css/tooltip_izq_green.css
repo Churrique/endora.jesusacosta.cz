@@ -1,0 +1,41 @@
+@import url(../css/fuenteslocales.css);
+.tooltipi {
+    position: relative;
+    /* display: inline-block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.tooltipi .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #0f480f;
+    color: #1ee01e;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 110%;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+.tooltipi .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+  }
+.tooltipi:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+.tooltipi:hover .tooltiptext::after {
+    opacity: 0.80;
+    transition: opacity 3s;
+  }
