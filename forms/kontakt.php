@@ -21,50 +21,49 @@
   </head>
 
   <body>
-<?php
-echo '<p>Hola</p>';
-?>
-<div id="div-padre">
-    <div id="div-contenido-form">
-    <form name="frmDeContacto" id="frmDeContacto" action="../scripts/php/kontakt.php" method="post" autocomplete="off">
-        <div id="div-entrada">
-        <label for="_correo_" data-help="Ejemplo: un.nombre_cualquiera@MasCaracteres.com">
-            Correo Electrónico:
-          </label>
-        <input type="email" name="correo" id="_correo_" size="40" maxlength="50" placeholder="* Correo Electrónico:"
-            pattern="[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$" tabindex="1" title="...completa este campo..." required
-            autofocus />
-      </div>
-        <div id="div-entrada">
-        <label for="_nombre_" data-help="un nombre corto para referencia">
-            Nombre:
-          </label>
-        <input type="text" name="nombre" id="_nombre_" size="40" maxlength="30" placeholder="* Nombre:"
-            pattern="[a-zA-Z ]{3,30}" tabindex="2" title="...completa este campo..." />
-      </div>
-        <div id="div-entrada">
-        <label for="_asunto_" data-help="dale un título a tu mensaje para referencia">
-            Asunto:
-          </label>
-        <input type="text" name="asunto" id="_asunto_" size="40" maxlength="30" placeholder="* Asunto:"
-            pattern="[a-zA-Z*-_ ]{3,30}" tabindex="3" title="...completa este campo..." />
-      </div>
-        <div id="div-entrada-textarea">
-        <label for="_mensaje_" data-help="trata de ser claro y puntual en lo que expones">
-            Mensaje:
-          </label>
-        <textarea name="mensaje" id="_mensaje_" placeholder="* Mensaje:" cols="43" rows="5" maxlength="2000"
-            tabindex="4" required></textarea>
-      </div>
-        <div class="g-recaptcha" data-sitekey="6LeXMaUZAAAAAMqx3xwaJ5zZl8wpw1t7CuGi0gZx"></div
+    <?php
+    echo("HOLA");
+    ?>
+    <div id="div-padre">
+      <div id="div-contenido-form">
+        <form name="frmDeContacto" id="frmDeContacto" action="../scripts/php/kontakt.php" method="post" autocomplete="off">
+          <div id="div-entrada">
+          <label for="_correo_" data-help="Ejemplo: un.nombre_cualquiera@MasCaracteres.com">
+              Correo Electrónico:
+            </label>
+          <input type="email" name="correo" id="_correo_" size="40" maxlength="50" placeholder="* Correo Electrónico:"
+              pattern="[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$" tabindex="1" title="...completa este campo..." required
+              autofocus />
+          </div>
+          <div id="div-entrada">
+          <label for="_nombre_" data-help="un nombre corto para referencia">
+              Nombre:
+            </label>
+          <input type="text" name="nombre" id="_nombre_" size="40" maxlength="30" placeholder="* Nombre:"
+              pattern="[a-zA-Z ]{3,30}" tabindex="2" title="...completa este campo..." />
+          </div>
+          <div id="div-entrada">
+          <label for="_asunto_" data-help="dale un título a tu mensaje para referencia">
+              Asunto:
+            </label>
+          <input type="text" name="asunto" id="_asunto_" size="40" maxlength="30" placeholder="* Asunto:"
+              pattern="[a-zA-Z*-_ ]{3,30}" tabindex="3" title="...completa este campo..." />
+          </div>
+          <div id="div-entrada-textarea">
+          <label for="_mensaje_" data-help="trata de ser claro y puntual en lo que expones">
+              Mensaje:
+            </label>
+          <textarea name="mensaje" id="_mensaje_" placeholder="* Mensaje:" cols="43" rows="5" maxlength="2000"
+              tabindex="4" required></textarea>
+          </div>
+          <div class="g-recaptcha" data-sitekey="6LeXMaUZAAAAAMqx3xwaJ5zZl8wpw1t7CuGi0gZx"></div
 
-        
-        <div id="div-submit">
-        <input name="btnenvia" type="submit" id="_envia_" value="Enviar" tabindex="5"
-            title="...enviar solicitud de contacto..." />
+          <div id="div-submit">
+          <input name="btnenvia" type="submit" id="_envia_" value="Enviar" tabindex="5"
+              title="...enviar solicitud de contacto..." />
+          </div>
+        </form>
       </div>
-      </form>
-  </div>
-  </div>
-</body>
+    </div>
+  </body>
 </html>
