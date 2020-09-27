@@ -39,9 +39,23 @@
     gtag('js', new Date());
     gtag('config', 'UA-165417175-1');
   </script>
+  <script type="text/javascript">
+    function MontaImagen() {
+      let vn = Math.floor( Math.random() * 24 );
+      let str_vn = vn.toString();
+      let txt_vn = "";
+      if (str_vn.length == 1) {
+        txt_vn = "url(../img/coches/fondo_coche_0" + str_vn + ".jpg)";
+      }
+      else {
+        txt_vn = "url(../img/coches/fondo_coche_" + str_vn + ".jpg)";
+      }
+      document.querySelector("body#imagendefondo").style.backgroundImage = txt_vn;
+    }
+  </script>
 </head>
 
-<body id="imagendefondo_01">
+<body id="imagendefondo" onload="MontaImagen()">
   <!--
 !
 ! Área del Tope de la Página
@@ -132,6 +146,7 @@
       <img src="img/redes_sociales_y_contacto/rs_youtube.png" alt="Youtube" />
     </a>
   </footer>
+
 </body>
 
 </html>

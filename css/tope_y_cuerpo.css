@@ -14,9 +14,8 @@
     right: 1vw;
     top: 14vh;
 }
-#imagendefondo_01 {
-    /* background-image: url("../img/fondo01.jpg"); */
-    background-image: url("../img/coches/fondo_coche_01.jpg");
+body#imagendefondo {
+    background-image: url("../img/coches/fondo_coche_21.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
