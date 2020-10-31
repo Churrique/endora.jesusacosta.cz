@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
   <meta charset="UTF-8" />
   <meta name="language" content="es" />
@@ -37,14 +37,14 @@
             Nombre:
           </label>
         <input type="text" name="nombre" id="_nombre_" size="40" maxlength="30" placeholder="* Nombre:"
-            pattern="[a-zA-Z ]{3,30}" tabindex="2" title="...completa este campo..." />
+            pattern="[a-zA-Z.ÁáÉéÍíÓóÚúÑñ ]{3,30}" tabindex="2" title="...completa este campo..." />
       </div>
         <div id="div-entrada">
         <label for="_asunto_" data-help="dale un título a tu mensaje para referencia">
             Asunto:
           </label>
         <input type="text" name="asunto" id="_asunto_" size="40" maxlength="30" placeholder="* Asunto:"
-            pattern="[a-zA-Z*-_ ]{3,30}" tabindex="3" title="...completa este campo..." />
+            pattern="[a-zA-Z*-_.ÁáÉéÍíÓóÚúÑñ ]{3,30}" tabindex="3" title="...completa este campo..." />
       </div>
         <div id="div-entrada-textarea">
         <label for="_mensaje_" data-help="trata de ser claro y puntual en lo que expones">
@@ -53,9 +53,7 @@
         <textarea name="mensaje" id="_mensaje_" placeholder="* Mensaje:" cols="43" rows="5" maxlength="2000"
             tabindex="4" required></textarea>
       </div>
-        <div class="g-recaptcha" data-sitekey="6LeXMaUZAAAAAMqx3xwaJ5zZl8wpw1t7CuGi0gZx"></div
-
-        
+        <div class="g-recaptcha" data-sitekey="6LeXMaUZAAAAAMqx3xwaJ5zZl8wpw1t7CuGi0gZx"></div>
         <div id="div-submit">
         <input name="btnenvia" type="submit" id="_envia_" value="Enviar" tabindex="5"
             title="...enviar solicitud de contacto..." />

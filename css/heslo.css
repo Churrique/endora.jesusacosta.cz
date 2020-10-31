@@ -1,0 +1,21 @@
+@import url(../css/fuenteslocales.css);
+label {
+    color: rgb(47, 152, 245);
+    position: relative;
+    display: block;
+    line-height: 2.8125em;
+    margin-top: 0em;
+    transition: all 0.80s;
+    width: 100%;
+    padding: 0px 0px 0px 15px;
+  }
+  label:hover {
+    color: #00ffff;
+  }
+  input[type="text"], input[type="range"] {
+    border: 1px solid rgba(16, 50, 243, 0.692);
+    background-color: rgba(139, 9, 245, 0.473);
+    color: rgba(243, 8, 8, 0.842);
+    padding: 0px 0px 0px 15px;
+    margin-left: 15px;
+  }

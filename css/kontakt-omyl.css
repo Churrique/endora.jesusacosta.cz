@@ -1,0 +1,110 @@
+@import url(../css/fuenteslocales.css);
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.esquema_unico {
+  font-family: 'Parisienne', cursive;
+  font-size: 1.125em;
+}
+#div-padre {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#div-contenido-form {
+  border-style: double;
+  border-width: 0.3em;
+  border-color: rgba(107, 83, 17, 0.836);
+  border-radius: 0.3125em;
+  margin: 0.9375em 0.625em 0.3125em 0.625em;
+  width: 28em;
+  height: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: auto;
+  background-image: url("../img/fondo_floral_modificado.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: contain;
+
+}
+#div-entrada {
+  background-color: rgba(4, 119, 155, 0.76);
+  border-color: transparent;
+  height: 5em;
+  width: 22.81em;
+  margin: 1.5625em 1.5625em 0.625em 1.5625em;
+  padding: 0em 0.25em 0em 0.25em;
+  /*margin: 0em 1.5625em 0.625em 1.5625em;
+  padding: 0em 0em 0em 0.625em;*/
+  transition: all 0.80s;
+}
+#div-entrada:hover {
+  background-color: rgb(4, 120, 155);
+}
+#div-error {
+  background-color: rgba(155, 4, 4, 0.76);
+  border-color: transparent;
+  height: 5em;
+  width: 22.81em;
+  margin: 1.5625em 1.5625em 0.625em 1.5625em;
+  padding: 0em 0.25em 0em 0.25em;
+  /*margin: 0em 1.5625em 0.625em 1.5625em;
+  padding: 0em 0em 0em 0.625em;*/
+  transition: all 0.80s;
+}
+#div-error:hover {
+  background-color: rgb(155, 4, 4);
+}
+#div-submit {
+  display: flex;
+  justify-content: center;
+}
+p {
+  color: aliceblue;
+  position: relative;
+  display: block;
+  line-height: 3em;
+  /*line-height: 2.8125em;*/
+  margin-top: 0em;
+  transition: all 0.80s;
+  width: 100%;
+}
+p:hover {
+  color: #00ffff;
+}
+::placeholder {
+  color: #f3d5ae;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #f3d5ae;
+}
+::-webkit-input-placeholder { /* WebKit */
+  color: #f3d5ae;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #f3d5ae;
+}
+input[type="submit"] {
+  background-color: rgba(107, 83, 17, 0.836);
+  border: 1px solid #8bc34a;
+  color: #8bc34a;
+  padding: 0.3125em 0.9375em;
+  font-size: 1em;
+  margin: 0.9375em auto;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+input[type="submit"]:hover {
+  color: #a71409;
+  background-color: rgba(139, 195, 74, 0.678);
+  border: 0.0625em solid #f13f08;
+}
