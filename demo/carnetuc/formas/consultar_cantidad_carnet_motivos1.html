@@ -1,0 +1,47 @@
+<!--
+//************************
+//Version 0.1 15-04-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" height="400">
+		<tr>
+		  <td colspan="2">
+				<div align="right" class="Estilo2">Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		 </td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle">
+				<table width="61%" height="138" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				  <tr bgcolor="d0dcea">
+				    <td height="30" colspan="4" bgcolor="#CCCCCC" valign="middle"><div align="center" class="titulo1">
+					Resumen Reporte de Tramitaci&oacute;n Carnet</div></td>
+				  </tr>
+				  <tr height="30" valign="middle">                   
+					<td class="resaltar_rojo2" width="38%" align="rigth"><div align="right"><span class="Estilo9">Fecha Desde:</span></div></td>
+					<td class="resaltar_rojo2" width="12%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['fechad'];?></td>
+				    <td class="resaltar_rojo2" width="12%" align="rigth"><div align="right"><span class="Estilo9">Fecha Hasta:</span></div></td>
+				    <td class="resaltar_rojo2" width="38%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['fechah'];?></td>
+				  </tr>
+				  <tr height="30">
+				    <td colspan="4" class="Estilo8"  align="center" valign="middle">
+						<table cellpadding="2" cellspacing="0" border="1" width="49%" bordercolor="#666666">
+							<tr bgcolor="#999999">
+							  <td width="29%" align="center" class="Estilo9">C&oacute;digo Tr&aacute;mite </td>
+							  <td width="40%" align="center" class="Estilo9">Motivo Tr&aacute;mite</td>
+							  <td width="31%" align="center" class="Estilo9">Cantidad</td>
+						  </tr>
+						  <?php $conexion=conectar($host_carnet,$usuario_carnet,$clave_carnet,$database_carnet); 
+						  cantidad_carnet_motivos($conexion,$tabla_historial_estudiante,$_SESSION['fechad'],$_SESSION['fechah']); ?>
+					  </table>					</td>
+			      </tr>
+				   <tr>
+				    <td height="20" colspan="4" class="error">&nbsp;</td>
+				  </tr>
+		      </table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="Estilo2" height="50" valign="bottom" style="color:#DC8638"><a href="consultar_cantidad_carnet_motivos.php" class="link3" style="color:#CC6600"><< Regresar</a></td>
+		</tr>
+	    </table>

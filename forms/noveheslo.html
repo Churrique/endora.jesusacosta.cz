@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <form name="FrmPass" id="FrmPass" method="post" action="#">
+  <form name="FrmPass" id="FrmPass">
   <table width="70%" border="0" cellspacing="0" cellpadding="0">
     <tbody>
       <tr>
@@ -24,11 +24,7 @@
 
           <div>
             <label for="contrasena">Contraseña</label>
-            <input type="text" name="contrasena" id="contrasena" size="15">
-           </div>
-           <div>
-            <label for="longitud">Longitud</label>
-            <input type="text" name="longitud" id="longitud" size="5" value="">
+            <input type="text" name="contrasena" id="contrasena" size="30">
            </div>
            <div>
             <label for="rango">Rango (3..20)</label>
@@ -45,10 +41,14 @@
           <!-- 
             * Zona de check box's 
           ! -->
-           <div>
-            <input type="checkbox" title="Incluir [A..Z]" checked name="mayusculas" id="mayusculas">
+          <div><label class="content-input">
+            <input type="checkbox" name="Vehiculo" id="autopista" value="autopista">Autopista
+            <i></i>
+          </label></div>
+
+          <div>
             <label title="Incluir letras mayúsculas" for="mayusculas">
-              [A..Z]
+            <input type="checkbox" title="Incluir [A..Z]" checked name="mayusculas" id="mayusculas">[A..Z]
             </label>
           </div>
           <div>

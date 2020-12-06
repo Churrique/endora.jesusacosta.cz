@@ -1,0 +1,49 @@
+<!--
+//************************
+//Version 0.1 15-04-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" height="400">
+		<tr>
+		  <td colspan="2">
+				<div align="right" class="Estilo2">Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		 </td>
+		</tr>
+		<tr>
+			<td align="center" valign="middle">
+				<table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				  <tr bgcolor="d0dcea">
+				    <td height="40" colspan="2" bgcolor="#FFFFFF" valign="bottom"><div align="center" class="titulo1">
+					<img src="images/historial_inscripcion.png" width="100%" height="30" /></div></td>
+				  </tr>
+				  <tr height="30" valign="middle">
+				  	<td align="right" width="50%" class="Estilo9">Cédula:</td>
+					<td class="resaltar_rojo2" width="50%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['cedula'];?></td>
+				  </tr>
+				  <tr height="30">
+				    <td colspan="2" class="Estilo8"  align="center" valign="middle">
+						<table cellpadding="2" cellspacing="0" border="1" width="98%" bordercolor="#666666">
+							<tr bgcolor="#999999">
+								<td class="Estilo9" align="center" width="10%">Fecha de Inscripción</td>
+								<td class="Estilo9" align="center" width="25%">Escuela</td>
+								<td class="Estilo9" align="center" width="10%">Modalidad de Ingreso</td>
+								<td class="Estilo9" align="center" width="15%">Tipo de Inscripción</td>
+								<td class="Estilo9" align="center" width="10%">Codigo Planilla</td>
+								<td class="Estilo9" align="center" width="15%">Inscrito por</td>
+								<td class="Estilo9" align="center" width="15%">Observacion</td>
+							</tr>
+							<?php cuadro_historial($conexion,$tabla_historial_inscripciones,$_SESSION[cedula]); ?>
+						</table>
+					</td>
+				   </tr>
+				   <tr>
+				    <td height="20" colspan="2" class="error">&nbsp;</td>
+				  </tr>
+		      </table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" class="Estilo2" height="30" valign="top" style="color:#DC8638"><a href="consultar_estudiante.php" class="link3" onclick="javascript:window.close();">Cerrar Ventana</a></td>
+		</tr>
+	    </table>

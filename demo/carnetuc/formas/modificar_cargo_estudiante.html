@@ -1,0 +1,78 @@
+<!--
+//************************
+//Version 0.1 18-06-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+<table height="379" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="30%" background="images/bg_izquierdo.gif" style="background-position:right top; background-repeat:repeat-y"></td>
+	<td width="800" valign="top">
+		<table width="800" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <td>
+<div align="right" class="Estilo2"><br />
+		      Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		  </td>
+		</tr>
+		<tr>
+			<td align="center">
+				<form id="form_modificar_usuario" name="form_modificar_usuario" method="post" action="modificar_cargo_estudiante.php">
+				<table width="650" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				  <tr bgcolor="d0dcea">
+				    <td height="50" bgcolor="#FFFFFF" valign="bottom"><div align="center">
+					<img src="images/administrar.png"/></div></td>
+				  </tr>
+				  <tr>
+				    <td height="30" bgcolor="#EAEAEA" valign="bottom" align="center" class="Estilo2">MODIFICAR CARGO ESTUDIANTE:</td>
+				  </tr>
+				  <tr>
+				    <td height="40" bgcolor="#EAEAEA" class="formalizar" align="center"><?php echo $_SESSION['cargo_nombre']; ?></td>
+				  </tr> 
+				  <tr>
+				  	<td bgcolor="#EAEAEA">
+						<table width="90%" border="0" cellpadding="2" cellspacing="0" bgcolor="#CCCCCC">
+						<tr>
+							<td width="30%" align="right" bgcolor="#EAEAEA" class="Estilo2">Nombre:</td>
+							<td align="left" bgcolor="#EAEAEA"><input name="nombre" type="text" size="40" maxlength="26" value="<?php echo $_SESSION['cargo_nombre']; ?>" /></td>
+						</tr>
+						<tr>
+						<td bgcolor="#EAEAEA" colspan="2" align="center" height="20" valign="middle" class="Estilo8">
+					      <div align="center" class="Estilo2">
+					        <br />¿Desea guardar los cambios?
+			                <input name="seleccion" type="radio" value="si" />Si
+					        <input name="seleccion" type="radio" value="no" checked="checked" />No
+					      </div>
+						</td>
+					   </tr>
+				      <tr>
+				     	<td colspan="2"align="center" bgcolor="#EAEAEA"><br><?php
+							echo"<div align=\"center\"><input type=\"submit\" name=\"actualizar_cargo\" value=\"Aceptar\" class=\"boton1\" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"submit\" name=\"cancelar_cargo\" value=\"Cancelar\" class=\"boton1\" /></div>";?>
+						</td>
+				      </tr>
+						</table>
+					</td>
+				</tr>
+				  <tr>
+				    <td bgcolor="#EAEAEA"><br></td>
+		  		  </tr>
+				  <tr>
+				    <td height="20" bgcolor="#EAEAEA" class="error">
+					<div align="center"><?php echo $error; ?></div>
+					</td>
+				  </tr>
+		      </table>
+			  </form>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="Estilo2" height="20" valign="bottom" style="color:#DC8638"><a href="editar_cargo_estudiante.php" class="link3"><< Regresar</a></td>
+		</tr>
+		<tr>
+			<td class="error" align="right"><br /><br /><form name="salir" action="index.php" method="post"><input name="logout" type="submit" value="Salir" class="boton1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form></td>
+		</tr>
+	    </table>
+	</td>
+	<td width="30%" background="images/bg_derecho.gif" style="background-position:left top; background-repeat:repeat-y"></td>
+</tr>
+</table>

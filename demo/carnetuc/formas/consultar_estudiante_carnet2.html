@@ -1,0 +1,154 @@
+<!--
+//************************
+//Version 0.1 15-04-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+<script language=javascript> 
+function openwindow(url, width, height)
+{
+var win;
+var windowName;
+var params;
+x=(screen.width - 800)/2
+y=(screen.height -400)/2
+
+var d = new Date();
+var t = d.getTime();
+
+params = "toolbar=0,";
+params += "location=0,";
+params += "directories=0,";
+params += "status=0,";
+params += "menubar=0,";
+params += "titlebar=1,";
+params += "scrollbars=1,";
+params += "resizable=1,";
+params += "top="+y+",";
+params += "left="+x+",";
+params += "width="+width+",";
+params += "height="+height;
+
+win = window.open(url,t, params);
+}
+</script>
+</head>
+<body>
+<table height="456" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="30%" background="images/bg_izquierdo.gif" style="background-position:right top; background-repeat:repeat-y"></td>
+	<td width="800" valign="top">
+		<table width="800" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <td colspan="2">
+				<div align="right" class="Estilo2"><br />
+			      Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		 </td>
+		</tr>
+		<tr>
+			<td align="center">
+				<table width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				  <tr bgcolor="d0dcea">
+				    <td height="40" colspan="4" bgcolor="#FFFFFF" valign="bottom"><div align="center" class="titulo1">
+					<img src="images/datos_personales.png"/></div></td>
+				  </tr>
+				  <tr>
+                    <td align="right" width="6%" class="Estilo8"></td>
+                    <td align="right" width="20%" class="Estilo8"></td>
+				  	<td align="right" width="22%" class="Estilo8"></td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;
+					</td>  
+    			  </tr>
+                    <tr>
+                    <td align="right" width="6%" class="Estilo8"></td>
+                    <td width="20%" rowspan="8" align="center" class="Estilo8" style="border:2px solid gray"><div align="center" class="titulo1">
+			         <?php
+                     if($_SESSION['cedula']<10000000)
+                     {
+	                     $imagen="0".$_SESSION['cedula'].".jpg";
+                     }
+                     else
+                     {
+	                     $imagen=$_SESSION['cedula'].".jpg";
+                     }
+                     $ruta="fotos/$imagen";
+                     if(file_exists($ruta))
+				     {
+					    
+                       echo "<div align=\"center\"><img src=\"fotos/$imagen\" width=\"120\" heigth=\"171\" /></div>";
+				     }
+				     else
+				     {
+					  echo "<div align=\"center\" class=\"resaltar_rojo2\" style=\"color:#0000FF\">SIN FOTO</div>";
+				     }
+			         ?>
+                    </div></td>
+                    <td align="right" width="22%" class="Estilo8"></td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;
+					</td>  
+    			  </tr>
+		          <tr>
+                    <td align="right" width="6%" class="Estilo8">&nbsp;</td>
+                    <td align="right" width="22%" class="Estilo8">Cédula:</td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['cedula'];?>
+					</td>  
+    			  </tr>
+		          <tr>
+                    <td align="right" width="6%" class="Estilo8">&nbsp;</td>
+                    <td align="right" width="22%" class="Estilo8">Nombres:</td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['primer_nombre']." ".$_SESSION['segundo_nombre'];?>
+					</td>  
+    			  </tr>
+		          <tr>
+                    <td align="right" width="6%" class="Estilo8">&nbsp;</td>
+                    <td align="right" width="22%" class="Estilo8">Apellidos:</td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['primer_apellido']." ".$_SESSION['segundo_apellido'];?>
+					</td>  
+    			  </tr>
+		          <tr>
+                    <td align="right" width="6%" class="Estilo8">&nbsp;</td> 
+                    <td align="right" width="22%" class="Estilo8">Facultad:</td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['nombre_facultad'];?>
+					</td>  
+    			  </tr>
+		          <tr>
+                    <td align="right" width="6%" class="Estilo8">&nbsp;</td>
+                    <td align="right" width="22%" class="Estilo8" valign="middle">Escuela:</td>
+					<td class="resaltar_rojo2" width="52%" align="left" valign="middle">&nbsp;
+					<?php echo $_SESSION['carrera'];?></td>
+				  </tr>
+                    <tr>
+                    <td align="right" width="6%" class="Estilo8"></td>
+                    <td align="right" width="22%" class="Estilo8"><br /></td>
+					<td class="Estilo9" width="52%" align="left"><br /></td>
+				  </tr>
+                     <tr>
+                    <td align="right" width="6%" class="Estilo8"></td>
+				  	<td class="Estilo9" width="22%" align="left"><br /></td>
+				  </tr>
+                   <tr>                  
+				  	<td align="center" colspan="4" class="resaltar_rojo2" valign="middle">Carnets Emitidos:&nbsp;<?php echo $_SESSION['cantidad_carnet'];?></td>
+				  </tr>
+		          <tr>
+                    <td colspan="4" align="center" class="resaltar_rojo2">Fecha de la última carnetización:&nbsp;<?php echo $_SESSION['fecha_carnetizacion'];?></td>
+				  </tr>
+		          <tr>
+					<td colspan="4" height="20"></td>
+				  </tr>
+		          <tr>
+				  	<td colspan="4" align="center" class="Estilo8" valign="middle"><a href="javascript:openwindow('historial_estudiante_carnet.php',800,400)" class="link3" style="color:#CC6600">Consultar Historial de Carnetización</a></td>
+				  </tr>
+				   <tr>
+				    <td height="40" colspan="4" class="error"><div align="center"><?php echo $error;?></div></td>
+				  </tr>
+		      </table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" class="Estilo2" height="50" valign="bottom" style="color:#DC8638"><a href="consultar_estudiante_carnet.php" class="link3" style="color:#CC6600"><< Regresar</a></td>
+		</tr>
+	    </table>
+	</td>
+	<td width="30%" background="images/bg_derecho.gif" style="background-position:left top; background-repeat:repeat-y"></td>
+</tr>
+</table>

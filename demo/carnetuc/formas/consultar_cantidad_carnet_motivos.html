@@ -1,0 +1,85 @@
+<!--
+//************************
+//Version 0.1 18-06-2007 *
+//************************-->
+<link href="calendar/calendario_dw-estilos.css" type="text/css" rel="STYLESHEET">
+<script type="text/javascript" src="calendar/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="calendar/calendario_dw.js"></script>   
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<table height="456" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="30%" background="images/bg_izquierdo.gif" style="background-position:right top; background-repeat:repeat-y"></td>
+	<td width="800" valign="top">
+		<table width="800" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <td>
+<div align="right" class="Estilo2"><br />
+		      Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		  </td>
+		</tr>
+		<tr>
+			<td align="center">
+				<table width="330" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				<form id="form3" name="form3" method="POST" action="consultar_cantidad_carnet_motivos.php">
+				  <tr bgcolor="d0dcea">
+				    <td height="60" bgcolor="#FFFFFF" valign="bottom"><div align="center">
+					<img src="images/reportes.png"/></div></td>
+				  </tr>
+				  <tr>
+				    <td height="40" bgcolor="#EAEAEA"><br />
+				    <div align="center" class="Estilo2">Introduzca Fechas(Carnetización) para la Consulta</div>				    </td>
+				  </tr>
+				  <tr>
+				    <td align="center" height="10" valign="middle" bgcolor="#EAEAEA" class="Estilo2"><p>Fecha Desde:
+                      <input type="text" name="fechad" id="fechad" class="campofecha" size="12" />
+				    </p>			        </td>
+			      </tr>
+				  <tr>
+				    <td align="center" height="10" valign="middle" bgcolor="#EAEAEA" class="Estilo2">&nbsp;</td>
+			      </tr>
+				  <tr>
+				    <td align="center" height="10" valign="middle" bgcolor="#EAEAEA" class="Estilo2">
+				      <div align="center">
+						  Fecha Hasta: <input type="text" name="fechah" id="fechah" class="campofecha" size="12">						  
+		            </div>					</td>
+				  </tr>
+				  <tr>
+				    <td align="center" height="10" valign="middle" bgcolor="#EAEAEA" class="Estilo2">&nbsp;</td>
+			      </tr>
+				  <td align="center" height="20" valign="middle" bgcolor="#EAEAEA" class="Estilo2">
+							<br>				  
+                            <div align="center">
+                                <input name="consul_cant_motivos" type="submit" class="boton1" id="consul_cant_motivos" value="CONSULTAR"/>
+                            <br/>
+                            </div>                   </td>
+				  <tr>
+				    <td bgcolor="#EAEAEA"><br></td>
+		  		  </tr>
+
+				  <tr>
+				    <td height="50" bgcolor="#EAEAEA" class="error">
+					<div align="center"><?php echo $error; ?></div>	</td>
+				  </tr>
+				</form>
+				<script type="text/javascript">
+					 document.form3.fechad.focus();
+				</script> 
+				<script type="text/javascript">
+						$(document).ready(function(){
+						$(".campofecha").calendarioDW();
+						})
+			   </script> 
+		      </table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="Estilo2" height="50" valign="bottom" style="color:#DC8638"><a href="menu_usuario.php" class="link3" style="color:#CC6600"><< Regresar</a></td>
+		</tr>
+		<tr>
+			<td class="error" align="right"><br /><br /><form name="salir" action="index.php" method="post"><input name="logout" type="submit" value="Salir" class="boton1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form></td>
+		</tr>
+	    </table>
+	</td>
+	<td width="30%" background="images/bg_derecho.gif" style="background-position:left top; background-repeat:repeat-y"></td>
+</tr>
+</table>

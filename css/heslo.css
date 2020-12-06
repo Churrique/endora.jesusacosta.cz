@@ -1,6 +1,6 @@
 @import url(../css/fuenteslocales.css);
-label {
-    color: rgb(47, 152, 245);
+  label {
+    color:rgba(16, 50, 243, 0.692);
     position: relative;
     display: block;
     line-height: 2.8125em;
@@ -10,12 +10,33 @@ label {
     padding: 0px 0px 0px 15px;
   }
   label:hover {
-    color: #00ffff;
+    color:rgba(7, 36, 201, 0.863);
   }
   input[type="text"], input[type="range"] {
     border: 1px solid rgba(16, 50, 243, 0.692);
-    background-color: rgba(139, 9, 245, 0.473);
-    color: rgba(243, 8, 8, 0.842);
+    background-color: rgba(11, 103, 241, 0.473);
+    color: rgba(233, 13, 13, 0.842);
     padding: 0px 0px 0px 15px;
     margin-left: 15px;
+  }
+  input[type="submit"] {
+    margin-left: 15px;
+  }
+  div {
+    border: 1px solid rgba(9, 121, 56, 0.541);
+    background-color: rgba(11, 241, 107, 0.473);
+    width: 18em;
+    height: 4em;
+    margin: 1em 0em;
+    padding: 0.17em;
+  }
+  button {
+    display: block;
+    margin: 1em auto;
+  }
+  #oculto {
+    display: block;
+  }
+  #oculto:hover {
+    display: none;
   }

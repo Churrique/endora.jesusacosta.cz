@@ -1,0 +1,55 @@
+<!--
+//************************
+//Version 0.1 11-06-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<table height="456" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="30%" background="images/bg_izquierdo.gif" style="background-position:right top; background-repeat:repeat-y"></td>
+	<td width="800" valign="top">
+		<table width="800"  cellpadding="0" cellspacing="0" border="0" >
+		<tr>
+			<td colspan="2" ><br />
+			<div align="center" class="titulo1"></div>
+			<br /></td>
+		</tr>
+		<tr>
+			
+			<td width="58%" align="center" class="tablacentral">
+				<table width="330" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				<form id="form0" name="form0" method="post" action="index.php">
+				  <tr bgcolor="d0dcea">
+				    <td height="60" colspan="4" bgcolor="#FFFFFF" valign="bottom"><div align="center" class="titulo1">
+					<img src="images/autentificarse.png"/></div>
+					</td>
+				  </tr>
+				  <tr>
+				  	<td width="40" rowspan="5" bgcolor="#EAEAEA">&nbsp;</td>
+				    <td height="30" colspan="2" bgcolor="#EAEAEA">&nbsp;</td>
+				    <td width="40" rowspan="5" bgcolor="#EAEAEA">&nbsp;</td>
+				  </tr>
+				  <tr>
+				    <td width="63" height="40" valign="middle" bgcolor="#EAEAEA" class="Estilo2">Usuario:</td>
+				    <td width="172" bgcolor="#EAEAEA"><div align="left"><input name="usuario" type="text" id="usuario" size="25" maxlength="30"/>
+				    </div></td>
+				  </tr>
+				  <tr>
+				    <td width="63" height="40" bgcolor="#EAEAEA" class="Estilo2">Clave:</td>
+				    <td width="172" bgcolor="#EAEAEA">
+						<div align="left"><input name="clave" type="password" size="25" maxlength="32" /></div></td>
+		  		  </tr>
+		  		  <tr>
+				    <td height="30" colspan="2" bgcolor="#EAEAEA"><div align="center"><input type="submit" name="verificar" value="Enviar" class="boton1" /></div></td>
+				  </tr>
+				  <tr>
+				    <td height="50" colspan="2" bgcolor="#EAEAEA" class="error"><div align="center"><?php echo $error;?></div></td>
+				  </tr>
+				</form>
+		      </table>
+			</td>
+		</tr>
+	    </table>
+	</td>
+	<td width="30%" background="images/bg_derecho.gif" style="background-position:left top; background-repeat:repeat-y"></td>
+</tr>
+</table>

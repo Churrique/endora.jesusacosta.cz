@@ -1,0 +1,64 @@
+<!--
+//************************
+//Version 0.1 18-06-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+<table height="379" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="30%" background="images/bg_izquierdo.gif" style="background-position:right top; background-repeat:repeat-y"></td>
+	<td width="800" valign="top">
+		<table width="800" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <td>
+<div align="right" class="Estilo2"><br />
+		      Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		  </td>
+		</tr>
+		<tr>
+			<td align="center">
+				<table width="650" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				  <tr bgcolor="d0dcea">
+				    <td height="60" bgcolor="#FFFFFF" valign="bottom"><div align="center">
+					<img src="images/administrar_usuarios.png"/></div></td>
+				  </tr>
+				  <tr>
+				    <td height="40" bgcolor="#EAEAEA"><div align="center" class="Estilo2">LISTA DE USUARIOS</div>
+				    </td>
+				  </tr>
+				  <tr>
+				  	<td bgcolor="#EAEAEA">
+						<table width="90%" align="center" border="1" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC" bordercolor="#666666">
+						<tr bgcolor="#EFB76B" align="center">
+							<td class="Estilo9">USUARIO</td>
+							<td class="Estilo9">NOMBRE</td>
+							<td class="Estilo9">APELLIDO</td>
+							<td class="Estilo9">ACTIVO</td>
+							<td colspan="2" class="Estilo9">ACCION</td>
+						</tr>
+						<?php cuadro_usuarios($conexion,$tabla_usuarios); ?>
+						</table>
+					</td>
+				</tr>
+				  <tr>
+				    <td height="30" bgcolor="#EAEAEA" class="error" align="center"><a href="crear_usuario.php" class="link5">Crear un Nuevo Usuario</a></td>
+				  </tr>
+				  <tr>
+				    <td height="40" bgcolor="#EAEAEA" class="error">
+					<div align="center"><?php echo $error; ?></div>
+					</td>
+				  </tr>
+		      </table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="Estilo2" height="50" valign="bottom" style="color:#DC8638"><a href="menu_usuario.php" class="link3"><< Regresar</a></td>
+		</tr>
+		<tr>
+			<td class="error" align="right"><br /><br /><form name="salir" action="index.php" method="post"><input name="logout" type="submit" value="Salir" class="boton1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form></td>
+		</tr>
+	    </table>
+	</td>
+	<td width="30%" background="images/bg_derecho.gif" style="background-position:left top; background-repeat:repeat-y"></td>
+</tr>
+</table>

@@ -1,0 +1,154 @@
+.titulo1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+}
+.titulo2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+}
+.Estilo2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	font-weight: bold;
+}
+.Estilo3 {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: italic;
+	color: #000033;
+}
+.Estilo4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000066;
+	font-size: 12px;
+	text-align: justify;
+}
+.Estilo5 {
+	font-size: 14px;
+	color: #FF0000;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+}
+.Estilo7 {
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+}
+.Estilo8
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.Estilo9
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform:uppercase;
+}
+.Estilo10 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333333;
+	font-weight: bold;
+}
+.Estilo11
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+.Estilo14
+{
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 12px;
+	color: #666666;
+}
+.Estilo18 {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.Estilo19
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.boton1
+{
+	order: 1px solid #003366;
+	COLOR: #000000;
+	BACKGROUND-COLOR: #FFFFFF;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10px;
+	padding: 1px;
+	cursor: pointer;
+	border: 2px solid #000000;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.error {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #990000;
+	font-weight: bold;
+	font-size: 12px;
+}
+.tablacentral{
+	padding-left: 10px;
+	padding-right:10px;
+}
+.instrucciones
+{
+font-family:Arial, Helvetica, sans-serif;
+color:#333333;
+font-size:12px;
+text-align:justify;
+}
+.link
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#000000;
+}
+.link2
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color:#CC6600;
+	font-weight:bold;
+}
+.link3
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#CC6600;
+	font-weight:bold;
+}
+.link4
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color:#CC6600;
+	font-weight:bold;
+}
+.link5
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#000000;
+	font-weight:bold;
+}
+.formalizar {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #990000;
+	font-weight: bold;
+	font-size: 16px;
+}

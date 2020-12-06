@@ -1,0 +1,92 @@
+/* CSS Document */
+
+.row1 {
+display:block;
+position:absolute;
+width:330px;
+height:30px;
+color:#FFFFFF;
+background: #61c6e4;
+border:1px solid #ccc;
+-webkit-border-radius: 6px 6px 0px 0px;
+border-radius: 6px 6px 0px 0px;
+behavior:url(css/PIE/PIE.htc);
+float:left;
+z-index:2;
+}
+
+.content1 
+{
+display: block;
+position:relative;
+width:790px;
+height:190px;
+top:5px;
+margin-left:auto;
+margin-right:auto;
+left:0;
+right:0;
+background: #FFFFFF;
+border:1px solid #ccc;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+-moz-box-shadow:0px 0px 3px #ffffff;
+-webkit-box-shadow:0px 0px 3px #ffffff;
+border-radius:6px;
+box-shadow:0px 0px 0px 3px #ffffff;
+behavior:url(css/PIE/PIE.htc);
+z-index:;
+}
+
+.bannerizq
+{
+display: block;
+position:absolute;
+width:240px;
+height:174px;
+top:7px;
+left:7px;
+right:;
+margin-right:0px;
+background: #FFFFFF;
+border:1px solid #ccc;
+-moz-border-radius:6px 0px 0px 6px;
+-webkit-border-radius: 6px 0px 0px 6px;
+
+border-radius: 6px 0px 0px 6px; 
+box-shadow: 0px 0px 5px #DDD;
+behavior:url(css/PIE/PIE.htc);
+float:left;
+z-index:1;
+
+}
+
+.text3 
+{
+ display: inline;
+ position:absolute;
+ width:280px;
+ top:120px;
+ right:488px;
+ font-family: Century Gothic, Arial, Helvetica;
+ font-weight:bold;
+ font-size: 11px;
+ color: #999999;
+ border:0px solid #000000; 
+ z-index:4;
+}
+
+.text4 
+{
+ display: inline;
+ position:absolute;
+ width:280px;
+ top:138px;
+ right:435px;
+ font-family: Century Gothic, Arial, Helvetica;
+ font-weight:bold;
+ color:#000099;
+ font-size: 14px;
+ border:0px solid #000000; 
+ z-index:4;
+}

@@ -1,0 +1,91 @@
+<!--
+//************************
+//Version 0.1 18-06-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<table border="0" cellpadding="0" cellspacing="0">
+   <tr> 
+     <td>
+	 <SPAN style="position: absolute; top: 0 px; left: 0 px;"><img src="images/carnet_azul8.jpg" width="302" height="195"></SPAN>
+	 <SPAN style="position: absolute; width:100px; top: 65 px; left: 90 px; font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 18px;"><?php echo $_SESSION['nacionalidad']."-".$_SESSION['cedula'];?></SPAN>
+	 <SPAN style="position: absolute; width:300px; top: 100 px; left: 11 px; font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 14px;"><?php echo $_SESSION['primer_apellido']." ".$_SESSION['ini_segundo_apellido']." ".$_SESSION['primer_nombre']." ".$_SESSION['ini_segundo_nombre'];?></SPAN>
+	  <SPAN style="position: absolute; width:300px; top: 118 px; left: 11 px; font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 12px;"><?php echo $_SESSION['carrera'];?></SPAN>
+	   <SPAN style="position: absolute; width:300px; top: 110 px; left: 243 px; font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 8px;">Secretario</SPAN>
+	   <SPAN style="position: absolute; width:300px; top: 135 px; left: 11 px; font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 10px;">VENCE:<?php echo $_SESSION['dia']."-".$_SESSION['mes']."-".$_SESSION['ano'];?></SPAN>
+	  <SPAN style="position: absolute; top: 6 px; left: 232 px;">  
+	                 <?php
+//					  if($_SESSION['cedula']<10000000)
+//					  {
+//					        $imagen="0".$_SESSION['cedula'].".jpg";
+//					  }
+//					  else
+//					  {
+//					 		$imagen=$_SESSION['cedula'].".jpg";
+//					  }
+                      if($_SESSION['cedula']>=1 && $_SESSION['cedula']<=999) {
+                        $imagen="00000".$_SESSION['cedula'].".jpg";
+                      }
+                      else {
+                        if($_SESSION['cedula']>999 && $_SESSION['cedula']<=9999) {
+                          $imagen="0000".$_SESSION['cedula'].".jpg";
+                        }
+                        else {
+                          if($_SESSION['cedula']>9999 && $_SESSION['cedula']<=99999) {
+                            $imagen="000".$_SESSION['cedula'].".jpg";
+                          }
+                          else {
+                            if($_SESSION['cedula']>99999 && $_SESSION['cedula']<=999999) {
+                              $imagen="00".$_SESSION['cedula'].".jpg";
+                            }
+                            else {
+                              if($_SESSION['cedula']>999999 && $_SESSION['cedula']<=9999999) {
+                                $imagen="0".$_SESSION['cedula'].".jpg";
+                              }
+                              else {
+                                $imagen=$_SESSION['cedula'].".jpg";
+                              }
+                            }
+                          }
+                        }
+                      }
+                    
+                   
+                     $ruta="fotos/$imagen";
+                     if(file_exists($ruta))
+				     {
+					    
+                       echo "<div align=\"center\"><img src=\"fotos/$imagen\" width=\"66\" heigth=\"94\" /></div>";
+				     }
+				     else
+				     {
+					  echo "<SPAN style=\"position: absolute; width:50 px; top: 20 px; left: 10 px;\"><div align=\"center\" class=\"resaltar_rojo2\" style=\"color:#FF0000\">SIN FOTO</div></SPAN>";
+				     }
+			         ?></SPAN>
+	  <SPAN style="position: absolute; top: 149 px; left: 0 px;"><img src="codigo_barra.php"></SPAN>
+	    <SPAN style="position: absolute; top:  px; left:  px;"><?php
+		
+		 if($_SESSION[nombre_cargo]!="")
+	     {
+		    
+			   if($_SESSION[num_caracter_cargo]<=14)
+			   {
+			         echo "<SPAN style=\"position: absolute; top: 159 px; left: 198 px;\"><div align=\"center\"><img src=\"images/fondo_azul_grande.jpg\" width=\"100\" heigth=\"30\" /></div></SPAN>";
+			         echo "<SPAN style=\"position: absolute; width:100px; top: 165 px; left: 198 px; font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 12px; color:#FFFFFF   ;\"><div align=\"center\">$_SESSION[nombre_cargo]</div></SPAN>";        
+		       }
+			   else
+			   {
+			         echo "<SPAN style=\"position: absolute; top: 159 px; left: 198 px;\"><div align=\"center\"><img src=\"images/fondo_azul_grande.jpg\" width=\"100\" heigth=\"30\" /></div></SPAN>";
+			         echo "<SPAN style=\"position: absolute; width:100px; top: 159 px; left: 198 px; font-family: Arial, Helvetica, sans-serif;font-weight: bold;font-size: 12px; color:#FFFFFF ;\"><div align=\"center\">$_SESSION[nombre_cargo]</div></SPAN>";        
+			   }
+		  }
+		  else
+		  {
+		          echo "<SPAN style=\"position: absolute; top: 164 px; left: 198 px;\"><div align=\"center\"><img src=\"images/fondo_azul.jpg\" width=\"100\" heigth=\"30\" /></div></SPAN>"; 
+				   
+		  }
+		 
+		?></SPAN>
+	 </td>
+   </tr>	
+</table>
+

@@ -1,0 +1,69 @@
+<!--
+//************************
+//Version 0.1 18-06-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+<table height="456" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="30%" background="images/bg_izquierdo.gif" style="background-position:right top; background-repeat:repeat-y"></td>
+	<td width="800" valign="top">
+		<table width="800" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <td>
+<div align="right" class="Estilo2"><br />
+		      Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		  </td>
+		</tr>
+		<tr>
+			<td align="center">
+				<form id="form_insertar_asignados" name="form_insertar_asignados" method="post" action="editar_estudiante_postgrado.php">
+				<table width="650" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				  <tr bgcolor="d0dcea">
+				    <td height="50" bgcolor="#FFFFFF" valign="bottom"><div align="center">
+					<img src="images/administrar.png"/></div></td>
+				  </tr>
+				  <tr>
+				    <td height="30" bgcolor="#EAEAEA" valign="bottom" align="center" class="resaltar_rojo">EDITAR ESTUDIANTE POSTGRADO</td>
+				  </tr>
+				  <tr>
+				    <td height="20" bgcolor="#EAEAEA">&nbsp;</td>
+				  </tr>
+				  <tr>
+				  	<td bgcolor="#EAEAEA">
+						<table width="90%" border="0" cellpadding="3" cellspacing="0" bgcolor="#CCCCCC">
+						<tr>
+							<td width="39%" align="right" bgcolor="#EAEAEA" class="Estilo2">Cedula:</td>
+						  <td width="16%" align="left" bgcolor="#EAEAEA"><input name="cedula" type="text" size="10" maxlength="8" value="<?php if(isset($_POST['cedula'])){ echo trim($_POST['cedula']);}?>"/></td> 
+						    <td width="45%" align="left" bgcolor="#EAEAEA"><?php echo"<div align=\"left\">&nbsp;&nbsp;<input type=\"submit\" name=\"buscar_estudiante\" value=\"Buscar\" class=\"boton1\" /></div>";
+					  	?></td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				  <tr>
+				    <td bgcolor="#EAEAEA"><br /><br /></td>
+		  		  </tr>
+				  <tr>
+				    <td height="20" bgcolor="#EAEAEA" class="error">
+					<div align="center"><?php echo $error; ?></div>
+					</td>
+				  </tr>
+		      </table>
+			  </form>
+              <script type="text/javascript">
+					 document.form_insertar_asignados.cedula.focus();
+			  </script>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="Estilo2" height="30" valign="bottom" style="color:#DC8638"><a href="menu_usuario.php" class="link3" style="color:#CC6600"><< Regresar</a></td>
+		</tr>
+		<tr>
+			<td class="error" align="right"><br /><br /><form name="salir" action="index.php" method="post"><input name="logout" type="submit" value="Salir" class="boton1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form></td>
+		</tr>
+	    </table>
+	</td>
+	<td width="30%" background="images/bg_derecho.gif" style="background-position:left top; background-repeat:repeat-y"></td>
+</tr>
+</table>

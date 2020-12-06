@@ -1,0 +1,95 @@
+<!--
+//************************
+//Version 0.1 18-06-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+<table height="379" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="30%" background="images/bg_izquierdo.gif" style="background-position:right top; background-repeat:repeat-y"></td>
+	<td width="800" valign="top">
+		<table width="800" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <td>
+<div align="right" class="Estilo2"><br />
+		      Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		  </td>
+		</tr>
+		<tr>
+			<td align="center">
+				<form id="form_modificar_usuario" name="form_modificar_usuario" method="post" action="modificar_usuario.php">
+				<table width="650" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				  <tr bgcolor="d0dcea">
+				    <td height="50" bgcolor="#FFFFFF" valign="bottom"><div align="center">
+					<img src="images/administrar_usuarios.png"/></div></td>
+				  </tr>
+				  <tr>
+				    <td height="30" bgcolor="#EAEAEA" valign="bottom" align="center" class="Estilo2">MODIFICAR DATOS DE USUARIO:</td>
+				  </tr>
+				  <tr>
+				    <td height="40" bgcolor="#EAEAEA" class="formalizar" align="center"><?php echo $_SESSION['usuario_login']; ?></td>
+				  </tr>
+				  <tr>
+				  	<td bgcolor="#EAEAEA">
+						<table width="90%" border="0" cellpadding="2" cellspacing="0" bgcolor="#CCCCCC">
+						<tr>
+							<td width="30%" align="right" bgcolor="#EAEAEA" class="Estilo2">Cedula:</td>
+							<td align="left" bgcolor="#EAEAEA"><input name="cedula" type="text" size="10" maxlength="8" value="<?php echo $_SESSION['usuario_cedula'];?>" />&nbsp;&nbsp;<a href="cambiar_clave.php" class="link3">Cambiar Clave</a></td>
+						</tr>
+						<tr>
+							<td width="30%" align="right" bgcolor="#EAEAEA" class="Estilo2">Nombre:</td>
+							<td align="left" bgcolor="#EAEAEA"><input name="nombre" type="text" size="30" maxlength="30" value="<?php echo $_SESSION['usuario_nombre']; ?>" /></td>
+						</tr>
+						<tr>
+							<td width="30%" align="right" bgcolor="#EAEAEA" class="Estilo2">Apellido:</td>
+							<td align="left" bgcolor="#EAEAEA"><input name="apellido" type="text" size="30" maxlength="30" value="<?php echo $_SESSION['usuario_apellido']; ?>" /></td>
+						</tr>
+						<tr>
+							<td width="30%" align="right" bgcolor="#EAEAEA" class="Estilo2">Activo:</td>
+							<td align="left" bgcolor="#EAEAEA">
+							<select name="activo">
+									<option value="1" <?php if($_SESSION['usuario_activo'] == '1') echo 'selected';?>>SI</option>
+									<option value="0" <?php if ($_SESSION['usuario_activo'] == '0') echo 'selected';?>>NO</option>
+							</select>
+							</td>
+						</tr>
+						<tr>
+						<td bgcolor="#EAEAEA" colspan="2" align="center" height="20" valign="middle" class="Estilo8">
+					      <div align="center" class="Estilo2">
+					        <br />¿Desea guardar los cambios?
+			                <input name="seleccion" type="radio" value="si" />Si
+					        <input name="seleccion" type="radio" value="no" checked="checked" />No
+					      </div>
+						</td>
+					   </tr>
+				      <tr>
+				     	<td colspan="2"align="center" bgcolor="#EAEAEA"><br><?php
+							echo"<div align=\"center\"><input type=\"submit\" name=\"actualizar_datos_usuario\" value=\"Aceptar\" class=\"boton1\" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"submit\" name=\"cancelar_datos_usuario\" value=\"Cancelar\" class=\"boton1\" /></div>";?>
+						</td>
+				      </tr>
+						</table>
+					</td>
+				</tr>
+				  <tr>
+				    <td bgcolor="#EAEAEA"><br></td>
+		  		  </tr>
+				  <tr>
+				    <td height="20" bgcolor="#EAEAEA" class="error">
+					<div align="center"><?php echo $error; ?></div>
+					</td>
+				  </tr>
+		      </table>
+			  </form>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="Estilo2" height="20" valign="bottom" style="color:#DC8638"><a href="administrar_usuarios.php" class="link3"><< Regresar</a></td>
+		</tr>
+		<tr>
+			<td class="error" align="right"><br /><br /><form name="salir" action="index.php" method="post"><input name="logout" type="submit" value="Salir" class="boton1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form></td>
+		</tr>
+	    </table>
+	</td>
+	<td width="30%" background="images/bg_derecho.gif" style="background-position:left top; background-repeat:repeat-y"></td>
+</tr>
+</table>

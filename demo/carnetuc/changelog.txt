@@ -1,0 +1,12 @@
+13-04-2010
+*config.php quitado lineas innecesarias
+*en administrar_permisos_usuarios,administrar_usuarios,modificar_usuarios se centro el texto
+*en consultar_estudiante_carnet2 se comento una linea
+*en eliminar cargo autoridad se elimino una linea de mas
+*en lista cargo estudiante se centro el texto y en eliminar cargo estudiante
+*en editar_estudiante_carnet y en editar_estudiante_carnet1 se modifico una linea referente a mensaje de actualizacion
+tambíen se eliminaron líneas adicionales innecesarias y modificaciones esteticas a los htmls
+*en consultar estudiante y personal se corrigio error fecha_ultima_carnetizacion
+*actualizado las imagenes profesor
+*se agrego postgrado , editar postgrado, imprimir postgrado
+ 

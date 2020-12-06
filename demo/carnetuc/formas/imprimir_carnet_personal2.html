@@ -1,0 +1,228 @@
+<!--
+//************************
+//Version 0.1 15-04-2007 *
+//************************-->
+<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<table height="456" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td width="30%" background="images/bg_izquierdo.gif" style="background-position:right top; background-repeat:repeat-y"></td>
+	<td width="800" valign="top">
+		<table width="800" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+		  <td colspan="2">
+				<div align="right" class="Estilo2"><br />
+			      Bienvenido(a),<font color="#CC6600"><?php echo " ".$_SESSION['nombre']."  ".$_SESSION['apellido']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp"; ?></font></div>
+		 </td>
+		</tr>
+		<tr>
+			<td align="center">
+				<table width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E0E0">
+				<form id="form_imprimir" name="form_imprimir" method="post" action="imprimir_carnet_personal2.php">
+				  <tr bgcolor="d0dcea">
+				    <td height="40" colspan="5" bgcolor="#FFFFFF" valign="bottom"><div align="center" class="titulo1">
+					<img src="images/datos_personales.png"/></div></td>
+				  </tr>
+				  <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8"></td>
+                    <td align="right" width="20%" class="Estilo8"></td>
+				  	<td align="right" width="22%" class="Estilo8"></td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;					</td>  
+    			  </tr>
+                    <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8"></td>
+                    <td width="20%" rowspan="8" align="center" class="Estilo8" style="border:2px solid gray"><div align="center" class="titulo1">
+			         <?php
+//                      if($_SESSION['cedula']<10000000)
+//					 {
+//					 	$imagen="0".$_SESSION['cedula'].".jpg";
+//					 }
+//					 else
+//					 {
+//					 	$imagen=$_SESSION['cedula'].".jpg";
+//					 }
+                      if($_SESSION['cedula']>=1 && $_SESSION['cedula']<=999) {
+                        $imagen="00000".$_SESSION['cedula'].".jpg";
+                      }
+                      else {
+                        if($_SESSION['cedula']>999 && $_SESSION['cedula']<=9999) {
+                          $imagen="0000".$_SESSION['cedula'].".jpg";
+                        }
+                        else {
+                          if($_SESSION['cedula']>9999 && $_SESSION['cedula']<=99999) {
+                            $imagen="000".$_SESSION['cedula'].".jpg";
+                          }
+                          else {
+                            if($_SESSION['cedula']>99999 && $_SESSION['cedula']<=999999) {
+                              $imagen="00".$_SESSION['cedula'].".jpg";
+                            }
+                            else {
+                              if($_SESSION['cedula']>999999 && $_SESSION['cedula']<=9999999) {
+                                $imagen="0".$_SESSION['cedula'].".jpg";
+                              }
+                              else {
+                                $imagen=$_SESSION['cedula'].".jpg";
+                              }
+                            }
+                          }
+                        }
+                      }
+                     $ruta="fotos/$imagen";
+                     if(file_exists($ruta))
+				     {
+					    
+                       echo "<div align=\"center\"><img src=\"fotos/$imagen\" width=\"120\" heigth=\"171\" /></div>";
+				     }
+				     else
+				     {
+					  echo "<div align=\"center\" class=\"resaltar_rojo2\" style=\"color:#0000FF\">SIN FOTO</div>";
+				     }
+			         ?>
+                    </div></td>
+                    <td colspan="2" align="center" class="error" style="color:#0000FF"></td>
+				  </tr>
+		          <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8">&nbsp;</td>
+                    <td align="right" width="22%" class="Estilo8">Cedula:</td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['cedula'];?></div>					</td>  
+    			  </tr>
+		          <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8">&nbsp;</td>
+                    <td align="right" width="22%" class="Estilo8">Nombres:</td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['primer_nombre']." ".$_SESSION['segundo_nombre'];?>					</td>  
+    			  </tr>
+		          <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8">&nbsp;</td>
+                    <td align="right" width="22%" class="Estilo8">Apellidos:</td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['primer_apellido']." ".$_SESSION['segundo_apellido'];?>					</td>  
+    			  </tr>
+		          <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8">&nbsp;</td> 
+                    <td align="right" width="22%" class="Estilo8">Dependencia:</td>
+					<td class="resaltar_rojo2" width="52%" align="left">&nbsp;&nbsp;<?php echo $_SESSION['nombre_dependencia'];?>					</td>  
+    			  </tr>
+		          <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8">&nbsp;</td>
+                    <td align="right" width="22%" class="Estilo8" valign="middle">Tipo de Personal</td>
+					<td class="resaltar_rojo2" width="52%" align="left" valign="middle">&nbsp;
+					<?php echo $_SESSION['nombre_tipo'];?></td>
+				  </tr>
+                    <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8"></td>
+                    <td align="right" width="22%" class="Estilo8">Autoridad:<br /></td>
+					<td align="left" width="22%" class="Estilo8" height="30">&nbsp;&nbsp;&nbsp;<?php lista_autoridad($conexion); ?></td>
+				  </tr>
+                     <tr>
+                    <td width="6%" colspan="2" align="right" class="Estilo8"></td>
+				  	<td align="right" width="22%" class="Estilo8" height="30">Fecha de Vencimiento:<br /></td>
+					<td class="Estilo2" width="52%" align="left" style="color:#990000">&nbsp;&nbsp;<?php $_POST['dia'] = date(d); $_POST['mes'] = date(m); $_POST['ano'] = date(Y)+2; ?>
+					   &nbsp;D&iacute;a:
+								<select name="dia">
+								    <option value=""></option>
+									<option value="01" <?php if ($_POST['dia'] == '1') echo 'selected'; ?>>01</option>
+									<option value="02" <?php if ($_POST['dia'] == '2') echo 'selected'; ?>>02</option>
+									<option value="03" <?php if ($_POST['dia'] == '3') echo 'selected'; ?>>03</option>
+									<option value="04" <?php if ($_POST['dia'] == '4') echo 'selected'; ?>>04</option>
+									<option value="05" <?php if ($_POST['dia'] == '5') echo 'selected'; ?>>05</option>
+									<option value="06" <?php if ($_POST['dia'] == '6') echo 'selected'; ?>>06</option>
+									<option value="07" <?php if ($_POST['dia'] == '7') echo 'selected'; ?>>07</option>
+									<option value="08" <?php if ($_POST['dia'] == '8') echo 'selected'; ?>>08</option>
+									<option value="09" <?php if ($_POST['dia'] == '9') echo 'selected'; ?>>09</option>
+									<option value="10" <?php if ($_POST['dia'] == '10') echo 'selected'; ?>>10</option>
+									<option value="11" <?php if ($_POST['dia'] == '11') echo 'selected'; ?>>11</option>
+									<option value="12" <?php if ($_POST['dia'] == '12') echo 'selected'; ?>>12</option>
+									<option value="13" <?php if ($_POST['dia'] == '13') echo 'selected'; ?>>13</option>
+									<option value="14" <?php if ($_POST['dia'] == '14') echo 'selected'; ?>>14</option>
+									<option value="15" <?php if ($_POST['dia'] == '15') echo 'selected'; ?>>15</option>
+									<option value="16" <?php if ($_POST['dia'] == '16') echo 'selected'; ?>>16</option>
+									<option value="17" <?php if ($_POST['dia'] == '17') echo 'selected'; ?>>17</option>
+									<option value="18" <?php if ($_POST['dia'] == '18') echo 'selected'; ?>>18</option>
+									<option value="19" <?php if ($_POST['dia'] == '19') echo 'selected'; ?>>19</option>
+									<option value="20" <?php if ($_POST['dia'] == '20') echo 'selected'; ?>>20</option>
+									<option value="21" <?php if ($_POST['dia'] == '21') echo 'selected'; ?>>21</option>
+									<option value="22" <?php if ($_POST['dia'] == '22') echo 'selected'; ?>>22</option>
+									<option value="23" <?php if ($_POST['dia'] == '23') echo 'selected'; ?>>23</option>
+									<option value="24" <?php if ($_POST['dia'] == '24') echo 'selected'; ?>>24</option>
+									<option value="25" <?php if ($_POST['dia'] == '25') echo 'selected'; ?>>25</option>
+									<option value="26" <?php if ($_POST['dia'] == '26') echo 'selected'; ?>>26</option>
+									<option value="27" <?php if ($_POST['dia'] == '27') echo 'selected'; ?>>27</option>
+									<option value="28" <?php if ($_POST['dia'] == '28') echo 'selected'; ?>>28</option>
+									<option value="29" <?php if ($_POST['dia'] == '29') echo 'selected'; ?>>29</option>
+									<option value="30" <?php if ($_POST['dia'] == '30') echo 'selected'; ?>>30</option>
+									<option value="31" <?php if ($_POST['dia'] == '31') echo 'selected'; ?>>31</option>
+								</select>
+								&nbsp;Mes:
+								<select name="mes">
+									<option value=""></option>
+									<option value="01" <?php if ($_POST['mes'] == '1') echo 'selected'; ?>>01</option>
+									<option value="02" <?php if ($_POST['mes'] == '2') echo 'selected'; ?>>02</option>
+									<option value="03" <?php if ($_POST['mes'] == '3') echo 'selected'; ?>>03</option>
+									<option value="04" <?php if ($_POST['mes'] == '4') echo 'selected'; ?>>04</option>
+									<option value="05" <?php if ($_POST['mes'] == '5') echo 'selected'; ?>>05</option>
+									<option value="06" <?php if ($_POST['mes'] == '6') echo 'selected'; ?>>06</option>
+									<option value="07" <?php if ($_POST['mes'] == '7') echo 'selected'; ?>>07</option>
+									<option value="08" <?php if ($_POST['mes'] == '8') echo 'selected'; ?>>08</option>
+									<option value="09" <?php if ($_POST['mes'] == '9') echo 'selected'; ?>>09</option>
+
+									<option value="10" <?php if ($_POST['mes'] == '10') echo 'selected'; ?>>10</option>
+									<option value="11" <?php if ($_POST['mes'] == '11') echo 'selected'; ?>>11</option>
+									<option value="12" <?php if ($_POST['mes'] == '12') echo 'selected'; ?>>12</option>
+								</select>
+								&nbsp;A&ntilde;o:
+								<select name="ano">
+									<option value=""></option>
+									<option value="2012" <?php if ($_POST['ano'] == '2012') echo 'selected'; ?>>2012</option>
+									<option value="2013" <?php if ($_POST['ano'] == '2013') echo 'selected'; ?>>2013</option>
+									<option value="2014" <?php if ($_POST['ano'] == '2014') echo 'selected'; ?>>2014</option>
+									<option value="2015" <?php if ($_POST['ano'] == '2015') echo 'selected'; ?>>2015</option>
+									<option value="2016" <?php if ($_POST['ano'] == '2016') echo 'selected'; ?>>2016</option>
+									<option value="2017" <?php if ($_POST['ano'] == '2017') echo 'selected'; ?>>2017</option>
+									<option value="2018" <?php if ($_POST['ano'] == '2018') echo 'selected'; ?>>2018</option>
+									<option value="2019" <?php if ($_POST['ano'] == '2019') echo 'selected'; ?>>2019</option>
+									<option value="2020" <?php if ($_POST['ano'] == '2020') echo 'selected'; ?>>2020</option>
+                                    <option value="2021" <?php if ($_POST['ano'] == '2021') echo 'selected'; ?>>2021</option>
+                                    <option value="2022" <?php if ($_POST['ano'] == '2022') echo 'selected'; ?>>2022</option>
+                                    <option value="2023" <?php if ($_POST['ano'] == '2023') echo 'selected'; ?>>2023</option>
+                                    <option value="2024" <?php if ($_POST['ano'] == '2024') echo 'selected'; ?>>2024</option>
+                                    <option value="2025" <?php if ($_POST['ano'] == '2025') echo 'selected'; ?>>2025</option>
+                                    <option value="2026" <?php if ($_POST['ano'] == '2026') echo 'selected'; ?>>2026</option>
+                                    <option value="2027" <?php if ($_POST['ano'] == '2027') echo 'selected'; ?>>2027</option>
+                                    <option value="2028" <?php if ($_POST['ano'] == '2028') echo 'selected'; ?>>2028</option>
+                                    <option value="2029" <?php if ($_POST['ano'] == '2029') echo 'selected'; ?>>2029</option>
+                                    <option value="2030" <?php if ($_POST['ano'] == '2030') echo 'selected'; ?>>2030</option>
+								</select>
+					<br /></td>
+				  </tr>
+                   <tr>
+				  	<td align="center" colspan="5"></td>
+				  </tr>
+		          <tr>
+                    <td colspan="5" height="25"></td>
+                   </tr>
+
+		          <tr>
+				  	<td align="center" class="Estilo8" valign="middle">&nbsp;</td>
+				    <td align="center" class="Estilo8" valign="middle">&nbsp;</td>
+				    <td align="center" class="Estilo8" valign="middle">&nbsp;</td>
+				    <td align="center" class="Estilo8" valign="middle">
+                      <div align="right">
+                        <input name="imprimir" type="submit" class="boton1" id="imprimir" value="Imprimir" />
+                      </div></td>
+				    <td align="center" class="Estilo8" valign="middle"><div align="left">&nbsp;&nbsp;&nbsp;
+				      <input   name="imprimir2" type="submit" class="boton1" id="imprimir2" value="Imprimir duplex" />
+			        </div></td>
+		          </tr>
+				   <tr>
+				   <td colspan="5" align="center" heigth="20" class="error" style="color:#0000FF" valign="middle"><br /><?php echo $error;?><br /><br /></td>
+				   </tr>
+				</form> 
+		      </table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" class="Estilo2" height="50" valign="bottom" style="color:#DC8638"><a href="imprimir_carnet_personal.php" class="link3" style="color:#CC6600"><< Regresar</a></td>
+		</tr>
+	    </table>
+	</td>
+	<td width="30%" background="images/bg_derecho.gif" style="background-position:left top; background-repeat:repeat-y"></td>
+</tr>
+</table>
