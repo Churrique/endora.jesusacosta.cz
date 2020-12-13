@@ -5,27 +5,35 @@
 tbody tr:nth-child(even) {
 	background-color: #e495e4;
 } */
+a, a:link, a:visited, a:hover, a:active  {
+	color: currentColor;
+	text-decoration: none;
+	cursor: pointer;
+}
 ol {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	top: 0em;
 }
 ol li {
-	background: url('../img/btn_flecha_derecha_ver_2.png') no-repeat left;
+	background: url('../img/btn_flecha_derecha_ver_2.png') no-repeat;
+	background-position: left 0.176em;
 	height: auto;
-	padding-left: 0.9375em;
-	padding-top: 0.0625em;
+	padding-left: 1.15em;
+	padding-top: 0em;
 }
 ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+	top: 0em;
 }
 ul li {
-	background: url('../img/btn_flecha_derecha.png') no-repeat left center;
+	background: url('../img/btn_flecha_derecha.png') no-repeat left;
 	height: auto;
-	padding-left: 0.9975em;
-	padding-top: 0.0625em;
+	padding-left: 1.15em;
+	padding-top: 0.1825em;
 }
 table {
 	margin: 0.625em;
@@ -36,7 +44,8 @@ table {
 	cursor: grab;
 }
 th {
-	font-family: 'Amiko Bold', cursive;
+	font-family: 'Kavoon', cursive;
+	/*font-family: 'Amiko Bold', cursive;*/
 	font-size: 0.875em;
 	text-align: center;
 	padding: 0.5em;
@@ -46,7 +55,8 @@ th {
 	color: #039;
 }
 td {
-	font-family: 'Clicker Script', cursive;
+	font-family: 'Kavoon', cursive;
+	/*font-family: 'Clicker Script', cursive;*/
 	font-size: 0.8125em;
 	padding: 0.5em;
 	background: #e8edff;
@@ -227,13 +237,11 @@ caption:hover {
 .content div p {
 	font-size: 0.875em;
 	line-height: 1.375em;
-	/* font-style: italic; */
 	text-align: justify;
 	text-indent: 1.5em;
 	margin: 0.9375em 0em 1.25em 0em;
 	color: #777;
 	padding-left: 0.9375em;
-	/* font-family: Cambria, Georgia, serif; */
 	font-family: 'Kavoon', cursive;
 	border-left: 0.5em solid rgba(63,148,148, 0.1);
 }
