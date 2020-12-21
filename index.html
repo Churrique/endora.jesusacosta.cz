@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-es">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="language" content="es" />
+  <meta name="language" content="es-es" />
   <meta name="viewport" content="width=max-device-width, initial-scale=1.0, user-scalable=yes/zoom" />
   <meta name="author" content="Jesús Acosta" />
   <meta name="copyright" content="Jesús Acosta" />
@@ -11,8 +11,12 @@
   <meta name="description" content="Página principal del sitio Web" />
   <meta name="revisit-after" content="1 month" />
   <meta name="robots" content="index, follow" />
+  <meta name="REPLY-TO" content="kontakt@jesusacosta.cz">
+  <meta name="Resource-type" content="Document">
+  <meta name="DateCreated" content="Tue, 31 March 2020 14:00:00 GMT+1">
+  <meta http-equiv="expires" content="86400"/> <!-- Equivalente a 24 horas -->
   <title>jesusacosta.cz</title>
-  <script id="cookieyes" src="https://cdn-cookieyes.com/client_data/185f96cb1f0c9c2e4d3a50ca.js"></script>
+  <link rev="made" href="mailto:kontakt@jesusacosta.cz">
   <link rel="StyleSheet" href="css/tope_y_cuerpo.css" type="text/css" />
   <link rel="StyleSheet" href="css/cuerpo_ctro_izq.css" type="text/css" />
   <link rel="StyleSheet" href="css/footer.css" type="text/css" />
@@ -20,6 +24,8 @@
   <link rel="StyleSheet" href="css/btn_blue_2.css" type="text/css" />
   <link rel="StyleSheet" href="css/tooltip_izq_gris.css" type="text/css" />
   <link rel="shortcut icon" href="img/_logo_nube.ico" type="image/x-icon" />
+  <script id="cookieyes" src="https://cdn-cookieyes.com/client_data/185f96cb1f0c9c2e4d3a50ca.js"></script>
+
   <!-- Smartsupp Live Chat script -->
   <script type="text/javascript">
     var _smartsupp = _smartsupp || {};
@@ -31,6 +37,7 @@
       c.src = 'https://www.smartsuppchat.com/loader.js?'; s.parentNode.insertBefore(c, s);
     })(document);
   </script>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165417175-1"></script>
   <script>
@@ -39,6 +46,8 @@
     gtag('js', new Date());
     gtag('config', 'UA-165417175-1');
   </script>
+
+<!-- Script que muestra las imágenes aleatoriamente -->
   <script type="text/javascript">
     function MontaImagen() {
       let vn = Math.floor( Math.random() * 24 );
@@ -57,42 +66,43 @@
 
 <body id="imagendefondo" onload="MontaImagen()">
   <!--
-!
-! Área del Tope de la Página
-!
--->
+  !
+  ! Área del Tope de la Página
+  !
+  -->
   <header>
     <div style="position: relative;">
-      <img id="imagendetope" src="img/TopeConCorte.jpg" alt="Tope" />
+      <img id="imagendetope" src="/img/TopeConCorte.jpg" alt="Tope" />
       <div class="texto_01">
         Bienvenido@...!
       </div>
     </div>
   </header>
   <!--
-!
-! Área de Botones de la Página
-!
--->
+  !
+  ! Área de Botones de la Página
+  !
+  -->
   <div style="position: absolute; right: 0.5vw;">
     <button class="button" onclick="location.href='index.html';">
-      <img src="img/pg_home.png" alt="Home" />
+      <img src="/img/pg_home.png" alt="Home" />
     </button><br />
     <div class="dropdown">
       <button class="dropbtn">Menú</button>
       <div class="dropdown-content">
-        <a href="../stranky/cv_act.html" target="marco_a">Portafolio</a>
-        <a href="/forms/noveheslo.html" target="marco_a">Generar Clave</a>
-        <a href="#">Foro</a>
+        <a href="/stranky/cv_act.html" target="marco_a">Portafolio</a>
+        <a href="/stranky/forum.html" target="marco_a">Foro</a>
+        <a href="/stranky/uzitny.html" target="marco_a">Utilidades</a>
+        <a href="/mobil/menumobil.html" target="new">Versión Mobil</a>
         <div class="tooltipi">
-          <a href="../forms/kontakt.html" target="marco_a">
-            <img src="img/redes_sociales_y_contacto/ct_email.png" alt="E-Mail" />
+          <a href="/forms/kontakt.html" target="marco_a">
+            <img src="/img/redes_sociales_y_contacto/ct_email.png" alt="E-Mail" />
           </a>
           <span class="tooltiptext">Contáctame por correo electrónico...</span>
         </div>
         <div class="tooltipi">
           <a href="#" target="marco_a">
-            <img src="img/redes_sociales_y_contacto/broken-link-24-pink.png" alt="Link-Roto" />
+            <img src="/img/redes_sociales_y_contacto/broken-link.png" alt="Link-Roto" />
           </a>
           <span class="tooltiptext">Reporta algún elnace roto...</span>
         </div>
@@ -100,56 +110,47 @@
     </div>
   </div>
   <!--
-!
-! Área de Izquierda-Centro-Página
-!
--->
+  !
+  ! Área de Izquierda-Centro-Página
+  !
+  -->
   <iframe id="ctroizq" name="marco_a"></iframe>
-  <!-- <div class="tooltipd">
-    Prueba de tooltip
-    <span class="tooltiptext">Mensaje del tootip...</span>
-  </div>
-  <div class="tooltipi">...<span class="tooltiptext">Trabajos realizados...</span></div> -->
   <!--
-!
-! Área de Pie de Página
-!
--->
-  <!-- <div style="position: absolute; bottom: 10px; margin-left: 30px;">
-  <img src="img/Valid_CSS.png" />
-  <img src="img/Valid_XHTML.png" />
-</div> -->
+  !
+  ! Área de Pie de Página
+  !
+  -->
   <div id="footter">
     <a href="https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.jesusacosta.cz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es"
       target="new">
-      <img src="img/Valid_CSS.png" alt="¡CSS Válido!" />
+      <img src="/img/Valid_CSS.png" alt="¡CSS Válido!" />
     </a>
     <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&checkerrorpages=yes&useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=&doc=http%3A%2F%2Fwww.jesusacosta.cz%2F"
       target="new">
-      <img src="img/Valid_XHTML.png" alt="¡HTML Válido!" />
+      <img src="/img/Valid_XHTML.png" alt="¡HTML Válido!" />
     </a>
   </div>
   <footer>
     <a href="https://www.facebook.com/jesus.e.acosta.m/about?lst=667884118%3A667884118%3A1589398423" target="new">
-      <img src="img/redes_sociales_y_contacto/rs_facebook.png" alt="Facebook" />
+      <img src="/img/redes_sociales_y_contacto/rs_facebook.png" alt="Facebook" />
     </a>
     <a href="#" target="marco_a">
-      <img src="img/redes_sociales_y_contacto/rs_instagram.png" alt="Instagram" />
+      <img src="/img/redes_sociales_y_contacto/rs_instagram.png" alt="Instagram" />
     </a>
     <a href="#" target="marco_a">
-      <img src="img/redes_sociales_y_contacto/rs_linkedin.png" alt="LinkedIn" />
+      <img src="/img/redes_sociales_y_contacto/rs_linkedin.png" alt="LinkedIn" />
     </a>
     <a href="#" target="marco_a">
-      <img src="img/redes_sociales_y_contacto/rs_skype.png" alt="Skype" />
+      <img src="/img/redes_sociales_y_contacto/rs_skype.png" alt="Skype" />
     </a>
     <a href="#" target="marco_a">
-      <img src="img/redes_sociales_y_contacto/rs_twitter.png" alt="Twitter" />
+      <img src="/img/redes_sociales_y_contacto/rs_twitter.png" alt="Twitter" />
     </a>
     <a href="#" target="marco_a">
-      <img src="img/redes_sociales_y_contacto/rs_whatsapp.png" alt="WhatsApp" />
+      <img src="/img/redes_sociales_y_contacto/rs_whatsapp.png" alt="WhatsApp" />
     </a>
     <a href="#" target="marco_a">
-      <img src="img/redes_sociales_y_contacto/rs_youtube.png" alt="Youtube" />
+      <img src="/img/redes_sociales_y_contacto/rs_youtube.png" alt="Youtube" />
     </a>
   </footer>
 

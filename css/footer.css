@@ -18,8 +18,8 @@ footer a:hover{
 }
 footer img{
   opacity: 0.60;
-  width: 30px;
-  height: 30px;
+  width: 1.875em;
+  height: 1.875em;
 }
 footer img:hover{
   opacity: 1;
@@ -28,13 +28,13 @@ footer img:hover{
 }
 #footter{
   position: absolute;
-  bottom: 10px;
+  bottom: 0.625em;
   /* margin-left: 0px; */
 }
 #footter img{
   border: 0;
-  width: 88px;
-  height: 31px;
+  width: 5.5em;
+  height: 1.9375em;
   opacity: 0.50;
 }
 #footter img:hover{
