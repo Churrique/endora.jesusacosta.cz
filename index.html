@@ -47,7 +47,7 @@
     gtag('config', 'UA-165417175-1');
   </script>
 
-<!-- Script que muestra las imágenes aleatoriamente -->
+  <!-- Script que muestra las imágenes aleatoriamente -->
   <script type="text/javascript">
     function MontaImagen() {
       let vn = Math.floor( Math.random() * 24 );
@@ -62,6 +62,9 @@
       document.querySelector("body#imagendefondo").style.backgroundImage = txt_vn;
     }
   </script>
+
+  <!-- Script que hace mover el Título del Documento -->
+  <script src="/scripts/js/titulo.js"></script>
 </head>
 
 <body id="imagendefondo" onload="MontaImagen()">
