@@ -1,12 +1,8 @@
 @import url(../css/fuenteslocales.css);
-@media screen and (max-width: 1550px) {
-    .texto_01 {
-        top: 10vh;
-    }
-  }
 #imagendetope {
     width: 100%;
-    height: 12.5em;
+    height: 22vh;
+    /*height: 12.5em;*/
 }
 .texto_01 {
     font-family: 'Kavoon', cursive;

@@ -5,6 +5,11 @@
 tbody tr:nth-child(even) {
 	background-color: #e495e4;
 } */
+span {
+	font-family: 'Amiko', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
 a, a:link, a:visited, a:hover, a:active  {
 	color: currentColor;
 	text-decoration: none;
@@ -18,10 +23,10 @@ ol {
 }
 ol li {
 	background: url('../img/btn_flecha_derecha_ver_2.png') no-repeat;
-	background-position: left 0.176em;
+	background-position: left 0.45em;
 	height: auto;
 	padding-left: 1.15em;
-	padding-top: 0em;
+	padding-top: 0.1825em;
 }
 ul {
 	list-style-type: none;
@@ -30,7 +35,8 @@ ul {
 	top: 0em;
 }
 ul li {
-	background: url('../img/btn_flecha_derecha.png') no-repeat left;
+	background: url('../img/btn_flecha_derecha.png') no-repeat;
+	background-position: left 0.45em;
 	height: auto;
 	padding-left: 1.15em;
 	padding-top: 0.1825em;
@@ -84,6 +90,11 @@ caption:hover {
 	font-size: 1em;
 	transform: scale(1.05, 1.025);
 	transition: all 1s
+}
+iframe {
+	width: 45em;
+	margin: 0;
+	padding: 0;
 }
 .tabs {
     position: relative;

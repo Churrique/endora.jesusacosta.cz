@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ES-es">
+<html lang="es-es">
 
 <head>
   <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
   <meta name="Resource-type" content="Document">
   <meta name="DateCreated" content="Tue, 31 March 2020 14:00:00 GMT+1">
   <meta http-equiv="expires" content="86400" /> <!-- Equivalente a 24 horas -->
-  <title>&laquo;&nbsp;jesusacosta.cz&copy;&nbsp;&raquo;&nbsp;&nbsp;&nbsp;</title>
+  <title>jesusacosta.cz</title>
   <link rev="made" href="mailto:kontakt@jesusacosta.cz">
   <link rel="StyleSheet" href="css/tope_y_cuerpo.css" type="text/css" />
   <link rel="StyleSheet" href="css/cuerpo_ctro_izq.css" type="text/css" />
@@ -48,27 +48,9 @@
   <script src="/scripts/js/muestra_imagen_de_carro_aleatoria.js" type="text/javascript"></script>
   <!-- Script que hace mover el Título del Documento -->
   <script src="/scripts/js/titulo.js"></script>
-  <!-- Script que permite detectar el tipo de dispositivo utilizado -->
-  <script src="/node_modules/mobile-detect/mobile-detect.js"></script>
 </head>
 
 <body id="imagendefondo" onload="MontaImagen()">
-
-  <!--
-    *   Primero que nada chequear
-    *   el dispositivo que
-    *   esta accesando.
-  ! -->
-  <script>
-    var md = new MobileDetect(window.navigator.userAgent);
-    if (md.os() !== null) {
-      // Si se hace con window.location.href = "https://www.jesusacosta.cz/forms/preview.html";
-      // simularía un click con el mouse
-      // En cambio, con método 'replace()'
-      // simularía una redirección http
-      window.location.replace("https://www.jesusacosta.cz/stranky/preview.html");
-    }
-  </script>
   <!--
   !
   ! Área del Tope de la Página
@@ -97,9 +79,9 @@
         <a href="/stranky/cv_act.html" target="marco_a">Portafolio</a>
         <a href="/stranky/forum.html" target="marco_a">Foro</a>
         <a href="/stranky/uzitny.html" target="marco_a">Utilidades</a>
-        <a href="/movil/menumovil.html" target="new">Versión Mobil</a>
+        <a href="/mobil/menumobil.html" target="new">Versión Mobil</a>
         <div class="tooltipi">
-          <a href="/formuláře/kontakt.html" target="marco_a">
+          <a href="/forms/kontakt.html" target="marco_a">
             <img src="/img/redes_sociales_y_contacto/ct_email.png" alt="E-Mail" />
           </a>
           <span class="tooltiptext">Contáctame por correo electrónico...</span>

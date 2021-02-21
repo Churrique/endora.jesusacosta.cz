@@ -1,3 +1,4 @@
+@import url(../css/fuenteslocales.css);
 .content-input input,
 .content-select select{
 	appearance: none;
@@ -12,12 +13,10 @@
 .content-input{
 	position: relative;
 	margin-bottom: 30px;
-	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar 
-        el elemento <i> en este espacio*/
+	padding:5px 0 5px 60px; /* Damos un padding de 60px para posicionar el elemento <i> en este espacio*/
 	display: block;
 }
-/* Estas reglas se aplicarán a todos las elementos i 
-después de cualquier input*/
+/* Estas reglas se aplicarán a todos las elementos i Después de cualquier input*/
 .content-input input + i{
        background: #f0f0f0;
        border:2px solid rgba(0,0,0,0.2);
@@ -25,8 +24,7 @@ después de cualquier input*/
        left: 0;
        top: 0;
 }
-/* Estas reglas se aplicarán a todos los i despues 
-de un input de tipo checkbox*/
+/* Estas reglas se aplicarán a todos los i despues de un input de tipo checkbox*/
 .content-input input[type=checkbox ] + i{
 	width: 50px;
 	height: 26px;
@@ -59,11 +57,13 @@ debemos poner definir este valor.
  background: #2AC176;
 }
 .content-input input[type=checkbox] + i:after{
-	content: 'ON';
+	content: 'INCLUIR';
 	position: absolute;
 	font-size: 10px;
-	color: rgba(255,255,255,0.6);
-	top: 6px;
+	font-family: 'Aleo', serif; font-style: italic;
+	font-weight: 700;
+	color: rgba(233, 12, 12, 0.6);
+	top: 29px;
 	left: 4px;
 	opacity: 0 /* Ocultamos este elemento */;
 	transition: all 0.25s ease 0.25s;

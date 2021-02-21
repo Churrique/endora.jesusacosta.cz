@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Código</title>
+</head>
+<body>
+    <strong><p>No maximises la ventana del navegador y:
+        <ul>
+            <li>mueve la venta en el espacio que tienes en el escritorio</li>
+            <li>redimenciona el tamaña de la ventana del navegador</li>
+        </ul>
+        ... así veras cómo cambian los valores mostrados aquí !
+    </p></strong>
+    <div id="result"></div>
+ 
+	<script>
+	var oldX = window.screenX, oldY = window.screenY;
+ 
+	/**
+	 * Funcion que se ejecuta cada 500 milisegundos para comprovar si se ha
+	 * movido la ventana de lugar
+	 */
+	var interval = setInterval(function() {
+		if(oldX != window.screenX || oldY != window.screenY) {
+			showInfo();
+		}
+ 
+		oldX = window.screenX;
+		oldY = window.screenY;
+	}, 500);
+ 
+	if(window.addEventListener) {
+		// navegadores que utilizan los estandares
+		window.addEventListener("resize",showInfo);
+		window.addEventListener("scroll",showInfo);
+	}else{
+		// Los navegadores de Microsoft... siempre ayudando a los desarrolladores...
+		window.attachEvent("onresize",showInfo);
+		window.attachEvent("onscroll",showInfo);
+	}
+ 
+	function showInfo() {
+		var result="";
+ 
+		// Tamaño de la Ventana con menu, pestañas, etc...
+		result+="<br>Anchura de la ventana: "+window.outerWidth;
+		result+="<br>Altura de la ventana: "+window.outerHeight;
+ 
+		// Tamaño de la parte interior de la ventana
+		result+="<br>Anchura interna de la ventana: "+window.innerHeight;
+		result+="<br>Altura interna de la ventana: "+window.innerHeight;
+ 
+		// posición de los scroll
+		result+="<br>Scroll horizontal: "+window.pageXOffset;
+		result+="<br>Scroll vertical: "+window.pageYOffset;
+ 
+		// separacion de la ventana en relacion a la pantalla
+		result+="<br>Separacion del lado izquierdo de la pantalla: "+window.screenX;
+		result+="<br>Separacion de la parte superior de la pantalla: "+window.screenY;
+ 
+		document.getElementById("result").innerHTML=result;
+	}
+	showInfo();
+	</script>
+</body>
+</html>

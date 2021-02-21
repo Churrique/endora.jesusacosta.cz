@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>jesusacosta.cz</title>
+  <link rel="StyleSheet" href="../css/_normalizar.css" type="text/css" />
+  <link rel="StyleSheet" href="../css/chk_green_1.css" type="text/css" />
+  <link rel="StyleSheet" href="../css/heslo.css" type="text/css" />
+  <link rel="shortcut icon" href="../img/_logo_nube.ico" type="image/x-icon" />
+  <script src="../scripts/js/genpass.js"></script>
+  <script src="../scripts/js/ocultarcaracteres.js">oculta_todo();</script>
+</head>
+
+<body>
+    <table width="70%" border="0" cellspacing="0" cellpadding="0">
+      <tbody>
+        <tr>
+          <td width="38%">
+            <div>
+              <label for="contrasena">Contraseña</label>
+              <input type="text" name="contrasena" id="contrasena" size="30">
+            </div>
+            <div>
+              <label for="rango">Rango (5..20)</label>
+              <input type="range" name="rango" id="rango" min="5" max="20" step="1" value="8"
+                onchange="document.getElementById('temporal').innerHTML = document.getElementById('rango').value;">
+              <span id="temporal"></span>
+            </div>
+            <div class="centrado">
+              <!-- <input type="submit" name="btnGenerar" id="btnGenerar" value="Generar"> -->
+              <button onclick="GeneraContrasena(document.getElementById('rango').value,'');">Generar</button>
+              <button id="limpiar" onclick="limpia_el_texto();">Borrar</button>
+            </div>
+          </td>
+          <td width="62%">
+            <!-- 
+            * Zona de check box's 
+          ! -->
+            <div>
+              <label class="content-input" title="Incluir letras Mayúsculas de la 'A' a la 'Z'" for="mayusculas">
+                <input type="checkbox" title="Incluir [A..Z]" checked name="mayusculas" id="mayusculas">[A..Z]
+                <i></i>
+              </label>
+            </div>
+            <div>
+              <label class="content-input" title="Incluir letras Minúsculas de la 'a' a la 'z'" for="minusculas">
+                <input type="checkbox" title="Incluir [a..z]" checked name="minusculas" id="minusculas">[a..z]
+                <i></i>
+              </label>
+            </div>
+            <div>
+              <label class="content-input" title="Incluir Números del 0 al 9" for="numeros">
+                <input type="checkbox" title="Incluir [0..9]" checked name="numeros" id="numeros">[0..9]
+                <i></i>
+              </label>
+            </div>
+            <p>
+              <a href="#" onclick="m_l_p_8_c();" id="mas1">... mostrar más caracteres (los siguientes ocho)...</a>
+            </p>
+            <section id="desplegar1">
+              <div>
+                <label class="content-input" title="Incluir símbolo #" for="numeral">
+                  <input type="checkbox" title="Incluir #" name="numeral" id="numeral">#
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo %" for="porcentual">
+                  <input type="checkbox" title="Incluir %" name="porcentual" id="porcentual">%
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo $" for="dolar">
+                  <input type="checkbox" title="Incluir $" name="dolar" id="dolar">$
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo *" for="asterisco">
+                  <input type="checkbox" title="Incluir *" name="asterisco" id="asterisco">*
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolos ()" for="parentesis">
+                  <input type="checkbox" title="Incluir ()" name="parentesis" id="parentesis">()
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolos []" for="corchetes">
+                  <input type="checkbox" title="Incluir []" name="corchetes" id="corchetes">[]
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolos {}" for="llaves">
+                  <input type="checkbox" title="Incluir {}" name="llaves" id="llaves">{}
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo @" for="arroba">
+                  <input type="checkbox" title="Incluir @" name="arroba" id="arroba">@
+                  <i></i>
+                </label>
+              </div>
+              <p id="pra_linea">
+                <a href="#" onclick="o_l_p_8_c();" id="menos1">... ocultar estos caracteres...</a> o <a href="#" onclick="m_l_u_8_c();" id="mas2">... mostrar los últimos ocho...</a>
+              </p>
+            </section> <!-- id="desplegar1" -->
+            <section id="desplegar2">
+              <div>
+                <label class="content-input" title="Incluir símbolo +" for="mas">
+                  <input type="checkbox" title="Incluir +" name="mas" id="mas">+
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo -" for="menos">
+                  <input type="checkbox" title="Incluir -" name="menos" id="menos">-
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo _" for="piso">
+                  <input type="checkbox" title="Incluir _" name="piso" id="piso">_
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolos ¡!" for="exclamacio">
+                  <input type="checkbox" title="Incluir ¡!" name="exclamacion" id="exclamacio">¡!
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolos ¿?" for="interrogacion">
+                  <input type="checkbox" title="Incluir ¿?" name="interrogacion" id="interrogacion">¿?
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo =" for="igual">
+                  <input type="checkbox" title="Incluir =" name="igual" id="igual">=
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo /" for="diagonal">
+                  <input type="checkbox" title="Incluir /" name="diagonal" id="diagonal">/
+                  <i></i>
+                </label>
+              </div>
+              <div>
+                <label class="content-input" title="Incluir símbolo \" for="invertida">
+                  <input type="checkbox" title="Incluir \" name="invertida" id="invertida">\
+                  <i></i>
+                </label>
+              </div>
+              <p id="sda_linea2">
+                <a href="#" onclick="oculta_todo();" id="menos2">... ocultar todos los caracteres...</a>
+              </p>
+            </section> <!-- id="desplegar2" -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <script type="text/javascript">
+    document.getElementById('temporal').innerHTML = document.getElementById('rango').value;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobil Detect</title>
+    <script src="/node_modules/mobile-detect/mobile-detect.min.js"></script>
+</head>
+<body>
+    <form name="frm_unico" id="frm_unico">
+        <label for="txt_mobile">Mobile:</label>
+        <input type="text" name="txt_mobile" id="txt_mobile"><br><br>
+        <label for="txt_phone">Phone:</label>
+        <input type="text" name="txt_phone" id="txt_phone"><br><br>
+        <label for="txt_tablet">Tablet:</label>
+        <input type="text" name="txt_tablet" id="txt_tablet"><br><br>
+        <label for="txt_userAgent">userAgent:</label>
+        <input type="text" name="txt_userAgent" id="txt_userAgent"><br><br>
+        <label for="txt_os">Os:</label>
+        <input type="text" name="txt_os" id="txt_os"><br><br>
+        <label for="txt_is_phone">Is Phone:</label>
+        <input type="text" name="txt_is_iphone" id="txt_is_iphone"><br><br>
+        <label for="txt_is_bot">Is Bot:</label>
+        <input type="text" name="txt_is_bot" id="txt_is_bot"><br><br>
+        <label for="txt_webkit">Webkit:</label>
+        <input type="text" name="txt_webkit" id="txt_webkit"><br><br>
+        <label for="txt_build">Build:</label>
+        <input type="text" name="txt_build" id="txt_build"><br><br>
+        <label for="txt_match">Match:</label>
+        <input type="text" name="txt_match" id="txt_match"><br><br>
+    </form>
+    <script type="text/javascript">
+        var md = new MobileDetect(window.navigator.userAgent);
+        document.frm_unico.txt_mobile.value = ( md.mobile() == null ? 'is null' : md.mobile() );
+        document.frm_unico.txt_phone.value = ( md.phone() == null ? 'is null' : md.phone() );
+        document.frm_unico.txt_tablet.value = ( md.tablet() == null ? 'is null' : md.tablet() );
+        document.frm_unico.txt_userAgent.value = ( md.userAgent() == null ? 'is null' : md.userAgent() );
+        document.frm_unico.txt_os.value = ( md.os() == null ? 'is null' : md.os() );
+        document.frm_unico.txt_is_iphone.value = ( md.is('iPhone') == false ? 'is false' : md.is('iPhone') );
+        document.frm_unico.txt_is_bot.value = ( md.is('bot') == false ? 'is false' : md.is('bot') );
+        document.frm_unico.txt_webkit.value = md.version('webkit');
+        document.frm_unico.txt_build.value = ( md.versionStr('Build') == null ? 'is null' : md.versionStr('Build') );
+        document.frm_unico.txt_match.value = ( md.match('playstation|xbox') == false ? 'is false' : md.match('playstation|xbox') );
+        //console.log(md.mobile());
+    </script>
+</body>
+</html>

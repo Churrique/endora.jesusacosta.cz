@@ -1,0 +1,39 @@
+@import url(../css/fuenteslocales.css);
+.fuccia {
+    border: .17em solid #8c0058;
+    background: #c9007f;
+    color: #47002d;
+    top: 3em;
+    margin: 0em 0em 1em 0em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.esmeralda {
+    border: .17em solid #027055;
+    background: #09a27c;
+    color: #003528;
+    top: 3em;
+    margin: 0em 0em 1em 0em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.marina {
+    border: .17em solid #00a577;
+    background: #00eeac;
+    color: #011b3a;
+    margin: 0em 0em 1em 0em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.daltonico {
+    color: #b61b94;
+}

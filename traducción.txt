@@ -1,0 +1,4 @@
+formuláře   ->  FORMS
+prameny     ->  FUENTES
+vlajky      ->  BANDERAS
+stranky     ->  PÁGINAS

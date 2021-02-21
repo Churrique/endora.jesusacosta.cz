@@ -1,42 +1,50 @@
 @import url(../css/fuenteslocales.css);
-  label {
-    color:rgba(16, 50, 243, 0.692);
-    position: relative;
-    display: block;
-    line-height: 2.8125em;
-    margin-top: 0em;
-    transition: all 0.80s;
-    width: 100%;
-    padding: 0px 0px 0px 15px;
-  }
-  label:hover {
-    color:rgba(7, 36, 201, 0.863);
-  }
-  input[type="text"], input[type="range"] {
-    border: 1px solid rgba(16, 50, 243, 0.692);
-    background-color: rgba(11, 103, 241, 0.473);
-    color: rgba(233, 13, 13, 0.842);
-    padding: 0px 0px 0px 15px;
-    margin-left: 15px;
-  }
-  input[type="submit"] {
-    margin-left: 15px;
-  }
-  div {
-    border: 1px solid rgba(9, 121, 56, 0.541);
-    background-color: rgba(11, 241, 107, 0.473);
-    width: 18em;
-    height: 4em;
-    margin: 1em 0em;
-    padding: 0.17em;
-  }
-  button {
-    display: block;
-    margin: 1em auto;
-  }
-  #oculto {
-    display: block;
-  }
-  #oculto:hover {
-    display: none;
-  }
+label {
+  color: rgba(16, 50, 243, 0.692);
+  position: relative;
+  display: block;
+  /* line-height: 2.8125em; */
+  margin-top: 0em;
+  transition: all 0.8s;
+  width: 100%;
+  padding: 0px 0px 0px 15px;
+}
+label:hover {
+  color: rgba(7, 36, 201, 0.863);
+}
+input[type="text"],
+input[type="range"] {
+  border: 1px solid rgba(16, 50, 243, 0.692);
+  background-color: rgba(11, 103, 241, 0.473);
+  color: rgba(233, 13, 13, 0.842);
+  padding: 0px 0px 0px 15px;
+  margin-left: 15px;
+}
+input[type="submit"] {
+  margin-left: 15px;
+}
+div {
+  border: 1px solid rgba(9, 121, 56, 0.541);
+  background-color: rgba(11, 241, 107, 0.473);
+  width: 18em;
+  height: 2.55em;
+  margin: 1em 0em 1em 1em;
+  padding: 0.17em;
+}
+button {
+  position: relative;
+  margin: 1em auto;
+}
+a {
+  text-decoration: none;
+}
+#desplegar1,
+#desplegar2 {
+  display: none;
+}
+.centrado {
+  width: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
