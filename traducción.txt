@@ -1,4 +1,7 @@
-formuláře   ->  FORMS
-prameny     ->  FUENTES
-vlajky      ->  BANDERAS
-stranky     ->  PÁGINAS
+formuláře   -> FORMS
+formulare   -> FORMS
+prameny     -> FUENTES
+vlajky      -> BANDERAS
+stranky     -> PÁGINAS
+dočasný     -> TEMPORAL-PROVISIONAL
+docasny     -> TEMPORAL-PROVISIONAL

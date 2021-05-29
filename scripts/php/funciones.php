@@ -1,10 +1,10 @@
 <?php
-function se_envio_el_correo($pDe='',$pPara='',$pAsunto='',$pCuerpo='') {
-    $header = 'MIME-Version: 1.0' . "\r\n";
-	$header .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-	$header .= "From: DiGAEs <digaesuc@digaesuc.com.ve>"."\r\n";
-	$header .= "X-Mailer:PHP/".phpversion()."\r\n";
-	$contenido = '<html xmlns="http://www.w3.org/1999/xhtml">
+function se_envio_el_correo( $pDe = '', $pPara = '', $pAsunto = '', $pCuerpo = '' ) {
+   $header = 'MIME-Version: 1.0' . "\r\n";
+   $header .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+   $header .= "From: DiGAEs <digaesuc@digaesuc.com.ve>" . "\r\n";
+   $header .= "X-Mailer:PHP/" . phpversion() . "\r\n";
+   $contenido = '<html xmlns="http://www.w3.org/1999/xhtml">
 	  <head>
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	  <title>.:Correo:.</title>
@@ -35,22 +35,22 @@ function se_envio_el_correo($pDe='',$pPara='',$pAsunto='',$pCuerpo='') {
 			<tr>
 			  <td width="22%" height="30" align="right" style="font-family: Tahoma, Geneva, sans-serif; font-size: 18px; font-style: normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; color: #666; text-decoration: none;">De:</td>
 			  <td width="1%" height="30">&nbsp;</td>
-			  <td width="77%" height="30" style="background: #000; color: #fff; border: 2px solid #777; text-shadow: 1px 1px 6px #fff;">'.$pDe.'</td>
+			  <td width="77%" height="30" style="background: #000; color: #fff; border: 2px solid #777; text-shadow: 1px 1px 6px #fff;">' . $pDe . '</td>
 			  </tr>
 			<tr>
 			  <td width="22%" height="30" align="right" style="font-family: Tahoma, Geneva, sans-serif; font-size: 18px; font-style: normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; color: #666; text-decoration: none;">Para:</td>
 			  <td height="30">&nbsp;</td>
-			  <td height="30" style="background: #000; color: #fff; border: 2px solid #777; text-shadow: 1px 1px 6px #fff;">'.$pPara.'</td>
+			  <td height="30" style="background: #000; color: #fff; border: 2px solid #777; text-shadow: 1px 1px 6px #fff;">' . $pPara . '</td>
 			  </tr>
 			<tr>
 			  <td width="22%" height="30" align="right" style="font-family: Tahoma, Geneva, sans-serif; font-size: 18px; font-style: normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; color: #666; text-decoration: none;">Asunto:</td>
 			  <td height="30">&nbsp;</td>
-			  <td height="30" style="background: #000; color: #fff; border: 2px solid #777; text-shadow: 1px 1px 6px #fff;">'.$pAsunto.'</td>
+			  <td height="30" style="background: #000; color: #fff; border: 2px solid #777; text-shadow: 1px 1px 6px #fff;">' . $pAsunto . '</td>
 			  </tr>
 			<tr>
 			  <td width="22%" height="30" align="right" style="font-family: Tahoma, Geneva, sans-serif; font-size: 18px; font-style: normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; color: #666; text-decoration: none;">Texto</td>
 			  <td height="30">&nbsp;</td>
-			  <td height="30"><div style="color: #1B51BF; font-family: verdana; font-style: normal; font-weight: normal; font-size: 14px; font-variant: normal; line-height: 18px; text-align: justify; text-decoration: none; text-shadow: 3px 3px 2px #688EF7; margin: 10px 10px 10px 10px;">'.$pCuerpo.'</div></td>
+			  <td height="30"><div style="color: #1B51BF; font-family: verdana; font-style: normal; font-weight: normal; font-size: 14px; font-variant: normal; line-height: 18px; text-align: justify; text-decoration: none; text-shadow: 3px 3px 2px #688EF7; margin: 10px 10px 10px 10px;">' . $pCuerpo . '</div></td>
 			  </tr>
 			<tr>
 			  <td width="22%" height="30" align="right" style="font-family: Tahoma, Geneva, sans-serif; font-size: 18px; font-style: normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; color: #666; text-decoration: none;">Archivo Adjunto</td>
@@ -89,12 +89,10 @@ function se_envio_el_correo($pDe='',$pPara='',$pAsunto='',$pCuerpo='') {
 	  </div>
 	  </body>
 	  </html>';
-	if (mail($pPara, $pAsunto, $contenido , $header)) {
-		$seguimiento = 'Correo enviado...!<br />';
-	}
-	else {
-		$seguimiento = 'Problemas al enviar el correo...!<br />';
-	}
-	return($seguimiento);
+   if ( mail( $pPara, $pAsunto, $contenido, $header ) ) {
+      $seguimiento = 'Correo enviado...!<br />';
+   } else {
+      $seguimiento = 'Problemas al enviar el correo...!<br />';
+   }
+   return ( $seguimiento );
 }
-?>

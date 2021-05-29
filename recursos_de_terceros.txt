@@ -1,3 +1,7 @@
+Usuario: hagovoj792@naymeo.com
+Pass: 0123456
+<script src="https://kit.fontawesome.com/82f9d2a72c.js" crossorigin="anonymous"></script>
+
 @import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Amarante&family=Amiko:wght@400;600;700&family=Anaheim&family=Clicker+Script&family=Dancing+Script:wght@500;700&family=Kavoon&family=Lobster&family=Marck+Script&family=Oswald:wght@300;400;700&family=Sacramento&family=Shrikhand&family=Spicy+Rice&family=Arima+Madurai:wght@900&family=Nunito:ital,wght@1,900&family=Alfa+Slab+One:wght@400&display=swap");
 
 .fuentes {

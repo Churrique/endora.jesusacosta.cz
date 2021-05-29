@@ -2,10 +2,16 @@
 //************************************/
 //*  Valido para PHP versión >= 7.x  */
 //************************************/
-define("SERVIDOR", "localhost");
-define("BASEDEDATOS", "mi_base_de_datos");
+//! innodb.endora.cz
+define("SERVIDOR", "innodb.endora.cz");
+//! pruebas
+define("BASEDEDATOS", "pruebas");
+//! 3305
 define("PUERTO", "3306");
-define("USUARIO", "nombre_del_usuario");
-define("CONTRASENIA", "la_contraseña");
+//! jesusa1585628699
+define("USUARIO", "jesusa1585628699");
+//! qa3D4ZXe
+define("CONTRASENIA", "qa3D4ZXe");
+//! -no hay-
 define("PASARELA", "");
 ?>

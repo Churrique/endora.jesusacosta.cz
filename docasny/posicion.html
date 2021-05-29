@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="language" content="es-ES" />
+	<meta name="viewport" content="width=max-device-width, initial-scale=1.0, user-scalable=yes/zoom" />
+	<meta name="author" content="Jesús Acosta" />
+	<meta name="copyright" content="Jesús Acosta" />
+	<meta name="keywords" content="html, css, diseño web, utilidades, crear páginas, curriculum vitae, foro" />
+	<meta name="description" content="Página principal del sitio Web" />
+	<meta name="revisit-after" content="1 month" />
+	<meta name="robots" content="index, follow" />
+	<meta name="REPLY-TO" content="kontakt@jesusacosta.cz">
+	<meta name="Resource-type" content="Document">
+	<meta name="DateCreated" content="Tue, 31 March 2020 14:00:00 GMT+1">
+	<meta http-equiv="expires" content="86400" /> <!-- Equivalente a 24 horas -->
+	<title>&laquo;&nbsp;Posición&nbsp;&raquo;&nbsp;&laquo;&nbsp;jesusacosta.cz&copy;&nbsp;&raquo;&nbsp;&nbsp;&nbsp;</title>
+	<link rev="made" href="mailto:kontakt@jesusacosta.cz">
+	<link rel="shortcut icon" href="/img/_logo_nube.ico" type="image/x-icon" />
+	<!-- Script que hace mover el Título del Documento -->
+	<script src="/scripts/js/titulo.js"></script>
+</head>
+
+<body>
+	<strong>
+		<p>No maximises la ventana del navegador y:
+		<ul>
+			<li>mueve la venta en el espacio que tienes en el escritorio</li>
+			<li>redimenciona el tamaño de la ventana del navegador</li>
+		</ul>
+		... así veras cómo cambian los valores mostrados aquí !
+		</p>
+	</strong>
+	<div id="result"></div>
+
+	<script>
+		var oldX = window.screenX, oldY = window.screenY;
+
+		/**
+		 * Funcion que se ejecuta cada 500 milisegundos para comprovar si se ha
+		 * movido la ventana de lugar
+		 */
+		var interval = setInterval(function () {
+			if (oldX != window.screenX || oldY != window.screenY) {
+				showInfo();
+			}
+
+			oldX = window.screenX;
+			oldY = window.screenY;
+		}, 500);
+
+		if (window.addEventListener) {
+			// navegadores que utilizan los estandares
+			window.addEventListener("resize", showInfo);
+			window.addEventListener("scroll", showInfo);
+		} else {
+			// Los navegadores de Microsoft... siempre ayudando a los desarrolladores...
+			window.attachEvent("onresize", showInfo);
+			window.attachEvent("onscroll", showInfo);
+		}
+
+		function showInfo() {
+			var result = "";
+
+			// Tamaño de la Ventana con menu, pestañas, etc...
+			result += "<br>Anchura de la ventana: " + window.outerWidth;
+			result += "<br>Altura de la ventana: " + window.outerHeight;
+
+			// Tamaño de la parte interior de la ventana
+			result += "<br>Anchura interna de la ventana: " + window.innerHeight;
+			result += "<br>Altura interna de la ventana: " + window.innerHeight;
+
+			// posición de los scroll
+			result += "<br>Scroll horizontal: " + window.pageXOffset;
+			result += "<br>Scroll vertical: " + window.pageYOffset;
+
+			// separacion de la ventana en relacion a la pantalla
+			result += "<br>Separacion del lado izquierdo de la pantalla: " + window.screenX;
+			result += "<br>Separacion de la parte superior de la pantalla: " + window.screenY;
+
+			document.getElementById("result").innerHTML = result;
+		}
+		showInfo();
+	</script>
+</body>
+
+</html>
