@@ -7,6 +7,8 @@ function conecta($p_ser=SERVIDOR, $p_user=USUARIO, $p_pass=CONTRASENIA, $p_bdd=B
     $enlace = mysqli_connect($p_ser, $p_user, $p_pass, $p_bdd, $p_puer);
     if (!$enlace) {
         $cadena_del_error = 'Error de Conexión (' . mysqli_connect_errno() . ') ' . mysqli_connect_error();
+        header("Location: https://www.jesusacosta.cz/stranky/error.php?cislo=".mysqli_connect_errno()."&popis=".mysqli_connect_error());
+        die();
     }
     if (is_object($enlace)) {
         return($enlace);
