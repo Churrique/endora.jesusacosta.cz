@@ -43,7 +43,6 @@
   <?php
     include_once('../../../scripts/php/variables.php');
     include_once('../../../scripts/php/basededatos.php');
-    include_once('../../../scripts/php/funciones.php');
   ?>
   <div id="div-padre">
     <form name="frmDP" id="frmDP" autocomplete="off">
@@ -106,20 +105,10 @@
       <div id="capados">
         <div><label for="txtSexo">Sexo:</labe></div>
         <div>
-          <?php
-          CrtSelect('datos_personales', 'sexo', 'txtSexo');
-          ?>
-
           <div class="select_mate" data-mate-select="active">
-            <select name="" onchange="" onclick="return false;" id="">
-              <option value="">Seleciona una Opcion</option>
-              <option value="1">Select option 001</option>
-              <option value="2">Select option 2</option>
-              <option value="3">Select option 3</option>
-              <option value="3">Select option 4</option>
-              <option value="3">Select option 5</option>
-              <option value="3">Select option 6</option>
-            </select>
+            <?php
+              CrtSelect('datos_personales', 'sexo', 'txtSexo', 'txtSexo', '', 'return false;');
+            ?>
             <p class="selecionado_opcion" onclick="open_select(this)"></p>
             <span onclick="open_select(this)" class="icon_select_mate">
               <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +120,6 @@
               <ul class="cont_select_int"></ul>
             </div>
           </div>
-
         </div>
       </div>
       <div id="capatres">
