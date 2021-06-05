@@ -22,3 +22,26 @@ Pass: 0123456
   font-family: "Arima Madurai", cursive;
   font-family: "Nunito", sans-serif;
 }
+
+Tapices
+Hojas Doradas y Negras
+<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por starline - www.freepik.es</a>
+Hojas Doradas y Azules
+<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por starline - www.freepik.es</a>
+Armonia Rectangular
+<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por Harryarts - www.freepik.es</a>
+Papel pintado abstracto blanco
+<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a>
+Acuarela pintada amano con forma de cielo y nube
+<a href='https://www.freepik.es/fotos/fondo'>Foto de Fondo creado por denamorado - www.freepik.es</a>
+Fondo de pintura de acuarela rosa vibrante
+<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por rawpixel.com - www.freepik.es</a>
+Fondo de estilo cómico azul de diseño plano
+<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a>
+
+Basic Syntax
+The Markdown elements outlined in John Gruber's design document.
+https://www.markdownguide.org/basic-syntax/
+
+Programa Insider
+https://insider.windows.com/es-es/
