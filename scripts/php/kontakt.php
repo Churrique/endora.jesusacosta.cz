@@ -51,9 +51,10 @@
         $ccabecera .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         // Cabeceras adicionales
         $ccabecera .= 'To: Kontakt <kontakt@jesusacosta.cz>, <' . $_POST["correo"] . '>' . "\r\n";
-        $ccabecera .= 'From: Kontakt <kontakt@jesusacosta.cz>' . "\r\n";
-        $ccabecera .= 'Cc: jesuseacosta@email.cz' . "\r\n";
-        $ccabecera .= 'Bcc: jesuseacosta@gmail.com' . "\r\n";
+        $ccabecera .= 'From: Remitente <' . $_POST["correo"] . '>' . "\r\n";
+        //$ccabecera .= 'From: Kontakt <kontakt@jesusacosta.cz>' . "\r\n";
+        //$ccabecera .= 'Cc: jesuseacosta@email.cz' . "\r\n";
+        //$ccabecera .= 'Bcc: jesuseacosta@gmail.com' . "\r\n";
         // Enviarlo
         $problema = mail($cpara, $ctitulo, $cmensaje, $ccabecera);
         if ($problema) {

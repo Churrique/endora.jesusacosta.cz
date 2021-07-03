@@ -10,35 +10,46 @@ footer {
     text-align: center;
     padding: 0.3em;
   }
-footer a{
+footer a {
   text-decoration: none;
 }
 footer a:hover{
   box-shadow: 0 0.75em 1em 0 rgba(0,0,0,0.24), 0 1.063em 3.125em 0 rgba(0,0,0,0.19);
 }
-footer img{
+footer img {
   opacity: 0.60;
   width: 1.875em;
   height: 1.875em;
 }
-footer img:hover{
+footer img:hover {
   opacity: 1;
   transform: scale(1.15, 1.15);
   transition: all 0.1s
 }
-#footter{
+#footter {
   position: absolute;
   bottom: 0.625em;
   /* margin-left: 0px; */
 }
-#footter img{
+#footter img {
   border: 0;
   width: 5.5em;
   height: 1.9375em;
   opacity: 0.50;
 }
-#footter img:hover{
+#footter img:hover {
   opacity: 1;
   transform: scale(1.12, 1.12);
   transition: all 0.1s
+}
+section {
+  display: none;
+  transition-property: display;
+  transition-duration: 3s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  margin: 1em 05em;
+}
+section:target {
+  display: block;
 }

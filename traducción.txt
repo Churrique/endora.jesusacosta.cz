@@ -5,3 +5,6 @@ vlajky      -> BANDERAS
 stranky     -> PÁGINAS
 dočasný     -> TEMPORAL-PROVISIONAL
 docasny     -> TEMPORAL-PROVISIONAL
+hala        -> SALA
+krycí pokoj -> SALA DE REDACCIÓN
+kryci_pokoj -> SALA DE REDACCIÓN

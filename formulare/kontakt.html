@@ -54,7 +54,7 @@
             Asunto:
           </label>
           <input type="text" name="asunto" id="_asunto_" size="40" maxlength="30" placeholder="* Asunto:"
-            pattern="[a-zA-Z*-_.ÁáÉéÍíÓóÚúÑñ ]{3,30}" tabindex="3" title="...completa este campo..." />
+            pattern="[a-zA-Z*-_.ÁáÉéÍíÓóÚúÑñ ]{3,30}" tabindex="3" title="...completa este campo..." required />
         </div>
         <div id="div-entrada-textarea">
           <label for="_mensaje_" data-help="trata de ser claro y puntual en lo que expones">
@@ -63,7 +63,13 @@
           <textarea name="mensaje" id="_mensaje_" placeholder="* Mensaje:" cols="43" rows="5" maxlength="2000"
             tabindex="4" required></textarea>
         </div>
-        <div class="g-recaptcha" data-sitekey="6LeXMaUZAAAAAMqx3xwaJ5zZl8wpw1t7CuGi0gZx"></div>
+        <div id="div-entrada" style="height: 3em;">
+          <label for="_unacopia_" data-help="tíldalo para que recibas una copia del coreo">
+            <input type="checkbox" name="copia" id="_unacopia_" tabindex="5">
+            Envíame una copia de este Correo
+          </label>
+        </div>
+        <!-- <div class="g-recaptcha" data-sitekey="6LeXMaUZAAAAAMqx3xwaJ5zZl8wpw1t7CuGi0gZx"></div> -->
         <div id="div-submit">
           <input name="btnenvia" type="submit" id="_envia_" value="Enviar" tabindex="5"
             title="...enviar solicitud de contacto..." />

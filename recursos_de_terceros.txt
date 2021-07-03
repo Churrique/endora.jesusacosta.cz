@@ -39,9 +39,16 @@ Fondo de pintura de acuarela rosa vibrante
 Fondo de estilo cómico azul de diseño plano
 <a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a>
 
-Basic Syntax
+Basic Syntax (Referencias)
 The Markdown elements outlined in John Gruber's design document.
 https://www.markdownguide.org/basic-syntax/
 
-Programa Insider
+Programa Insider (Referencias)
 https://insider.windows.com/es-es/
+
+Jade (Referencias)
+https://www.youtube.com/watch?v=XcLiwuTMSwo
+
+Sass (Referencias)
+https://www.youtube.com/watch?v=xu0lVyrA8Y0
+https://www.youtube.com/watch?v=mHp2nr2kErs
