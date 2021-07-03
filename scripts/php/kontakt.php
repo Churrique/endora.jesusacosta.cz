@@ -56,8 +56,8 @@
         //$ccabecera .= 'Cc: jesuseacosta@email.cz' . "\r\n";
         //$ccabecera .= 'Bcc: jesuseacosta@gmail.com' . "\r\n";
         // Enviarlo
-        $problema = mail($cpara, $ctitulo, $cmensaje, $ccabecera);
-        if ($problema) {
+        $hay_problema = mail($cpara, $ctitulo, $cmensaje, $ccabecera);
+        if ($hay_problema) {
             header("Location:https://www.jesusacosta.cz/forms/kontakt-omyl.php?aae=El Correo Electrónico fue enviado satisfactoriamente...!&meeb=Enviar Otro&mde=");
         } else {
             $cmde = error_get_last()['message'];
