@@ -50,18 +50,25 @@
         $ccabecera  = 'MIME-Version: 1.0' . "\r\n";
         $ccabecera .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         // Cabeceras adicionales
+        $c2cabecera = $ccabecera;
         $ccabecera .= 'To: Kontakt <kontakt@jesusacosta.cz>, <' . $_POST["correo"] . '>' . "\r\n";
         $ccabecera .= 'From: Remitente <' . $_POST["correo"] . '>' . "\r\n";
+        $c2cabecera = 'To: Remitente <' . $_POST["correo"] . '>' . "\r\n";
+        $c2cabecera .= 'From: Kontakt <kontakt@jesusacosta.cz>' . "\r\n";
         //$ccabecera .= 'From: Kontakt <kontakt@jesusacosta.cz>' . "\r\n";
         //$ccabecera .= 'Cc: jesuseacosta@email.cz' . "\r\n";
         //$ccabecera .= 'Bcc: jesuseacosta@gmail.com' . "\r\n";
+        //Enviar copia
+        if (isset($_POST['copia']) && $_POST['copia']=='on') {
+          $copia_enviada = mail($_POST['correo'],$ctitulo,$cmensaje,$c2cabecera);
+        }
         // Enviarlo
-        $hay_problema = mail($cpara, $ctitulo, $cmensaje, $ccabecera);
-        if ($hay_problema) {
-            header("Location:https://www.jesusacosta.cz/forms/kontakt-omyl.php?aae=El Correo Electrónico fue enviado satisfactoriamente...!&meeb=Enviar Otro&mde=");
+        $no_hay_problema = mail($cpara, $ctitulo, $cmensaje, $ccabecera);
+        if ($no_hay_problema) {
+            header("Location:https://www.jesusacosta.cz/formulare/kontakt-omyl.php?aae=El Correo Electrónico fue enviado satisfactoriamente...!&meeb=Enviar Otro&mde=");
         } else {
             $cmde = error_get_last()['message'];
-            header("Location:https://www.jesusacosta.cz/forms/kontakt-omyl.php?aae=Hubo problemas al intentar enviar el correo...!&meeb=Reintentar&mde=" . $cmde);
+            header("Location:https://www.jesusacosta.cz/stranky/error.php?cislo=".$cmde['type']."&popis=".$cmde['message']);
         }
     } else {
        header("Location:https://www.jesusacosta.cz/forms/kontakt-omyl.php?aae=No se ha recibido nada...!&meeb=Reintentar");
