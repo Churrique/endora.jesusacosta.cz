@@ -22,7 +22,7 @@
   border-radius: 0.3125em;
   margin: 0.9375em 0.625em 0.3125em 0.625em;
   width: 28em;
-  height: 12em;
+  height: 20em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -68,12 +68,16 @@
   justify-content: center;
 }
 p {
+  font-family: 'Parisienne', cursive;
+  font-size: 1.125em;
   color: aliceblue;
   position: relative;
   display: block;
   line-height: 3em;
   /*line-height: 2.8125em;*/
-  margin-top: 0em;
+  /*margin-top: 0em;*/
+  text-align: center;
+  padding: .5em .3em;
   transition: all 0.80s;
   width: 100%;
 }

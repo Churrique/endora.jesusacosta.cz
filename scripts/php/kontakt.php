@@ -1,10 +1,12 @@
 <?php
 //require_once('/scripts/php/funciones.php');
-    if (isset($_POST["btnenvia"])) {
-        $cpara = 'kontakt@jesusacosta.cz' . ', ';
-        $cpara .= $_POST["correo"];
-        $ctitulo = $_POST["asunto"];
-        $cmensaje = '
+if (isset($_POST["btnenvia"])) {
+  $cpara = 'kontakt@jesusacosta.cz';
+  $cpara .= (isset($_POST['copia']) && $_POST['copia'] == 'on') ? (', ' . $_POST["correo"]) : ('');
+  //$cpara = 'kontakt@jesusacosta.cz' . ', ';
+  //$cpara .= $_POST["correo"];
+  $ctitulo = $_POST["asunto"];
+  $cmensaje = '
         <!DOCTYPE html>
         <html lang="es-ES">
         <head>
@@ -46,31 +48,36 @@
         </body>
         </html>
         ';
-        // Para enviar un correo HTML, debe establecerse la cabecera Content-type
-        $ccabecera  = 'MIME-Version: 1.0' . "\r\n";
-        $ccabecera .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        // Cabeceras adicionales
-        $c2cabecera = $ccabecera;
-        $ccabecera .= 'To: Kontakt <kontakt@jesusacosta.cz>, <' . $_POST["correo"] . '>' . "\r\n";
-        $ccabecera .= 'From: Remitente <' . $_POST["correo"] . '>' . "\r\n";
-        $c2cabecera = 'To: Remitente <' . $_POST["correo"] . '>' . "\r\n";
-        $c2cabecera .= 'From: Kontakt <kontakt@jesusacosta.cz>' . "\r\n";
-        //$ccabecera .= 'From: Kontakt <kontakt@jesusacosta.cz>' . "\r\n";
-        //$ccabecera .= 'Cc: jesuseacosta@email.cz' . "\r\n";
-        //$ccabecera .= 'Bcc: jesuseacosta@gmail.com' . "\r\n";
-        //Enviar copia
-        if (isset($_POST['copia']) && $_POST['copia']=='on') {
-          $copia_enviada = mail($_POST['correo'],$ctitulo,$cmensaje,$c2cabecera);
-        }
-        // Enviarlo
-        $no_hay_problema = mail($cpara, $ctitulo, $cmensaje, $ccabecera);
-        if ($no_hay_problema) {
-            header("Location:https://www.jesusacosta.cz/formulare/kontakt-omyl.php?aae=El Correo Electrónico fue enviado satisfactoriamente...!&meeb=Enviar Otro&mde=");
-        } else {
-            $cmde = error_get_last()['message'];
-            header("Location:https://www.jesusacosta.cz/stranky/error.php?cislo=".$cmde['type']."&popis=".$cmde['message']);
-        }
-    } else {
-       header("Location:https://www.jesusacosta.cz/forms/kontakt-omyl.php?aae=No se ha recibido nada...!&meeb=Reintentar");
-    }
-?>
+  // Para enviar un correo HTML, debe establecerse la cabecera Content-type
+  $ccabecera  = 'MIME-Version: 1.0' . "\r\n";
+  $ccabecera .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+  $ccabecera .= 'To: Kontakt <kontakt@jesusacosta.cz>' . "\r\n";
+  $ccabecera .= 'From: ' . $_POST['nombre'] . ' <' . $_POST["correo"] . '>' . "\r\n";
+  $ccabecera .= (isset($_POST['copia']) && $_POST['copia'] == 'on') ? ('Cc: ' . $_POST["correo"] . "\r\n") : ('');
+  //$ccabecera .= 'From: Kontakt <kontakt@jesusacosta.cz>' . "\r\n";
+  //$ccabecera .= 'Cc: jesuseacosta@email.cz' . "\r\n";
+  //$ccabecera .= 'Bcc: jesuseacosta@gmail.com' . "\r\n";
+  //Enviar copia
+  //if (isset($_POST['copia']) && $_POST['copia'] == 'on') {
+  //  $copia_enviada = mail($_POST['correo'], $c2titulo, $cmensaje, $ccabecera);
+  //  if (!$copia_enviada) {
+  //    $que_paso_con_la_copia = 'la copia no se pudo enviar.';
+  //  } else {
+  //    $que_paso_con_la_copia = 'La copia la envie.';
+  //  }
+  //} else {
+  //  $que_paso_con_la_copia = 'No se selecciono enviar copia al remitente.';
+  //}
+  // Enviarlo
+  $no_hay_problema = mail($cpara, $ctitulo, $cmensaje, $ccabecera);
+  if ($no_hay_problema) {
+    $aae = 'El Correo Electrónico fue enviado satisfactoriamente...!';
+    $meeb = 'Enviar Otro';
+    header("Location:https://www.jesusacosta.cz/formulare/kontakt-omyl.php?aae=$aae&meeb=$meeb&mde=");
+  } else {
+    $cmde = error_get_last();
+    header("Location:https://www.jesusacosta.cz/stranky/error.php?cislo=" . $cmde['type'] . "&popis=" . $cmde['message']);
+  }
+} else {
+  header("Location:https://www.jesusacosta.cz/forms/kontakt-omyl.php?aae=No se ha recibido nada...!&meeb=Reintentar");
+}

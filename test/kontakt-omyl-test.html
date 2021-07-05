@@ -26,20 +26,13 @@
     <div id="div-contenido-form">
       <form name="frmErrContac" id="frmErrContac" action="../formulare/kontakt.html" method="post">
         <div id="div-entrada">
-          <p><?php echo $_GET['aae']; ?></p>
+          <p>El correo se envio satisfactoriamente.</p>
         </div>
-        <?php
-        if (!empty($_GET['mde'])) {
-          echo
-          '
-            <div id="div-error">
-              <p>' . $_GET['mde'] . '</p>
-            </div>
-            ';
-        }
-        ?>
+        <div id="div-error">
+          <p>Ha ocurrido un error...!</p>
+        </div>
         <div id="div-submit">
-          <?php echo '<input name="btnenvia" type="submit" id="_envia_" value="' . $_GET['meeb'] . '" title="...' . $_GET['meeb'] . '..." />'; ?>
+          <input name="btnenvia" type="submit" id="_envia_" value="Enviar otro" title="...Enviar otro..." />
         </div>
       </form>
     </div>
