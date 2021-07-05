@@ -13,7 +13,6 @@
   <meta name="robots" content="index, follow" />
   <title>jesusacosta.cz</title>
   <link rel="StyleSheet" href="../css/kontakt-omyl.css" type="text/css" />
-  <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
     function onSubmit(token) {
       document.getElementById("demo-form").submit();
@@ -29,14 +28,14 @@
           <p><?php echo $_GET['aae']; ?></p>
         </div>
         <?php
-        if (!empty($_GET['mde'])) {
-          echo
-          '
-            <div id="div-error">
-              <p>' . $_GET['mde'] . '</p>
-            </div>
+          if (!empty($_GET['mde'])) {
+            echo
+            '
+              <div id="div-error">
+                <p>' . $_GET['mde'] . '</p>
+              </div>
             ';
-        }
+          }
         ?>
         <div id="div-submit">
           <?php echo '<input name="btnenvia" type="submit" id="_envia_" value="' . $_GET['meeb'] . '" title="...' . $_GET['meeb'] . '..." />'; ?>

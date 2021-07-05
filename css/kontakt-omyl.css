@@ -73,9 +73,9 @@ p {
   color: aliceblue;
   position: relative;
   display: block;
-  line-height: 3em;
+  line-height: 2em;
   /*line-height: 2.8125em;*/
-  /*margin-top: 0em;*/
+  margin-top: 1em;
   text-align: center;
   padding: .5em .3em;
   transition: all 0.80s;
