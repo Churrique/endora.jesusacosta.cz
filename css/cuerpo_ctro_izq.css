@@ -1,6 +1,7 @@
 @import url(../css/fuenteslocales.css);
 #ctroizq {
-    height: 38.125em;
+    height: 37.723em;
     width: 86%;
     border: none;
+    background-color: rgba(140, 208, 240, 0.336);
 }
