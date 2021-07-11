@@ -1,65 +1,45 @@
-div {
-  font-size: 15rem;
-  text-align: center;
-  height: 90vh;
-  line-height: 90vh;
-  color: #fcedd8;
-  background: #d52e3f;
-  font-family: 'Niconne', cursive;
-  font-weight: 700;
-  text-shadow: 5px 5px 0px #eb452b,
-      10px 10px 0px #efa032,
-      15px 15px 0px #46b59b,
-      20px 20px 0px #017e7f,
-      25px 25px 0px #052939,
-      30px 30px 0px #c11a2b,
-      35px 35px 0px #c11a2b,
-      40px 40px 0px #c11a2b,
-      45px 45px 0px #c11a2b;
-}
-p {
-  text-align: center;
-  font-family: "Helvetica";
-  font-size: 0.8rem;
-}
-a {
-  color: #d52e3f;
-  text-decoration: none;
-  font-family: 'Niconne', cursive;
-  font-size: 1.2rem;
-}
+@import url(../css/fuenteslocales.css);
 strong {
   position: relative;
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -0.125rem;
     left: -0.5rem;
     right: -0.5rem;
     height: 0.75rem;
-    z-index: -1; // Position the line behind the text so that. it is still easily readable
-    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg"); // The SVG is added as an SVG background image
+    // Position the line behind the text so that it is still easily readable
+    z-index: -1;
+    // The SVG is added as an SVG background image
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
     background-repeat: no-repeat;
-    background-size: cover; // This allows the SVG to flex in size to fit any length of word. If the word is short, the SVG will be stretched vertically, if it is long, the SVG will be stretched horizontally. The jagged nature of this particular SVG works with this transforming.
+    // This allows the SVG to flex in size to fit any length of word. If the word is short, the SVG will be stretched vertically, if it is long, the SVG will be stretched horizontally.
+    // The jagged nature of this particular SVG works with this transforming.
+    background-size: cover;
   }
 }
 p > strong {
   font-weight: 400;
   &::after {
-    bottom: -0.2rem; // Specific positioning for smaller text
+    // Specific positioning for smaller text
+    bottom: -0.2rem;
     height: 0.5rem;
     left: -0.25rem;
     right: -0.25rem;
   }
 }
-body { // Other properties for the demo, not related to the underlined text
+// ---------------------------------
+// Other properties for the demo, not related to the underlined text
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
 }
-h1,p {
-  font-family: "dosis", sans-serif;
+h1, p {
+  font-family: 'Shrikhand', cursive;
+  font-style: normal;
+  font-weight: 400;
   max-width: 800px;
   margin: 0 5% 1rem;
 }
@@ -69,4 +49,18 @@ h1 {
 }
 p {
   font-size: 1.125rem;
+}
+a, a:link, a:visited, a:active {
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  margin: 0em .33em;
+  color: rgba(57, 76, 94, 0.884);
+  opacity: .5;
+}
+a:hover {
+  color: rgba(245, 8, 8, 0.767);
+  opacity: 1;
+  transition: opacity 2s, color 3s;
 }

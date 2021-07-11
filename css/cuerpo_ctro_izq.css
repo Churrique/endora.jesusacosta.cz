@@ -1,7 +1,14 @@
 @import url(../css/fuenteslocales.css);
 #ctroizq {
-    height: 37.723em;
-    width: 86%;
-    border: none;
-    background-color: rgba(140, 208, 240, 0.336);
+  height: 39.891em;
+  width: 86%;
+  border: none;
+  background-color: rgba(140, 208, 240, 0.436);
+  opacity: 0.436;
+  border-radius: 0em;
+}
+#ctroizq:hover {
+  opacity: 1;
+  border-radius: 1em;
+  transition: opacity 3s, border-radius 4s;
 }

@@ -1,0 +1,8 @@
+p {
+  margin: 0em;
+  padding: 0em;
+  display: none;
+}
+p:target {
+  display: block;
+}/*# sourceMappingURL=prueba.css.map */
