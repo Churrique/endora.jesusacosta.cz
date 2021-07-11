@@ -8,8 +8,9 @@ strong::after {
   bottom: -0.125rem;
   left: -0.5rem;
   right: -0.5rem;
-  height: 0.75rem;
+  height: 0.67rem;
   z-index: -1;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg") no-repeat cover fixed;
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,13 +21,13 @@ p > strong {
 }
 p > strong::after {
   bottom: -0.2rem;
-  height: 0.5rem;
+  height: 1.1rem;
   left: -0.25rem;
   right: -0.25rem;
 }
 
 body {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   /*min-height: 100vh;*/
@@ -37,7 +38,7 @@ h1, p {
   font-style: normal;
   font-weight: 400;
   max-width: 800px;
-  margin: 0 5% 1rem;
+  margin: 0 5% 1.2rem;
 }
 
 h1 {
@@ -47,6 +48,7 @@ h1 {
 
 p {
   font-size: 1.125rem;
+  line-height: 1.49em;
 }
 
 a, a:link, a:visited, a:active {

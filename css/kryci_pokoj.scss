@@ -7,9 +7,10 @@ strong {
     bottom: -0.125rem;
     left: -0.5rem;
     right: -0.5rem;
-    height: 0.75rem;
+    height: 0.67rem;
     // Position the line behind the text so that it is still easily readable
     z-index: -1;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg') no-repeat cover fixed;
     // The SVG is added as an SVG background image
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
     background-repeat: no-repeat;
@@ -23,7 +24,7 @@ p > strong {
   &::after {
     // Specific positioning for smaller text
     bottom: -0.2rem;
-    height: 0.5rem;
+    height: 1.1rem; //tenía un valor de .5
     left: -0.25rem;
     right: -0.25rem;
   }
@@ -31,7 +32,7 @@ p > strong {
 // ---------------------------------
 // Other properties for the demo, not related to the underlined text
 body {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   /*min-height: 100vh;*/
@@ -41,7 +42,7 @@ h1, p {
   font-style: normal;
   font-weight: 400;
   max-width: 800px;
-  margin: 0 5% 1rem;
+  margin: 0 5% 1.2rem;
 }
 h1 {
   font-size: 2.5rem;
@@ -49,6 +50,7 @@ h1 {
 }
 p {
   font-size: 1.125rem;
+  line-height: 1.49em;
 }
 a, a:link, a:visited, a:active {
   text-decoration: none;
