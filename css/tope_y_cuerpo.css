@@ -16,11 +16,12 @@
     top: 8vh;
 }
 body#imagendefondo {
-    background-image: url("../img/coches/fondo_coche_21.jpg");
+    background: url("../img/coches/fondo_coche_21.jpg") center center/cover no-repeat fixed ;
+    /*background-image: url("../img/coches/fondo_coche_21.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed;*/
 }
 /*
 * Para el diseño responsivo hay que tener en cuenta:
