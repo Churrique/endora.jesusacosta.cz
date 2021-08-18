@@ -41,7 +41,7 @@ h1, p {
   font-family: 'Shrikhand', cursive;
   font-style: normal;
   font-weight: 400;
-  max-width: 800px;
+  max-width: 66em;
   margin: 0 5% 1.2rem;
 }
 h1 {
@@ -58,11 +58,19 @@ a, a:link, a:visited, a:active {
   font-style: normal;
   font-weight: 900;
   margin: 0em .33em;
-  color: rgba(57, 76, 94, 0.884);
+  color: rgba(57, 76, 94, 0.784);
   opacity: .5;
 }
 a:hover {
+  background-color: rgba(255, 255, 255, .812);
   color: rgba(245, 8, 8, 0.767);
   opacity: 1;
-  transition: opacity 2s, color 3s;
+  transition: opacity 2s, color 3s, background-color 3s;
+}
+ol li {
+  list-style-type: decimal-leading-zero;
+}
+code ol li{
+  background-color: darkslategray;
+  color: darkkhaki;
 }

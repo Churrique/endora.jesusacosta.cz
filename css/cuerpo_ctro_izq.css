@@ -3,12 +3,15 @@
   height: 39.891em;
   width: 86%;
   border: none;
-  background-color: rgba(140, 208, 240, 0.436);
-  opacity: 0.436;
+  background-color: rgba(140, 208, 240, 0);
+  opacity: 0;
+  /*background-color: rgba(140, 208, 240, 0.541);
+  opacity: 0.736;*/
   border-radius: 0em;
 }
 #ctroizq:hover {
+  background-color: rgba(140, 208, 240, 0.705);
   opacity: 1;
   border-radius: 1em;
-  transition: opacity 3s, border-radius 4s;
+  transition: opacity 3s, border-radius 4s, background-color 3s;
 }

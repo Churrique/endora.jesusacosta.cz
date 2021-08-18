@@ -1,3 +1,14 @@
+formuláře   -> FORMS
+formulare   -> FORMS
+prameny     -> FUENTES
+vlajky      -> BANDERAS
+stranky     -> PÁGINAS
+dočasný     -> TEMPORAL-PROVISIONAL
+docasny     -> TEMPORAL-PROVISIONAL
+hala        -> SALA
+krycí pokoj -> SALA DE REDACCIÓN
+kryci_pokoj -> SALA DE REDACCIÓN
+
 Usuario: hagovoj792@naymeo.com
 Pass: 0123456
 <script src="https://kit.fontawesome.com/82f9d2a72c.js" crossorigin="anonymous"></script>
@@ -52,3 +63,5 @@ https://www.youtube.com/watch?v=XcLiwuTMSwo
 Sass (Referencias)
 https://www.youtube.com/watch?v=xu0lVyrA8Y0
 https://www.youtube.com/watch?v=mHp2nr2kErs
+
+ul>li*5>a[href="#"]{Item $}
