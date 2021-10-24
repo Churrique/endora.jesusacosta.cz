@@ -67,10 +67,8 @@ a:hover {
   opacity: 1;
   transition: opacity 2s, color 3s, background-color 3s;
 }
-ol li {
+pre code ol li{
   list-style-type: decimal-leading-zero;
-}
-code ol li{
   background-color: darkslategray;
   color: darkkhaki;
 }

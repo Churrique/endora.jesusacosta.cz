@@ -35,11 +35,7 @@
     _smartsupp.key = "f07d463b04215584d2b97431033d0f91e9f99b00";
     window.smartsupp ||
       (function (d) {
-        var s,
-          c,
-          o = (smartsupp = function () {
-            o._.push(arguments);
-          });
+        var s, c, o = (smartsupp = function () { o._.push(arguments); });
         o._ = [];
         s = d.getElementsByTagName("script")[0];
         c = d.createElement("script");
@@ -105,32 +101,38 @@
   !
   -->
   <div style="position: absolute; right: 0.5vw">
+    <div style="display: flex; flex-direction: column;">
     <button class="button" onclick="location.href='index.html';">
-      <img src="/img/pg_home.png" alt="Home" /></button><br />
+      <img src="/img/pg_home.png" alt="Home" />
+    </button>
+    <button id="sltLista">
+      <img src="/img/pg_globo.png" width="25px" height="25px" alt="Globo" title="Idioma/Language/Jazyk..." style="margin-right: .5em;" />
+      <select name="sltLista" style="font-family: 'Monoton', cursive; background-color: #298ba2; border:  0.125em solid #026d86; color: #045681; font-size: 1em;">
+        <option>Español</option>
+        <option>Čeština</option>
+        <option>English</option>
+      </select>
+    </button>
+    </div>
     <div style="display: block">
-      <div style="
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 10em;
-          ">
+      <div style="display: inline-flex; justify-content: center; align-items: center; width: 10em;">
         <div class="tooltipi">
-          <a href="/descargas/V6 CV EN-US Summary.pdf" download="CV-JesusAcosta-EN-US">
+          <a href="/descargas/CV-JesúsAcosta-V8-EN-US.pdf" download="CV-JesúsAcosta-V8-EN-US">
             <img src="/img/vlajky/United-Kingdom.png" alt="CV" width="35" height="25" />
           </a>
-          <span class="tooltiptext">Curricum Vitae en Ingles...</span>
+          <span class="tooltiptext">Curriculum Summary...</span>
         </div>
         <div class="tooltipi">
-          <a href="/descargas/V6 CV CS-CZE Shrnutí.pdf" download="CV-JesusAcosta-CS-CZE" style="margin: 0em 0.3em">
+          <a href="/descargas/CV-JesúsAcosta-V8-CS-CZE.pdf" download="CV-JesúsAcosta-V8-CS-CZE" style="margin: 0em 0.3em">
             <img src="/img/vlajky/Czech-Republic.png" alt="CV" width="35" height="25" />
           </a>
-          <span class="tooltiptext">Curricum Vitae en Checo...</span>
+          <span class="tooltiptext">Shrnutí Učiva...</span>
         </div>
         <div class="tooltipi">
-          <a href="/descargas/V6 CV ES-ES Resumen.pdf" download="CV-JesusAcosta-ES-ES">
+          <a href="/descargas/CV-JesúsAcosta-V8-ES-ES.pdf" download="CV-JesúsAcosta-V8-ES-ES">
             <img src="/img/vlajky/Venezuela.png" alt="CV" width="35" height="25" />
           </a>
-          <span class="tooltiptext">Curricum Vitae en Español...</span>
+          <span class="tooltiptext">Resumen Curricular...</span>
         </div>
       </div>
     </div>
