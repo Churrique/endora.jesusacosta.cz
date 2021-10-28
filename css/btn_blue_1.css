@@ -2,18 +2,19 @@
 /*--------------------------------*/
 /*--- En tonalidad Azul        ---*/
 /*--------------------------------*/
-#sltLista{
+.sltIdioma{
   font-family: 'Monoton', cursive;
   background-color: #298ba2;
   border:  0.125em solid #026d86;
   color: #045681;
-  padding: 1em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-flex;
   font-size: 1em;
-  padding: 0.75em 1.75em;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
   border-radius: 0.75em;
+  padding: .3em 0em;
   transition-duration: 0.4s;
   cursor: pointer;
   width: 10em;
@@ -26,7 +27,6 @@
   background-color: #298ba2;
   border:  0.125em solid #026d86;
   color: #045681;
-  padding: 1em;
   text-align: center;
   text-decoration: none;
   display: inline-block;
