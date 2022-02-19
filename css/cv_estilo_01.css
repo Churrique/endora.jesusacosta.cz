@@ -1,10 +1,4 @@
-@import url(../css/fuenteslocales.css);
-/* tbody tr:nth-child(odd) {
-	background-color: #ff33cc;
-  }
-tbody tr:nth-child(even) {
-	background-color: #e495e4;
-} */
+@import url("css/fuenteslocales.css");
 span {
 	font-family: 'Amiko', sans-serif;
 	font-style: normal;

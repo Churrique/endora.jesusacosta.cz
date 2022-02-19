@@ -1,4 +1,5 @@
-@import url(../css/fuenteslocales.css);
+/*@import url("http://localhost/jesusacosta.cz/css/fuenteslocales.css");*/
+@import url("../../../css/fuenteslocales.css");
 /* ///  DECORATION CSS  ///  */
 .cont_select_center {
   position: absolute;
@@ -95,4 +96,4 @@
   display: block;
   margin: 0px;
   cursor: pointer;
-}/*# sourceMappingURL=elemento_select.css.map */
+}

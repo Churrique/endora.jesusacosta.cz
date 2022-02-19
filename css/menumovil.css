@@ -1,6 +1,7 @@
 @import url(../css/fuenteslocales.css);
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -21,7 +22,8 @@ body {
   height: 60px;
   border-radius: 50%;
   background-color: #1ef0a0;
-  box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
   position: absolute;
   z-index: 5;
   bottom: 0;
@@ -35,11 +37,13 @@ body {
   font-size: 2em;
   display: table-cell;
   vertical-align: middle;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .menu-toggle.open .fa {
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 .btn-app {
@@ -57,7 +61,8 @@ body {
 }
 
 .open .btn-app {
-  box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .menu-round {
@@ -70,19 +75,22 @@ body {
 .menu-round .btn-app {
   bottom: 0.25em;
   right: 0.25em;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .menu-round.open .btn-app:nth-of-type(1) {
   right: 0.5em;
   bottom: 4.25em;
-  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 .menu-round.open .btn-app:nth-of-type(2) {
   right: 3.5em;
   bottom: 3.5em;
-  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 
 .menu-round.open .btn-app:nth-of-type(3) {
@@ -98,8 +106,10 @@ body {
 .menu-line .btn-app {
   bottom: 0;
   right: 0.5em;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
-  transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 .menu-line.open .btn-app:nth-of-type(1) {
@@ -138,4 +148,5 @@ a:link, a:visited, a:hover, a:active {
   color: white;
   background-color: transparent;
   text-decoration: none;
-}/*# sourceMappingURL=menumovil.css.map */
+}
+/*# sourceMappingURL=menumovil.css.map */

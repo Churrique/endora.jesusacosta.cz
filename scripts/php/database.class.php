@@ -2,10 +2,10 @@
 namespace Conection;
 /* Clase encargada de gestionar las conexiones a la base de datos */
 class DataBase {
-   private $server='localhost';
-   private $user='user';
-   private $pass='test';
-   private $database='testDB';
+   private $server=SERVIDOR;
+   private $user=USUARIO;
+   private $pass=CONTRASENIA;
+   private $database=BASEDEDATOS;
    private $link;
    private $stmt;
    private $array;
@@ -46,15 +46,15 @@ class DataBase {
       return $this->array;
    }
 }
-/* Cómo usar */
-/*Incluimos el fichero de la clase*/
-require 'Db.class.php';
-/*Creamos la instancia del objeto. Ya estamos conectados*/
-$bd = DataBase::getInstance();
-/*Ejecutamos un query sencillo*/
-$rs = $bd->running( 'SELECT NOMBRE FROM CLIENTES' );
-/*Realizamos un bucle para ir obteniendo los resultados*/
-while ( $row = mysqli_fetch_array( $rs, MYSQLI_BOTH ) ) {
-   echo $row['NOMBRE'].'<br />';
-}
+// /* Cómo usar */
+// /*Incluimos el fichero de la clase*/
+// require 'Db.class.php';
+// /*Creamos la instancia del objeto. Ya estamos conectados*/
+// $bd = DataBase::getInstance();
+// /*Ejecutamos un query sencillo*/
+// $rs = $bd->running( 'SELECT NOMBRE FROM CLIENTES' );
+// /*Realizamos un bucle para ir obteniendo los resultados*/
+// while ( $row = mysqli_fetch_array( $rs, MYSQLI_BOTH ) ) {
+//    echo $row['NOMBRE'].'<br />';
+// }
 ?>

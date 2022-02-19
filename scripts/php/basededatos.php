@@ -6,7 +6,6 @@
 function conecta($p_ser = SERVIDOR, $p_user = USUARIO, $p_pass = CONTRASENIA, $p_bdd = BASEDEDATOS, $p_puer = PUERTO) {
     $enlace = mysqli_connect($p_ser, $p_user, $p_pass, $p_bdd, $p_puer);
     if (!$enlace) {
-        $cadena_del_error = 'Error de Conexión (' . mysqli_connect_errno() . ') ' . mysqli_connect_error();
         header("Location: https://www.jesusacosta.cz/stranky/error.php?cislo=".mysqli_connect_errno()."&popis=".mysqli_connect_error());
         exit;
     }
@@ -14,8 +13,10 @@ function conecta($p_ser = SERVIDOR, $p_user = USUARIO, $p_pass = CONTRASENIA, $p
         return($enlace);
     }
     else {
-        return(false);
-    }
+        header("Location: https://www.jesusacosta.cz/stranky/error.php?cislo=0&popis= Cuidado! Error No Depurado...");
+        exit;
+        //return(false);
+      }
 }
 
 function consulta( $p_conexion = null, $p_sql = null ) {

@@ -1,9 +1,10 @@
-@import url(../css/fuenteslocales.css);
+@import url(css/fuenteslocales.css);
 strong {
   position: relative;
 }
+
 strong::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -0.125rem;
   left: -0.5rem;
@@ -19,6 +20,7 @@ strong::after {
 p > strong {
   font-weight: 400;
 }
+
 p > strong::after {
   bottom: -0.2rem;
   height: 1.1rem;
@@ -28,13 +30,17 @@ p > strong::after {
 
 body {
   display: block;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /*min-height: 100vh;*/
 }
 
 h1, p {
-  font-family: "Shrikhand", cursive;
+  font-family: 'Shrikhand', cursive;
   font-style: normal;
   font-weight: 400;
   max-width: 66em;
@@ -53,28 +59,25 @@ p {
 
 a, a:link, a:visited, a:active {
   text-decoration: none;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 900;
-  margin: 0em 0.33em;
+  margin: 0em .33em;
   color: rgba(57, 76, 94, 0.784);
-  opacity: 0.5;
+  opacity: .5;
 }
 
 a:hover {
   background-color: rgba(255, 255, 255, 0.812);
   color: rgba(245, 8, 8, 0.767);
   opacity: 1;
+  -webkit-transition: opacity 2s, color 3s, background-color 3s;
   transition: opacity 2s, color 3s, background-color 3s;
 }
 
-ol li {
+pre code ol li {
   list-style-type: decimal-leading-zero;
-}
-
-code ol li {
   background-color: darkslategray;
   color: darkkhaki;
 }
-
 /*# sourceMappingURL=kryci_pokoj.css.map */

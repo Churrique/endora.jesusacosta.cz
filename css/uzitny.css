@@ -1,4 +1,4 @@
-@import url(../css/fuenteslocales.css);
+@import url("../css/fuenteslocales.css");
 button, a.fuente1 {
   font-family: 'Amarante', cursive;
 }

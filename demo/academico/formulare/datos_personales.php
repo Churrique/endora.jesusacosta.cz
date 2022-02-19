@@ -14,28 +14,16 @@
   <meta name="REPLY-TO" content="kontakt@jesusacosta.cz" />
   <meta name="Resource-type" content="Document" />
   <meta name="DateCreated" content="Tue, 31 March 2020 14:00:00 GMT+1" />
-  <meta http-equiv="expires" content="86400" />
-  <!-- Equivalente a 24 horas -->
-  <title>&laquo;&nbsp;Ficha Datos
-    Personales&nbsp;&raquo;&nbsp;&laquo;&nbsp;jesusacosta.cz&copy;&nbsp;&raquo;&nbsp;&nbsp;&nbsp;</title>
+  <meta http-equiv="expires" content="86400" /> <!-- Equivalente a 24 horas -->
+  <title>&laquo;&nbsp;Ficha Datos Personales&nbsp;&raquo;&nbsp;&laquo;&nbsp;jesusacosta.cz&copy;&nbsp;&raquo;&nbsp;&nbsp;&nbsp;</title>
   <link rev="made" href="mailto:kontakt@jesusacosta.cz" />
-  <!-- <link rel="StyleSheet" href="../../../css/_normalizar.css" type="text/css" /> -->
-  <link rel="StyleSheet" href="/css/_normalizar.css" type="text/css" />
-  <!-- <link rel="StyleSheet" href="../../../demo/academico/css/controles.css" type="text/css" /> -->
-  <link rel="StyleSheet" href="/demo/academico/css/controles.css" type="text/css" />
-
-  <link rel="StyleSheet" href="/css/elemento_select.css" type="text/css" />
-  <script src="/scripts/js/elemento_select.js"></script>
-
-
-  <!-- <link rel="shortcut icon" href="../../../img/_logo_nube.ico" type="image/x-icon" /> -->
-  <link rel="shortcut icon" href="/img/_logo_nube.ico" type="image/x-icon" />
-  <!-- <script src="../../../scripts/js/cuenta_caracteres.js"></script> Script que Hace el Conteo de los Caracteres Disponibles en el Campo -->
-  <script src="/scripts/js/cuenta_caracteres.js"></script>
-  <!-- Script que Hace el Conteo de los Caracteres Disponibles en el Campo -->
-  <!-- <script src="../../../scripts/js/titulo.js"></script> Script que hace mover el Título del Documento -->
-  <script src="/scripts/js/titulo.js"></script>
-  <!-- Librería de fontawesome -->
+  <link rel="StyleSheet" href="../../../css/_normalizar.css" type="text/css" />
+  <link rel="StyleSheet" href="../../../demo/academico/css/controles.css" type="text/css" />
+  <link rel="StyleSheet" href="../../../css/elemento_select.css" type="text/css" />
+  <link rel="shortcut icon" href="../../../img/_logo_nube.ico" type="image/x-icon" />
+  <script src="../../../scripts/js/elemento_select.js"></script>
+  <script src="../../../scripts/js/cuenta_caracteres.js"></script>
+  <script src="../../../scripts/js/titulo.js"></script>
   <script src="https://kit.fontawesome.com/82f9d2a72c.js" crossorigin="anonymous"></script>
 </head>
 

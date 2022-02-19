@@ -17,10 +17,10 @@ function MontaImagen() {
         break
       default : // Español || Spanish || Španělský
       if (str_vn.length == 1) {
-          txt_vn = "url(../img/coches/fondo_coche_0" + str_vn + ".jpg)";
+          txt_vn = "url(img/coches/fondo_coche_0" + str_vn + ".jpg)";
         }
         else {
-          txt_vn = "url(../img/coches/fondo_coche_" + str_vn + ".jpg)";
+          txt_vn = "url(img/coches/fondo_coche_" + str_vn + ".jpg)";
         }
     }
     document.querySelector("body#imagendefondo").style.backgroundImage = txt_vn;

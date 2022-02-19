@@ -1,4 +1,4 @@
-@import url(../css/fuenteslocales.css);
+@import url("css/fuenteslocales.css");
 @media screen and (min-width: 480px) {
   #imagendetope {
     width: 100%;
