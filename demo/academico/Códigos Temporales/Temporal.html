@@ -1,0 +1,34 @@
+<div id="capatres">
+  <div><label for="txtBuscar">Buscar:</labe></div>
+  <div><input type="text" name="txtBuscar" id="txtBuscar" value="" placeholder="Información a buscar" maxlength="20" onkeyup="cBuscar(this);"></div>
+  <div id="div-padre">
+    <button name="btnBuscar" id="btnBuscar" style="margin-right: 9em;"><span id="logo" class="fas fa-search"></span>Buscar Información</button>
+    <div class="lineadegradada margenderecho">
+      <span id="chBuscar" style="margin: 0em -.1875em 0em 0em;">
+        <script>document.getElementById("chBuscar").innerHTML = document.getElementById("txtBuscar").maxLength.toString().trim();</script>
+      </span>
+      <span>/</span>
+      <span id="strBuscar">
+        <script>document.getElementById("strBuscar").innerHTML = document.getElementById("txtBuscar").maxLength;</script>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div id="capatres">
+  <div><label>¿Algún Documento de Identificación?</label></div>
+  <div></div>
+  <div id="centrado"><button name="btnDocumentoI" id="btnDocumentoI">Registrar Identificación</button></div>
+</div>
+<div id="capatres">
+  <div><label>¿Tiene Dirección?</label></div>
+  <div id="centrado"><button name="btnDireccion" id="btnDireccion">Registrar Dirección</button></div>
+</div>
+<div id="capatres">
+  <div><label>¿Tiene E-mail?</label></div>
+  <div id="centrado"><button name="btnDireccion" id="btnDireccion">Registrar E-mail</button></div>
+</div>
+<div id="capatres">
+  <div><label>¿Tiene Teléfono?</label></div>
+  <div id="centrado"><button name="btnDireccion" id="btnDireccion">Registrar Teléfono</button></div>
+</div>
