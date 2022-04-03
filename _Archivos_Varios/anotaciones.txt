@@ -65,3 +65,6 @@ https://www.youtube.com/watch?v=xu0lVyrA8Y0
 https://www.youtube.com/watch?v=mHp2nr2kErs
 
 ul>li*5>a[href="#"]{Item $}
+
+<a href='https://www.freepik.es/fotos/pizarron-escuela'>Foto de pizarron escuela creado por jcomp - www.freepik.es</a>
+https://www.freepik.es/foto-gratis/libro-fondo-tablero-verde_2244883.htm#page=3&query=classroom&position=30&from_view=search

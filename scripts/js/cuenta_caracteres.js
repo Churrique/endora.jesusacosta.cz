@@ -18,6 +18,11 @@ function cNomCom(el_objeto) {
     document.getElementById("chNomCom").style.margin = "0em -.1875em";
     document.getElementById("chNomCom").innerHTML = strLongitud.toString().trim();
 }
+function cNValor(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    document.getElementById("chNValor").style.margin = "0em -.1875em";
+    document.getElementById("chNValor").innerHTML = strLongitud.toString().trim();
+}
 //var maxLongitud = el_objeto.maxLength;
 //var strRestantes = maxLongitud - strLongitud;
 // Esquema Abierto

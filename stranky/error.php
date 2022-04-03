@@ -37,14 +37,30 @@
     <tr class="esmeralda">
       <td>
         <span style='font-size:30px;'>&#9940;</span>
-        <h1><span class="daltonico">Número:</span><?php echo $GET['cislo']; ?></h1>
+        <h1><span class="daltonico">Número:</span>
+        <?php
+          if (isset($_GET['cislo'])) {
+            echo $_GET['cislo'];
+          }else {
+            echo '.NULL.';
+          }
+        ?>
+        </h1>
       </td>
     </tr>
     <tr class="marina">
       <td>
         <span style='font-size:30px;'>&#9940;</span>
         <h3>
-          <span class="daltonico">Descripción:</span><span>&nbsp;&nbsp;&#8247;&nbsp;</span><?php echo $GET['popis']; ?><span>&nbsp;&#8244;</span>
+          <span class="daltonico">Descripción:</span><span>&nbsp;&nbsp;&#8247;&nbsp;</span>
+          <?php
+            if (isset($_GET['popis'])) {
+              echo $_GET['popis'];
+            }else {
+              echo 'No hay mensaje que mostrar...!';
+            }
+          ?>
+          <span>&nbsp;&#8244;</span>
         </h3>
       </td>
     </tr>
@@ -54,6 +70,7 @@
       </td>
     </tr>
   </table>
+  <?php error_clear_last(); ?>
 </body>
 
 </html>

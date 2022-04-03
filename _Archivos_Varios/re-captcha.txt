@@ -1,0 +1,13 @@
+6LfO840eAAAAANsoUSRsFQMgGj8ZpNHpafedoKci
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LfO840eAAAAANsoUSRsFQMgGj8ZpNHpafedoKci"></script>
+<script>
+grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LfO840eAAAAANsoUSRsFQMgGj8ZpNHpafedoKci', {action: 'login'}).then(function(token) {
+       ...
+    });
+});
+</script>
+
+6LfO840eAAAAANsoUSRsFQMgGj8ZpNHpafedoKci
+

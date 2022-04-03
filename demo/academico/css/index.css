@@ -1,6 +1,6 @@
 @import url("../../../css/fuenteslocales.css");
 body {
-  background: url("../../../demo/academico/img/fondo.jpg");
+  background: url("../../../demo/academico/img/foto2.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@ iframe {
   top: 0;
   left: 0;
   width: 80%;
-  height: 700px;
+  height: 53.7em;
 }
 ul {
   list-style-type: none;

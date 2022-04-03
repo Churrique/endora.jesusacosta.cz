@@ -57,11 +57,12 @@ form {
 }
 footer {
   color: #000000;
+  display: flex;
   position: absolute;
-  bottom: -37em;
+  bottom: -4em;
   overflow: hidden;
   width: 550px;
-  height: 25px;
+  height: 30px;
   border-color: rgba(61, 134, 245, 0.733);
   border-style: solid;
   border-width: 1.45px;
