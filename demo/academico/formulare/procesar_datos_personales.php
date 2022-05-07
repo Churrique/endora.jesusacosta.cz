@@ -28,10 +28,45 @@ if ( $connection = Connection() ) {
     echo "<br>Registro insertado...!<br>";
     $the_condition = "WHERE TRIM(p_nom) = '" . $Nombre . "' AND TRIM(p_ape) = '" . $Apelli . "'";
     $recorset = Consulting($connection, "*", "vw_datper", $the_condition);
+    $numberecords = mysqli_num_rows($recorset);
+    echo '
+          <table>
+          <caption>Total de Registros Encontrados ['.$numberecords.']</caption>
+          <thead>
+            <tr>
+              <th title="Referencia...">Id</th>
+              <th>Documento</th>
+              <th>Número/Serie...</th>
+              <th>Nombre y Apellido</th>
+              <th>Sexo</th>
+              <th title="Fecha de Nacimiento...">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+        ';
     while ($row = mysqli_fetch_assoc($recorset)) {
-      echo $row["id_dat"]." ".$row["id_doc"]." ".$row["p_nom"]." ".$row["p_ape"]." ".$row["sexo"]." ".$row["f_nac"]." ".$row["nom_c"]."<br>";
-      echo "<br>";
+     echo '
+          <tr>
+          <td>'.$row["id_dat"].'</td>
+          <td title="Identificador: '.$row["id_doc"].'">'.$row["doc"].'</td>
+          <td>'.$row["doc_num"].'</td>
+          <td title="Nombre Completo: '.$row["nom_c"].'">'.$row["p_nom"].' '.$row["p_ape"].'</td>
+          <td>'.$row["sexo"].'</td>
+          <td title="Fecha de Nacimiento...">'.$row["f_nac"].'</td>
+          </tr>
+      ';
     }
+    echo '
+          </tbody>
+          <tfoot>
+          <tr>
+            <th colspan="6">
+              ATENCIÓN...! Se encontro más de una incidencia...
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    ';
     mysqli_free_result($recorset);
     mysqli_close($connection);
   }

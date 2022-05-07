@@ -24,16 +24,18 @@
   <script src="../../../scripts/js/elemento_select.js"></script>
   <script src="../../../scripts/js/cuenta_caracteres.js"></script>
   <script src="../../../scripts/js/titulo.js"></script>
+  <script src="../../../scripts/js/join_textboxs.js"></script>
   <script src="https://kit.fontawesome.com/82f9d2a72c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <?php
-  include_once('../../../scripts/php/variables.php');
-  include_once('../../../scripts/php/basededatos.php');
+    include_once '../../../scripts/php/setting.php';
+    include_once '../../../scripts/php/proc.connection.php';
+    include_once '../../../scripts/php/proc.consulting.php';
   ?>
   <div id="div-padre">
-    <form name="frmDP" id="frmDP" autocomplete="off" method="post" action="procesar_datos_personales.php">
+    <form name="frmDP" id="frmDP" autocomplete="off" method="post" action="datos_personales_procesados.php">
       <h1 id="alcentro">Ficha de Datos Personales</h1>
       <div id="capados">
         <div><label for="txtNValor">Documento:</labe></div>
@@ -56,7 +58,9 @@
         <div>
           <div class="select_mate" data-mate-select="active">
             <?php
-            ArmSelect('_tm_documento_identificacion', 'id_tm_documento_identificacion AS id, documento_identificacion AS documento', 'txtDocumento', 'txtDocumento', '', 'return false;');
+            $connectio = Connection();
+            ArmSelect($connectio, '_tm_documento_identificacion', 'id_tm_documento_identificacion AS id, documento_identificacion AS documento', 'txtDocumento', 'txtDocumento', '', 'return false;');
+            mysqli_close($connectio);
             ?>
             <p class="selecionado_opcion" onclick="open_select(this)"></p>
             <span onclick="open_select(this)" class="icon_select_mate">
@@ -105,7 +109,7 @@
       </div>
       <div id="capados">
         <div><label for="txtNomCom">Nombre Completo:</labe></div>
-        <div><input type="text" name="txtNomCom" id="txtNomCom" value="" placeholder="Nombre Completo" maxlength="100" onkeyup="cNomCom(this);"></div>
+        <div><input type="text" name="txtNomCom" id="txtNomCom" placeholder="Nombre Completo" maxlength="100" onkeyup="cNomCom(this);" ondblclick="JoinTextBoxs();"></div>
         <div id="aladerecha" class="lineadegradada margenderecho">
           <span id="chNomCom" style="margin: 0em -.1875em;">
             <script>
@@ -124,7 +128,9 @@
         <div>
           <div class="select_mate" data-mate-select="active">
             <?php
-            CrtSelect('datos_personales', 'sexo', 'txtSexo', 'txtSexo', '', 'return false;');
+            $connectio = Connection();
+            CrtSelect($connectio, 'datos_personales', 'sexo', 'txtSexo', 'txtSexo', '', 'return false;');
+            mysqli_close($connectio);
             ?>
             <p class="selecionado_opcion" onclick="open_select(this)"></p>
             <span onclick="open_select(this)" class="icon_select_mate">
@@ -144,8 +150,8 @@
         <div><input type="date" name="txtFechaNac" id="txtFechaNac" value=""></div>
       </div>
       <div id="centrado">
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Limpiar">
+        <input type="submit" name="btnEnviar" value="Enviar">
+        <input type="reset" name="btnLimpiar" value="Limpiar">
       </div>
       <div id="div-padre">
         <footer>

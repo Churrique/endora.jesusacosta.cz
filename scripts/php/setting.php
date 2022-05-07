@@ -19,4 +19,8 @@ define("CONTRASENIA", "qa3D4ZXe");
 define("PASS", "qa3D4ZXe");
 //! -no hay-
 define("PASARELA", "");
+//! Mayor Número Aleatorio - largest random number
+define("LARGESTNUMBER", mt_getrandmax());
+//! Menor Número Aleatorio - lowest random number
+define("LOWESTNUMBER", 0);
 ?>
