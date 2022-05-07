@@ -1,0 +1,11 @@
+|id_tm_nota|nomenclatura_nota|detalle            |
+|----------|-----------------|-------------------|
+|1         |NI               |No Indicado        |
+|2         |OC               |Otro Código        |
+|3         |NC               |No Curso           |
+|4         |EQ               |Equivalencia       |
+|5         |AP               |Aprobado           |
+|6         |RP               |Reprobado          |
+|7         |FN               |Final              |
+|8         |RE               |Reparación         |
+|9         |EE               |Evaluación Especial|
