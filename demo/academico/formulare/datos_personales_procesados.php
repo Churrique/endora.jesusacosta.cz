@@ -70,13 +70,19 @@ if ( is_object($connection) ) {
 
       }
 
+    } elseif ($numberecords > 1) {
+      $DesDoc = ReturValue($connection, '_tm_documento_identificacion', 'id_tm_documento_identificacion', $idDocu, 'documento_identificacion');
+
+    } else {
+      // Es cero (0) o menos uno (-1)
+      $DesDoc = ReturValue($connection, '_tm_documento_identificacion', 'id_tm_documento_identificacion', null, 'documento_identificacion');
     }
 
   }
 
 }
-
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -98,23 +104,24 @@ if ( is_object($connection) ) {
   <link rev="made" href="mailto:kontakt@jesusacosta.cz" />
   <link rel="StyleSheet" href="../../../css/_normalizar.css" type="text/css" />
   <link rel="StyleSheet" href="../../../demo/academico/css/controles.css" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="../../../demo/academico/css/tabla.css" />
+  <link rel="stylesheet" href="../../../demo/academico/css/tabla.css" type="text/css" />
   <link rel="shortcut icon" href="../../../img/_logo_nube.ico" type="image/x-icon" />
   <script src="../../../scripts/js/titulo.js"></script>
+  <script src="../../../scripts/js/trigger_event_click_in_button.js"></script>
 </head>
 
 <body>
   <div id="div-padre">
-    <form name="frmPDP" id="frmPDP" autocomplete="off" method="post" action="">
+    <form name="frmPDP" id="frmPDP" autocomplete="off" method="post" action="datos_personales_add.php">
       <h1 id="alcentro">Procesando: Ficha de Datos Personales</h1>
       <div id="capatres">
         <div><span>Documento:</span></div>
         <div><span id="cinput" title="Número del Documento..."><?php echo $NumDoc ?></span></div>
-        <?php echo '<input type="hidden" name="txtNValor" value="'.$NumDoc.'">'; ?>
+        <?php echo '<input type="hidden" name="txtNValor" id="txtNValor" value="'.$NumDoc.'">'; ?>
       </div>
       <div id="capatres">
         <div><span>Tipo de Documento:</span></div>
-        <div><span id="cinput" title="Tipo de Documento..."><?php echo $idDocu ?></span></div>
+        <div><span id="cinput" title="Tipo de Documento..."><?php echo "$idDocu : $DesDoc" ?></span></div>
         <?php echo '<input type="hidden" name="txtDocumento" value="'.$idDocu.' : '.$DesDoc.'">'; ?>
       </div>
       <div id="capatres">
@@ -144,10 +151,16 @@ if ( is_object($connection) ) {
       </div>
       <div id="capatres">
         <div><span title="Único para este registro...">Identificadores Únicos de Tablas:</span></div>
-        <div><span id="cinput" title="Tabla:Datos Personales..."><?php echo "Datos Personales: $idDatP" ?></span></div>
-        <div><span id="cinput" title="Tabla:Documento de Identificación..."><?php echo "Documento de Identificación: $idDatI " ?></span></div>
-        <div><span id="cinput" title="Tabla:Maestro de Documento..."><?php echo "Maestro de Documento: $idDocu " ?></span></div>
-        <?php echo '<input type="hidden" name="txtFechaNac" value="'.$FecNac.'">'; ?>
+        <!-- //? Explícitamente la tabla: DATOS_PERSONALES.iddatospersonales -->
+        <div><span id="cinput" title="Tabla:Datos Personales..."><?php echo "Ref. Interna: " . ( $numberecords == 1 ? $idDatP : 'Por definir...'); ?></span></div>
+        <!-- //? Explícitamente la tabla: DATOS_DOCUMENTOS_IDENTIFICACION.iddatosidentificacion -->
+        <div><span id="cinput" title="Tabla:Documento de Identificación..."><?php echo "Ref. Interna: " . ( $numberecords == 1 ? $idDatI : 'Por definir...'); ?></span></div>
+        <!-- //? Explícitamente la tabla: _TM_DOCUMENTO_IDENTIFICACION.id_tm_documento_identificacion -->
+        <div><span id="cinput" title="Tabla:Maestro de Documento..."><?php echo "Ref. Interna: $idDocu : $DesDoc " ?></span></div>
+      </div>
+      <div id="capatres">
+        <div><span id="nota">NOTA IMPORTANTE</span></div>
+        <div><span id="nota">De <span id="noteinred">la tabla</span> que se muestra <span id="noteinred">en la parte inferior</span>, Usted <span id="noteinred">debe seleccionar una de las entradas</span> que se muestran <span id="noteinred">para poder completar la incorporación del nuevo registro</span>, esto se debe a que hubo más de una coincidencia. El proceso en sí esta a un 50%, el porcentaje restante, del proceso, lo debe completar Usted, si así lo desea. <span id="noteinred">Considere</span> la opcion de <span id="noteinred">Cancelar si no esta seguro</span>.</span></div>
       </div>
       <?php
         if ($numberecords > 1) {
@@ -159,7 +172,6 @@ if ( is_object($connection) ) {
                   <th title="Aprobar:?..."></th>
                   <th title="Referencia...">Id</th>
                   <th>Documento</th>
-                  <th>Número/Serie</th>
                   <th>Nombre Apellido</th>
                   <th>Sexo</th>
                   <th title="Fecha de Nacimiento...">Fecha</th>
@@ -168,12 +180,14 @@ if ( is_object($connection) ) {
               <tbody>
               ';
           while ($row = mysqli_fetch_assoc($FirstRecorset)) {
+            echo '<input type="hidden" name="txt_id_dat'.$row["id_dat"].'" id="txt_id_dat'.$row["id_dat"].'" value="'.$row["id_dat"].'">';
+            echo '<input type="hidden" name="txt_id_doc'.$row["id_dat"].'" id="txt_id_doc'.$row["id_dat"].'" value="'.$row["id_doc"].'">';
+            echo '<input type="hidden" name="txt_doc_num'.$row["id_dat"].'" id="txt_doc_num'.$row["id_dat"].'" value="'.$row["doc_num"].'">';
             echo '
                 <tr>
-                <td id="ChangeIcon" title="Aprobar:Si..."></td>
+                <td title="Aprobar:Si..."><button name="btnIngFor" id="ChangeIcon" type="button" onclick="trigger_click_in_dp( '.$row["id_dat"].')" ></button></td>
                 <td>'.$row["id_dat"].'</td>
                 <td title="Identificador: '.$row["id_doc"].'">'.$row["doc"].'</td>
-                <td>'.$row["doc_num"].'</td>
                 <td title="Nombre Completo: '.$row["nom_c"].'">'.$row["p_nom"].' '.$row["p_ape"].'</td>
                 <td>'.$row["sexo"].'</td>
                 <td title="Fecha de Nacimiento...">'.$row["f_nac"].'</td>
@@ -196,8 +210,13 @@ if ( is_object($connection) ) {
         }
       ?>
       <div id="centrado">
-        <input type="submit" name="btnSdEnvio" value="Enviar">
-        <input type="reset" name="btnSdLimpio" value="Limpiar">
+        <?php
+          echo '<input type="hidden" name="numberecords" value="'.$numberecords.'">';
+          if ($numberecords == 1) {
+            echo '<input type="submit" name="btnSdConfirm" value="Procesar Otro">';
+          }
+        ?>
+        <input type="submit" name="btnSdCancel" value="Cancelar y Regresar">
       </div>
     </form>
   </div>

@@ -20,6 +20,7 @@
   <link rel="StyleSheet" href="../../../css/_normalizar.css" type="text/css" />
   <link rel="StyleSheet" href="../../../demo/academico/css/controles.css" type="text/css" />
   <link rel="StyleSheet" href="../../../css/elemento_select.css" type="text/css" />
+  <link rel="StyleSheet" href="../../../css/tooltip_der_blue.css" type="text/css" />
   <link rel="shortcut icon" href="../../../img/_logo_nube.ico" type="image/x-icon" />
   <script src="../../../scripts/js/elemento_select.js"></script>
   <script src="../../../scripts/js/cuenta_caracteres.js"></script>
@@ -109,7 +110,10 @@
       </div>
       <div id="capados">
         <div><label for="txtNomCom">Nombre Completo:</labe></div>
+        <div class="tooltipd">
         <div><input type="text" name="txtNomCom" id="txtNomCom" placeholder="Nombre Completo" maxlength="100" onkeyup="cNomCom(this);" ondblclick="JoinTextBoxs();"></div>
+        <span class="tooltiptext">No es necesario escribir tanto, haga doble-click para unir el nombre y el apellido...</span>
+        </div>
         <div id="aladerecha" class="lineadegradada margenderecho">
           <span id="chNomCom" style="margin: 0em -.1875em;">
             <script>
@@ -150,19 +154,27 @@
         <div><input type="date" name="txtFechaNac" id="txtFechaNac" value=""></div>
       </div>
       <div id="centrado">
-        <input type="submit" name="btnEnviar" value="Enviar">
-        <input type="reset" name="btnLimpiar" value="Limpiar">
+        <div class="tooltipd">
+          <button type="submit" name="btnEnviar" value="Enviar" formmethod="post">Enviar</button>
+          <span class="tooltiptext">Pulse para enviar la información al siguiente paso...</span>
+        </div>
+        <div class="tooltipd">
+          <button type="reset" name="btnLimpiar" value="Limpiar">Limpiar</button>
+          <span class="tooltiptext">Pulse para limpiar los campos del formulario...</span>
+        </div>
+        <div class="tooltipd">
+          <button type="button" name="btnCancelar"><a href="../../academico" target="_top">Cerrar</a></button>
+          <span class="tooltiptext">Pulse para salir de este formulario...</span>
+        </div>
       </div>
       <div id="div-padre">
         <footer>
           <p><span id="logo" class="fas fa-info-circle fa-2x"></span>Los tapices usados en esta página son cortesía de:</p>
           <dl>
             <dt>Papel pintado abstracto blanco</dt>
-            <dd><a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a>
-            </dd>
+            <dd><a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a></dd>
             <dt>Acuarela pintada amano con forma de cielo y nube</dt>
-            <dd><a href='https://www.freepik.es/fotos/fondo'>Foto de Fondo creado por denamorado - www.freepik.es</a>
-            </dd>
+            <dd><a href='https://www.freepik.es/fotos/fondo'>Foto de Fondo creado por denamorado - www.freepik.es</a></dd>
           </dl>
         </footer>
       </div>

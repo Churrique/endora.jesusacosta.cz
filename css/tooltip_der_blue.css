@@ -1,0 +1,45 @@
+@import url("css/fuenteslocales.css");
+.tooltipd {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/*  .tooltipd .tooltiptext {*/
+  .tooltipd .tooltiptext {
+    visibility: hidden;
+    width: 8.125em;
+    font-family: 'Spicy Rice', cursive;
+    font-style: normal;
+    font-weight: 200;
+    font-size: .8em;
+    background-color: #0f1c48;
+    color: #1e78e0;
+    text-align: center;
+    border-radius: .375em;
+    padding: .3125em 0;
+    position: absolute;
+    z-index: 1;
+    top: -.625em;
+    left: 110%;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+.tooltipd .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -.3125em;
+    border-width: .3125em;
+    border-style: solid;
+    border-color: transparent #0f2c48 transparent transparent;
+  }
+.tooltipd:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+.tooltipd:hover .tooltiptext::after {
+    opacity: 0.80;
+    transition: opacity 3s;
+  }

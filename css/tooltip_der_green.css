@@ -1,20 +1,26 @@
 @import url("css/fuenteslocales.css");
 .tooltipd {
     position: relative;
-    display: inline-block;
-    /* border-bottom: 1px dotted #00d789; If you want dots under the hoverable text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-.tooltipd .tooltiptext {
+/*  .tooltipd .tooltiptext {*/
+  .tooltipd .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 8.125em;
+    font-family: 'Spicy Rice', cursive;
+    font-style: normal;
+    font-weight: 200;
+    font-size: .8em;
     background-color: #0f480f;
     color: #1ee01e;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
+    border-radius: .375em;
+    padding: .3125em 0;
     position: absolute;
     z-index: 1;
-    top: -10px;
+    top: -.625em;
     left: 110%;
     opacity: 0;
     transition: opacity 1s;
@@ -24,8 +30,8 @@
     position: absolute;
     top: 50%;
     right: 100%;
-    margin-top: -5px;
-    border-width: 5px;
+    margin-top: -.3125em;
+    border-width: .3125em;
     border-style: solid;
     border-color: transparent #0f480f transparent transparent;
   }

@@ -14,13 +14,15 @@ input {
   font-size: 1.3em;
   border-radius: 0.3em;
   height: 1.35em;
-  width: 480px;
+  width: 23.13em;
   margin: .3em 0em .3em .3em;
 }
 input:focus {
   background: rgba(247, 142, 124, 0.274);
 }
 button {
+  width: 6em;
+  background: rgba(151, 211, 245, 0.363);
   margin: .5em;
   padding: .25em;
   border: none;
@@ -28,6 +30,7 @@ button {
   font-style: normal;
   font-weight: 400;
   font-size: 1.3em;
+  border-radius: .4em;
 }
 button:hover {
   background: rgba(252, 132, 111, 0.274);
@@ -50,22 +53,22 @@ form {
   background: url("../img/svg/capa-01.svg") no-repeat center;
   background-size: cover;
   background-clip: padding-box;
-  border-radius: 0.4em;
+  border-radius: .4em;
   height: auto;
-  width: 600px;
+  width: 37.5em;
   margin: 1em;
 }
 footer {
   color: #000000;
-  display: flex;
+  background-color: rgba(68, 136, 189, 0.548);
   position: absolute;
-  bottom: -4em;
+  bottom: -4.7em;
   overflow: hidden;
-  width: 550px;
-  height: 30px;
+  width: 38em;
+  height: 3em;
   border-color: rgba(61, 134, 245, 0.733);
   border-style: solid;
-  border-width: 1.45px;
+  border-width: .090625em;
   border-radius: .35em;
   font-family: 'Alfa Slab One', cursive;
   font-style: normal;
@@ -80,7 +83,7 @@ footer {
 footer:hover {
   background-color: #2787f5;
   border-color: #2acf14;
-  height: 75px;
+  height: 12em;
   color: rgb(169, 194, 231);
   letter-spacing: .15em;
 }
@@ -92,13 +95,11 @@ a, a:link {
   text-decoration: none;
   outline: none;
   color: rgb(169, 194, 231);
-  /*color: #000000;*/
   transition-property: color;
   transition-duration: 1s;
 }
 a:visited, a:hover, a:active {
   color: #000000;
-  /*color: rgb(169, 194, 231);*/
 }
 .lineadegradada {
   background-image: linear-gradient(to top,  #055da0, #0b17ad, #4107aa, #7e03a5, #bc0084, #db004d, #f90000);
@@ -112,11 +113,11 @@ a:visited, a:hover, a:active {
 .informacion {
   color: #000000;
   overflow: hidden;
-  width: 550px;
-  height: 25px;
+  width: 34.375em;
+  height: 1.5625em;
   border-color: rgba(61, 134, 245, 0.733);
   border-style: solid;
-  border-width: 1.45px;
+  border-width: .090625em;
   border-radius: .35em;
   font-family: 'Alfa Slab One', cursive;
   font-style: normal;
@@ -129,7 +130,7 @@ a:visited, a:hover, a:active {
 .informacion:hover {
   background-color: #2787f5;
   border-color: #2acf14;
-  height: 75px;
+  height: 4.6875em;
   color: rgb(169, 194, 231);
   letter-spacing: .15em;
 }
@@ -148,8 +149,8 @@ a:visited, a:hover, a:active {
   background: url("../img/svg/capa-02.svg") no-repeat center;
   background-size: cover;
   background-clip: padding-box;
-  height: 90px;
-  width: 500px;
+  height: 5.625em;
+  width: 31.25em;
   display: block;
   border-radius: 0.4em;
   margin: auto;
@@ -161,7 +162,7 @@ a:visited, a:hover, a:active {
   background-size: cover;
   background-clip: padding-box;
   height: auto;
-  width: 500px;
+  width: 31.25em;
   display: block;
   border-radius: 0.4em;
   margin: auto;
@@ -176,7 +177,7 @@ a:visited, a:hover, a:active {
   text-align: center;
 }
 #centrado {
-  width: 500px;
+  width: 31.25em;
   margin: auto;
   display: flex;
   align-items: center;
@@ -191,10 +192,26 @@ a:visited, a:hover, a:active {
   font-size: 1.3em;
   border-radius: 0.3em;
   height: 1.35em;
-  width: 480px;
+  width: 30em;
   margin: .3em 0em .3em .3em;
   display: block;
 }
 #cinput:hover {
   background: rgba(247, 142, 124, 0.274);
+}
+#nota {
+  font-family: 'Aleo', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: .69em;
+}
+#noteinred {
+  font-family: 'Aleo', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.0625em;
+  color: #900c3f
+}
+#noteinred:hover {
+  color: #c70039;
 }

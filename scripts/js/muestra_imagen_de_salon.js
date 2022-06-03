@@ -3,6 +3,6 @@ function MontaImagenSalonDeClases(min, max) {
   let vn = Math.floor( ( Math.random() * max ) + min);
   let str_vn = vn.toString();
   let txt_vn = "";
-  txt_vn = "url(../../demo/academico/img/foto" + str_vn + ".jpg)";
+  txt_vn = "url(../../demo/academico/img/jpg/foto" + str_vn + ".jpg)";
   document.querySelector("body#backgroundimage").style.backgroundImage = txt_vn;
 }

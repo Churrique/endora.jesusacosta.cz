@@ -28,19 +28,19 @@ function Consulting($local_connection, $camps, $table, $condition = null) {
 function ReturValue($local_connection, $table, $camp, $key, $filter = null) {
   $sentence = "SELECT " . ( is_null($filter) ? '*' : $filter ) . " FROM `" . DATABASE . "`.`" . $table . "` WHERE $camp = $key";
   if ( $record_set = mysqli_query($local_connection, $sentence) ) {
-    if ( mysqli_fetch_assoc($record_set) > 0 ) {
-      if ( is_null($filter) ) {
-        return $record_set;
+    if ( mysqli_num_rows($record_set) == 1 ) {
+      $uvalue = null;
+      while ( $urow = mysqli_fetch_assoc($record_set) ) {
+        $uvalue = $urow["$filter"];
       }
-      else {
-        return $filter;
-      }
+      mysqli_free_result($record_set);
+      return ( is_null($filter) ? "No hay info" : $uvalue );
     }
   }
   else {
-    header("Location:https://www.jesusacosta.cz/stranky/error.php?cislo=" . mysqli_errno($local_connection) . "&popis=" . mysqli_error($local_connection));
     mysqli_close($local_connection);
-    return FALSE;
+    header("Location:https://www.jesusacosta.cz/stranky/error.php?cislo=" . mysqli_errno($local_connection) . "&popis=" . mysqli_error($local_connection));
+    exit;
   }
 }
 
