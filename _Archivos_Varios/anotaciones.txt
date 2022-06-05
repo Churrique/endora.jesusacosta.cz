@@ -1,13 +1,11 @@
-formuláře   -> FORMS
-formulare   -> FORMS
-prameny     -> FUENTES
-vlajky      -> BANDERAS
-stranky     -> PÁGINAS
-dočasný     -> TEMPORAL-PROVISIONAL
-docasny     -> TEMPORAL-PROVISIONAL
-hala        -> SALA
-krycí pokoj -> SALA DE REDACCIÓN
-kryci_pokoj -> SALA DE REDACCIÓN
+Formuláře/formulare       -> FORMS
+prameny                   -> FUENTES
+vlajky                    -> BANDERAS
+stranky                   -> PÁGINAS
+Dočasný/docasny           -> TEMPORAL-PROVISIONAL
+Hala                      -> SALA
+Krycí Pokoj/kryci_pokoj   -> SALA DE REDACCIÓN
+Užitný/uzitny             -> UTILIDAD
 
 Usuario: hagovoj792@naymeo.com
 Pass: 0123456
@@ -35,20 +33,25 @@ Pass: 0123456
 }
 
 Tapices
-Hojas Doradas y Negras
-<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por starline - www.freepik.es</a>
-Hojas Doradas y Azules
-<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por starline - www.freepik.es</a>
+
 Armonia Rectangular
 <a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por Harryarts - www.freepik.es</a>
-Papel pintado abstracto blanco
+
+{capa-01.svg}Papel pintado abstracto blanco
 <a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a>
-Acuarela pintada amano con forma de cielo y nube
+
+{capa-02.svg}Acuarela pintada amano con forma de cielo y nube
 <a href='https://www.freepik.es/fotos/fondo'>Foto de Fondo creado por denamorado - www.freepik.es</a>
-Fondo de pintura de acuarela rosa vibrante
+ó
+https://www.freepik.es/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_9728603.htm
+
+{capa-05.svg}<a href="https://www.freepik.es/vectores/fondo-minimalista">Vector de fondo minimalista creado por kjpargeter - www.freepik.es</a>
+
+{capa-06.svg}Fondo de pintura de acuarela rosa vibrante
 <a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por rawpixel.com - www.freepik.es</a>
-Fondo de estilo cómico azul de diseño plano
-<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a>
+
+{capa-07.svg}Fondo de estilo cómico azul de diseño plano
+<a href="https://www.freepik.es/vectores/medias-tintas">Vector de medias tintas creado por freepik - www.freepik.es</a>
 
 Basic Syntax (Referencias)
 The Markdown elements outlined in John Gruber's design document.

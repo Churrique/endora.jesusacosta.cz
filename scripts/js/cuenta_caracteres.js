@@ -23,6 +23,31 @@ function cNValor(el_objeto) {
     document.getElementById("chNValor").style.margin = "0em -.1875em";
     document.getElementById("chNValor").innerHTML = strLongitud.toString().trim();
 }
+function cUsuario(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    document.getElementById("chUsuario").style.margin = "0em -.1875em";
+    document.getElementById("chUsuario").innerHTML = strLongitud.toString().trim();
+}
+function cPass(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    document.getElementById("chPass").style.margin = "0em -.1875em";
+    document.getElementById("chPass").innerHTML = strLongitud.toString().trim();
+}
+function cItem(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    document.getElementById("chItem").style.margin = "0em -.1875em";
+    document.getElementById("chItem").innerHTML = strLongitud.toString().trim();
+}
+function cSubItem(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    document.getElementById("chSubItem").style.margin = "0em -.1875em";
+    document.getElementById("chSubItem").innerHTML = strLongitud.toString().trim();
+}
+function cUrl(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    document.getElementById("chUrl").style.margin = "0em -.1875em";
+    document.getElementById("chUrl").innerHTML = strLongitud.toString().trim();
+}
 //var maxLongitud = el_objeto.maxLength;
 //var strRestantes = maxLongitud - strLongitud;
 // Esquema Abierto

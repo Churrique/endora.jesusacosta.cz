@@ -1,0 +1,230 @@
+@import url("../css/fuenteslocales.css");
+h1 {
+  font-family: "Lobster", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8em;
+}
+h3 {
+  font-family: "Lobster", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4em;
+}
+h5 {
+  font-family: "Lobster", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+input {
+  border: none;
+  outline: none;
+  background: rgba(151, 211, 245, 0.363);
+  font-family: "Kavoon", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3em;
+  border-radius: 0.3em;
+  height: 1.35em;
+  width: 23.13em;
+  margin: .3em 0em .3em .3em;
+}
+input:focus {
+  background: rgba(247, 142, 124, 0.274);
+}
+button {
+  width: 6em;
+  background: rgba(151, 211, 245, 0.363);
+  margin: .5em;
+  padding: .25em;
+  border: none;
+  font-family: "Kavoon", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3em;
+  border-radius: .4em;
+}
+button:hover {
+  background: rgba(252, 132, 111, 0.274);
+  color: rgba(9, 63, 241, 0.575);
+}
+label {
+  font-family: "Amarante", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.23em;
+  margin: 0em 0em 0.3em 0.3em;
+}
+span {
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.12em;
+}
+form {
+  background: url("../demo/academico/img/svg/capa-03.svg") no-repeat center;
+  background-size: cover;
+  background-clip: padding-box;
+  border-radius: .4em;
+  height: auto;
+  width: 37.5em;
+  margin: 1em;
+}
+footer {
+  color: #000000;
+  background-color: rgba(68, 136, 189, 0.548);
+  position: absolute;
+  bottom: -35em;
+  overflow: hidden;
+  width: 38em;
+  height: 3em;
+  border-color: rgba(61, 134, 245, 0.733);
+  border-style: solid;
+  border-width: .090625em;
+  border-radius: .35em;
+  font-family: 'Alfa Slab One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: .5em;
+  letter-spacing: normal;
+  margin: 0em 0em .5em 0em;
+  padding: 0em .5em 0em .5em;
+  transition-property: background-color, border-color, height, color, letter-spacing;
+  transition-duration: 2s, 1s, 2s, 1s, 1s;
+}
+footer:hover {
+  background-color: #2787f5;
+  border-color: #2acf14;
+  height: 12em;
+  color: rgb(169, 194, 231);
+  letter-spacing: .15em;
+}
+p {
+  margin: 0em;
+  padding: 0em;
+}
+a, a:link {
+  text-decoration: none;
+  outline: none;
+  color: rgb(169, 194, 231);
+  transition-property: color;
+  transition-duration: 1s;
+}
+a:visited, a:hover, a:active {
+  color: #000000;
+}
+.lineadegradada {
+  background-image: linear-gradient(to top,  #055da0, #0b17ad, #4107aa, #7e03a5, #bc0084, #db004d, #f90000);
+  background: -webkit-linear-gradient(to top, #055da0, #0b17ad, #4107aa, #7e03a5, #bc0084, #db004d, #f90000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.margenderecho {
+  margin: 0em 0.3em 0em 0em;
+}
+.informacion {
+  color: #000000;
+  overflow: hidden;
+  width: 34.375em;
+  height: 1.5625em;
+  border-color: rgba(61, 134, 245, 0.733);
+  border-style: solid;
+  border-width: .090625em;
+  border-radius: .35em;
+  font-family: 'Alfa Slab One', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: .5em;
+  letter-spacing: normal;
+  transition-property: background-color, border-color, height, color, letter-spacing;
+  transition-duration: 2s, 1s, 2s, 1s, 1s;
+}
+.informacion:hover {
+  background-color: #2787f5;
+  border-color: #2acf14;
+  height: 4.6875em;
+  color: rgb(169, 194, 231);
+  letter-spacing: .15em;
+}
+#logo {
+  color: rgb(151, 23, 6);
+  margin: .2em .3em 0em 0em;
+}
+#div-padre {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#capados {
+  background: url("../demo/academico/img/svg/capa-06.svg") no-repeat center;
+  background-size: cover;
+  background-clip: padding-box;
+  height: 5.625em;
+  width: 31.25em;
+  display: block;
+  border-radius: 0.4em;
+  margin: auto;
+  margin-bottom: .4em;
+  padding: .3em 0em 0em 0em;
+}
+#capatres {
+  background: url("../demo/academico/img/svg/capa-06.svg") no-repeat center;
+  background-size: cover;
+  background-clip: padding-box;
+  height: auto;
+  width: 31.25em;
+  display: block;
+  border-radius: 0.4em;
+  margin: auto;
+  margin-bottom: .4em;
+  padding: .3em 0em 0em .3em;
+}
+#aladerecha {
+  text-align: right;
+  margin-right: 0.3em;
+}
+#alcentro {
+  text-align: center;
+}
+#centrado {
+  width: 31.25em;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cinput {
+  color: rgba(35, 56, 68, 0.993);
+  background: rgba(151, 211, 245, 0.363);
+  font-family: "Kavoon", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3em;
+  border-radius: 0.3em;
+  height: 1.35em;
+  width: 30em;
+  margin: .3em 0em .3em .3em;
+  display: block;
+}
+#cinput:hover {
+  background: rgba(247, 142, 124, 0.274);
+}
+#nota {
+  font-family: 'Aleo', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: .69em;
+}
+#noteinred {
+  font-family: 'Aleo', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.0625em;
+  color: #900c3f
+}
+#noteinred:hover {
+  color: #c70039;
+}

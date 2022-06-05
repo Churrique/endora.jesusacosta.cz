@@ -28,7 +28,6 @@
   <script src="../../../scripts/js/join_textboxs.js"></script>
   <script src="https://kit.fontawesome.com/82f9d2a72c.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
   <?php
     include_once '../../../scripts/php/setting.php';
@@ -60,7 +59,7 @@
           <div class="select_mate" data-mate-select="active">
             <?php
             $connectio = Connection();
-            ArmSelect($connectio, '_tm_documento_identificacion', 'id_tm_documento_identificacion AS id, documento_identificacion AS documento', 'txtDocumento', 'txtDocumento', '', 'return false;');
+            ArmSelect($connectio, '_tm_documento_identificacion', 'id_tm_documento_identificacion AS id, documento_identificacion AS detalle', 'txtDocumento', 'txtDocumento', '', 'return false;');
             mysqli_close($connectio);
             ?>
             <p class="selecionado_opcion" onclick="open_select(this)"></p>

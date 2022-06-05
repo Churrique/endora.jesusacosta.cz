@@ -60,17 +60,23 @@ function CrtSelect($the_connection, $p_la_tabla = null, $p_el_campo = null, $p_v
   mysqli_free_result($resultado);
 }
 
-function ArmSelect($the_connection, $p_la_tabla = null, $p_el_campo = null, $p_valor_name = null, $p_valor_id = null, $p_valor_onchange = null, $p_valor_onclick = null) {
+function ArmSelect($the_connection, $p_la_tabla = null, $p_el_campo = null, $p_valor_name = null, $p_valor_id = null, $p_valor_onchange = null, $p_valor_onclick = null, $p_tercer_campo = null) {
   // mysqli_fetch_assoc($el_resultado)
   // es igual a
   // mysql_fetch_array($el_resultado, MYSQL_ASSOC)
   // Este crea asociativo y por número
   // --> mysql_fetch_array($el_resultado, MYSQLI_BOTH)
-  $sql_query = "SELECT " . $p_el_campo . " FROM " . $p_la_tabla . ";";
+  //$sql_query = "SELECT " . $p_el_campo . " FROM " . $p_la_tabla . ";";
+  $sql_query = ( is_null($p_tercer_campo) ? ("SELECT " . $p_el_campo . " FROM " . $p_la_tabla . ";") : ("SELECT " . $p_el_campo . "," . $p_tercer_campo . " FROM " . $p_la_tabla . ";") );
   $resultado = mysqli_query($the_connection, $sql_query);
   echo '<select id="' . $p_valor_id . '" name="' . $p_valor_name . '" onchange="' . $p_valor_onchange . '" onclick="'. $p_valor_onclick . '">';
   while ( $fila = mysqli_fetch_array( $resultado, MYSQLI_BOTH ) ) {
-     echo '<option value="'.$fila['id'].'">'.$fila['documento'].'</option>';
+    if ( is_null($p_tercer_campo) ) {
+      echo '<option value="'.$fila['id'].'">'.$fila['detalle'].'</option>';
+    }
+    else {
+        echo '<option value="'.$fila['id'].'" title="'.$fila['titulo'].'">'.$fila['detalle'].'</option>';
+      }
   }
   echo '</select>';
   mysqli_free_result($resultado);
