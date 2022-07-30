@@ -168,7 +168,7 @@
       </div>
       <div id="div-padre">
         <footer>
-          <p><span id="logo" class="fas fa-info-circle fa-2x"></span>Los tapices usados en esta página son cortesía de:</p>
+          <p><span id="logo"><i class="fas fa-info-circle fa-2x"></i></span>Los tapices usados en esta página son cortesía de:</p>
           <dl>
             <dt>Papel pintado abstracto blanco</dt>
             <dd><a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a></dd>

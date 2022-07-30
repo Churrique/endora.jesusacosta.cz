@@ -105,6 +105,7 @@ if ( is_object($connection) ) {
   <link rel="StyleSheet" href="../../../css/_normalizar.css" type="text/css" />
   <link rel="StyleSheet" href="../../../demo/academico/css/controles.css" type="text/css" />
   <link rel="stylesheet" href="../../../demo/academico/css/tabla.css" type="text/css" />
+  <link rel="StyleSheet" href="../../../css/tooltip_der_blue.css" type="text/css" />
   <link rel="shortcut icon" href="../../../img/_logo_nube.ico" type="image/x-icon" />
   <script src="../../../scripts/js/titulo.js"></script>
   <script src="../../../scripts/js/trigger_event_click_in_button.js"></script>
@@ -216,7 +217,15 @@ if ( is_object($connection) ) {
             echo '<input type="submit" name="btnSdConfirm" value="Procesar Otro">';
           }
         ?>
-        <input type="submit" name="btnSdCancel" value="Cancelar y Regresar">
+        <!-- <input type="submit" name="btnSdCancel" value="Cancelar y Regresar"> -->
+        <div class="tooltipd">
+          <button type="button" name="btnSdCancel"><a href="../../academico" target="_top">Cancelar</a></button>
+          <span class="tooltiptext">Pulse para salir de este formulario...</span>
+        </div>
+        <div class="tooltipd">
+          <button type="button" name="btnSdReturn"><a href="../../academico/formulare/datos_personales.php" target="_top">Regresar</a></button>
+          <span class="tooltiptext">Pulse para salir de este formulario...</span>
+        </div>
       </div>
     </form>
   </div>

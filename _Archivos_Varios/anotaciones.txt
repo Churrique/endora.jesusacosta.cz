@@ -53,6 +53,22 @@ https://www.freepik.es/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes
 {capa-07.svg}Fondo de estilo cómico azul de diseño plano
 <a href="https://www.freepik.es/vectores/medias-tintas">Vector de medias tintas creado por freepik - www.freepik.es</a>
 
+https://www.freepik.es/vector-gratis/fondo-abstracto-azul-acuarela_18971400.htm
+<a href='https://www.freepik.es/vectores/fondo-artistico'>Vector de fondo artistico creado por freepik - www.freepik.es</a>
+
+blue-brushstrokes-background
+https://www.freepik.es/foto-gratis/fondo-pinceladas-azules_13568384.htm
+<a href='https://www.freepik.es/fotos/acuarela-azul'>Foto de acuarela azul creado por Vectorium - www.freepik.es</a>
+
+https://www.freepik.es/vector-gratis/fondo-degradado-azul-abstracto_24349615.htm
+<a href='https://www.freepik.es/vectores/color-azul'>Vector de color azul creado por Vectorium - www.freepik.es</a>
+
+https://www.freepik.es/vector-gratis/fondo-invierno-azul-abstracto-acuarela_19965598.htm
+<a href='https://www.freepik.es/vectores/agua-acuarela'>Vector de agua acuarela creado por freepik - www.freepik.es</a>
+
+https://www.freepik.es/vector-gratis/diseno-banner-fondo-abstracto-multiproposito_23641821.htm
+<a href='https://www.freepik.es/vectores/cartel'>Vector de cartel creado por Sketchepedia - www.freepik.es</a>
+
 Basic Syntax (Referencias)
 The Markdown elements outlined in John Gruber's design document.
 https://www.markdownguide.org/basic-syntax/
@@ -71,3 +87,4 @@ ul>li*5>a[href="#"]{Item $}
 
 <a href='https://www.freepik.es/fotos/pizarron-escuela'>Foto de pizarron escuela creado por jcomp - www.freepik.es</a>
 https://www.freepik.es/foto-gratis/libro-fondo-tablero-verde_2244883.htm#page=3&query=classroom&position=30&from_view=search
+

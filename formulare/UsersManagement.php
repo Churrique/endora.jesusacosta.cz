@@ -17,6 +17,7 @@
   <meta name="Resource-type" content="Document" />
   <meta name="DateCreated" content="Tue, 31 March 2020 14:00:00 GMT+1" />
   <meta http-equiv="expires" content="86400" />
+  <meta http-equiv="Cache-Control" content="no-store" />
   <title>&laquo;&nbsp;jesusacosta.cz&copy;&nbsp;&raquo;&nbsp;&nbsp;&laquo;&nbsp;Administración de Usuarios para los Projectos en Ejecución&nbsp;&raquo;&nbsp;</title>
   <link rev="made" href="mailto:kontakt@jesusacosta.cz" />
   <link rel="StyleSheet" href="../css/_normalizar.css" type="text/css" />
@@ -87,8 +88,96 @@
         </div>
       </div>
       <div id="capados">
+        <div><label for="txtTExpira">Tiene Expiración?</labe></div>
+        <div>
+          <div class="select_mate" data-mate-select="active">
+            <?php
+              $connectio = Connection();
+              CrtSelect($connectio, '_tm_usuario', 'hasexpiration', 'txtTExpira', 'txtTExpira', '', 'return false;');
+              mysqli_close($connectio);
+            ?>
+            <p class="selecionado_opcion" onclick="open_select(this)"></p>
+            <span onclick="open_select(this)" class="icon_select_mate">
+              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="capados">
         <div><label for="txtExpira">Expira:</labe></div>
         <div><input type="datetime-local" name="txtExpira" id="txtExpira" value=""></div>
+      </div>
+      <div id="capados">
+        <div><label for="txtPermiso">Va a manejar sesión?</labe></div>
+        <div>
+          <div class="select_mate" data-mate-select="active">
+            <?php
+              $connectio = Connection();
+              CrtSelect($connectio, '_tm_usuario', 'session', 'txtSession', 'txtSession', '', 'return false;');
+              mysqli_close($connectio);
+            ?>
+            <p class="selecionado_opcion" onclick="open_select(this)"></p>
+            <span onclick="open_select(this)" class="icon_select_mate">
+              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="capados">
+        <div><label for="txtMenu">Cómo va a ser el menú?</labe></div>
+        <div>
+          <div class="select_mate" data-mate-select="active">
+            <?php
+              $connectio = Connection();
+              CrtSelect($connectio, '_tm_usuario', 'cargadelmenu', 'txtMenu', 'txtMenu', '', 'return false;');
+              mysqli_close($connectio);
+            ?>
+            <p class="selecionado_opcion" onclick="open_select(this)"></p>
+            <span onclick="open_select(this)" class="icon_select_mate">
+              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="capados">
+        <div><label for="txtDelUser'">Se Elimina Al Expirar?</labe></div>
+        <div>
+          <div class="select_mate" data-mate-select="active">
+            <?php
+              $connectio = Connection();
+              CrtSelect($connectio, '_tm_usuario', 'deleteuser', 'txtDelUser', 'txtDelUser', '', 'return false;');
+              mysqli_close($connectio);
+            ?>
+            <p class="selecionado_opcion" onclick="open_select(this)"></p>
+            <span onclick="open_select(this)" class="icon_select_mate">
+              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"></ul>
+            </div>
+          </div>
+        </div>
       </div>
       <hr>
       <!--
@@ -97,6 +186,28 @@
       //  ? ---------------
       -->
       <h3 id="alcentro">Elementos del Menú (en Horizontal)</h3>
+      <div id="capados">
+        <div><label for="txtApp">Pertenece a que Aplicación?</labe></div>
+        <div>
+          <div class="select_mate" data-mate-select="active">
+            <?php
+            $connectio = Connection();
+            ArmSelect($connectio, 'usuario_app', 'id_app AS id, detalle_app AS detalle', 'txtApp', 'txtApp', '', 'return false;');
+            mysqli_close($connectio);
+            ?>
+            <p class="selecionado_opcion" onclick="open_select(this)"></p>
+            <span onclick="open_select(this)" class="icon_select_mate">
+              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="capados">
         <div><label for="txtItem">Iten:</labe></div>
         <div><input type="text" name="txtItem" id="txtItem" value="" placeholder="Descripción del Item" maxlength="15" onkeyup="cItem(this);"></div>
