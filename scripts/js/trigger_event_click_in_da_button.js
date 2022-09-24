@@ -1,11 +1,8 @@
 // ?
-// ! Llamada desde DATOS_PERSONALES_PROCESADOS.PHP
+// ! Llamada desde DATOS_ADICIONALES.PHP
 // ?
-function trigger_click_in_dp (pid) {
-  let k1 = document.getElementById("txt_id_dat" + pid);
-  let k2 = document.getElementById("txt_id_doc" + pid);
-  let k4 = document.getElementById("txtNValor");
-  let targetURL = "datos_personales_ingfor.php?k1=" + k1.value + "&k2=" + k2.value + "&k4=" + k4.value;
+function trigger_click_in_add (p1_ns, p2_messaje) {
+  let targetURL = "plantilla_busqueda.php?ns=" + p1_ns + "&message=" + p2_messaje;
   let newURL = document.createElement('a');
   newURL.href = targetURL;
   document.body.appendChild(newURL);

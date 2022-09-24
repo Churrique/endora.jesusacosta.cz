@@ -11,7 +11,7 @@ include_once '../../../scripts/php/proc.insertion.php';
 
 $idDatP = null;                         //! iddatospersonales
 $idDocu = $_POST['txtDocumento'];       //! id_tm_documento_identificacion
-$DesDoc = null;
+$DesDoc = null;                         //? Descripción de id_tm_documento_identificacion
 $idDatI = null;                         //! iddatosidentificacion
 $NumDoc = $_POST['txtNValor'];
 $Nombre = $_POST['txtNombre'];
@@ -19,6 +19,10 @@ $Apelli = $_POST['txtApellido'];
 $NomCom = $_POST['txtNomCom'];
 $idSexo = $_POST['txtSexo'];
 $FecNac = $_POST['txtFechaNac'];
+
+$QuickMessage = '';
+$InsertedInTable = false;
+$SndInsertedInTable = false;
 
 $cam = "`id_tm_documento_identificacion`, `nombre`, `apellido`, `nombrecompleto`, `sexo`, `nacimiento`";
 $val = "$idDocu,'$Nombre','$Apelli','$NomCom','$idSexo','$FecNac'";
@@ -32,41 +36,52 @@ $connection = Connection();
 
 if ( is_object($connection) ) {
 
-  if ( Inserting("datos_personales", $cam, $val, $connection) ) {
+  //if ( Inserting("datos_personales", $cam, $val, $connection) ) {
+  if ( mysqli_query($connection, "CALL SP_CREATE_DP('$Nombre','$Apelli','$NomCom','$idSexo','$FecNac', @pds_insertado, @pds_identificador);") ) {
+
+    $StoreProcedure = mysqli_query($connection, "SELECT @pds_insertado AS Record_Inserted, @pds_identificador AS Unique_Identifier;");
+
+    while ( $FirstRow = mysqli_fetch_assoc($StoreProcedure) ) {
+      $InsertedInTable = (($FirstRow["Record_Inserted"] == '1') ? true : false);
+      $idDatP = $FirstRow["Unique_Identifier"];
+    }
 
     $FirstCondition = "WHERE TRIM(p_nom) = '" . $Nombre . "' AND TRIM(p_ape) = '" . $Apelli . "'";
     $FirstRecorset = Consulting($connection, "*", "vw_datper", $FirstCondition);
     $numberecords = mysqli_num_rows($FirstRecorset);
 
     if ($numberecords == 1) {
+      //
 
-      while ($row = mysqli_fetch_assoc($FirstRecorset)) {
+      if ( mysqli_query($connection, "CALL SP_CREATE_DDI($idDatP, $idDocu, '$NumDoc', @pds_insertado, @pds_identificador);") ) {
 
-        $idDatP = $row["id_dat"];
-        $camps = "`iddatospersonales`, `id_tm_documento_identificacion`, `numeracion`";
-        $value = $row["id_dat"] . "," . $idDocu . ",'" . $NumDoc . "'";
+        $SndStoreProcedure = mysqli_query($connection, "SELECT @pds_insertado AS record_insert, @pds_identificador AS unique_identifier;");
 
-        if ( Inserting("datos_documentos_identificacion", $camps, $value, $connection) ) {
+        while ( $SndRow = mysqli_fetch_assoc($SndStoreProcedure) ) {
+          $SndInsertedInTable = (($SndRow["record_insert"] == '1') ? true : false);
+          $idDatI = $SndRow["unique_identifier"];
+        }
 
-          $SecondCondition = "WHERE `iddatospersonales` = $idDatP AND `id_tm_documento_identificacion` = $idDocu";
-          $SecondRecorset = Consulting($connection, $camps, 'datos_documentos_identificacion', $SecondCondition);
-          $SecondNumberRecords = mysqli_num_rows($SecondRecorset);
+        if ($SndInsertedInTable == 1) {
 
-          if ($SecondNumberRecords == 1) {
+          $DesDoc = ReturValue($connection, '_tm_documento_identificacion', 'id_tm_documento_identificacion', $idDocu, 'documento_identificacion');
 
-            while ($SecondRow = mysqli_fetch_assoc($SecondRecorset)) {
-              $idDatI = $SecondRow["iddatosidentificacion"];
-            }
+          $FirstInterprete = (($InsertedInTable) ? 'Insertado OK! {1}' : 'No Inserto {1}');
+          $SndInterprete = (($SndInsertedInTable) ? 'Insertado OK! {2}' : 'No Inserto {2}');
+          $QuickMessage .= "$FirstInterprete $SndInterprete<br>Identificadores Únicos para:<br>[Documentos de Identificación {Datos} ] $idDatI , $idDatP, $idDocu, $NumDoc<br>[Datos Personales] $idDatP {IMPORTANTE}<br>[Documento {Tipo y Número} ] $idDocu, $NumDoc";
 
-            $DesDoc = ReturValue($connection, '_tm_documento_identificacion', 'id_tm_documento_identificacion', $idDocu, 'documento_identificacion');
+          mysqli_free_result($FirstRecorset);
+          mysqli_close($connection);
 
-            mysqli_free_result($FirstRecorset);
-            mysqli_free_result($SecondRecorset);
-            mysqli_close($connection);
+        } else {
 
-          }
+          $QuickMessage .= 'No hay confirmación de insersión en la segunda tabla...';
 
         }
+
+      } else {
+
+        $QuickMessage .= 'El "SP{2}" falló por alguna causa desconocida...';
 
       }
 
@@ -78,7 +93,15 @@ if ( is_object($connection) ) {
       $DesDoc = ReturValue($connection, '_tm_documento_identificacion', 'id_tm_documento_identificacion', null, 'documento_identificacion');
     }
 
+  } else {
+
+    $QuickMessage .= 'El "SP{1}" falló por alguna causa desconocida...';
+
   }
+
+} else {
+
+  $QuickMessage .= 'No hay conectividad con la "BD"';
 
 }
 ?>
@@ -113,8 +136,8 @@ if ( is_object($connection) ) {
 
 <body>
   <div id="div-padre">
-    <form name="frmPDP" id="frmPDP" autocomplete="off" method="post" action="datos_personales_add.php">
-      <h1 id="alcentro">Procesando: Ficha de Datos Personales</h1>
+    <form name="frmPDP" id="frmPDP" autocomplete="off" method="post" action="datos_personales.php">
+      <h1 id="alcentro">[2]Procesando: Ficha de Datos Personales</h1>
       <div id="capatres">
         <div><span>Documento:</span></div>
         <div><span id="cinput" title="Número del Documento..."><?php echo $NumDoc ?></span></div>
@@ -150,21 +173,24 @@ if ( is_object($connection) ) {
         <div><span id="cinput" title="Fecha de Nacimiento..."><?php echo $FecNac ?></span></div>
         <?php echo '<input type="hidden" name="txtFechaNac" value="'.$FecNac.'">'; ?>
       </div>
-      <div id="capatres">
-        <div><span title="Único para este registro...">Identificadores Únicos de Tablas:</span></div>
-        <!-- //? Explícitamente la tabla: DATOS_PERSONALES.iddatospersonales -->
-        <div><span id="cinput" title="Tabla:Datos Personales..."><?php echo "Ref. Interna: " . ( $numberecords == 1 ? $idDatP : 'Por definir...'); ?></span></div>
-        <!-- //? Explícitamente la tabla: DATOS_DOCUMENTOS_IDENTIFICACION.iddatosidentificacion -->
-        <div><span id="cinput" title="Tabla:Documento de Identificación..."><?php echo "Ref. Interna: " . ( $numberecords == 1 ? $idDatI : 'Por definir...'); ?></span></div>
-        <!-- //? Explícitamente la tabla: _TM_DOCUMENTO_IDENTIFICACION.id_tm_documento_identificacion -->
-        <div><span id="cinput" title="Tabla:Maestro de Documento..."><?php echo "Ref. Interna: $idDocu : $DesDoc " ?></span></div>
-      </div>
-      <div id="capatres">
-        <div><span id="nota">NOTA IMPORTANTE</span></div>
-        <div><span id="nota">De <span id="noteinred">la tabla</span> que se muestra <span id="noteinred">en la parte inferior</span>, Usted <span id="noteinred">debe seleccionar una de las entradas</span> que se muestran <span id="noteinred">para poder completar la incorporación del nuevo registro</span>, esto se debe a que hubo más de una coincidencia. El proceso en sí esta a un 50%, el porcentaje restante, del proceso, lo debe completar Usted, si así lo desea. <span id="noteinred">Considere</span> la opcion de <span id="noteinred">Cancelar si no esta seguro</span>.</span></div>
-      </div>
       <?php
+        if ($numberecords == 1) {
+          //
+          echo '
+            <div id="capatres">
+              <div><span>Comportamiento:</span></div>
+              <div><span id="nota">'.$QuickMessage.'</span></div>
+              <input type="hidden" name="txtQuickmessage" value="'.$QuickMessage.'">
+            </div>
+          ';
+        }
         if ($numberecords > 1) {
+          echo '
+            <div id="capatres">
+              <div><span id="nota">NOTA IMPORTANTE</span></div>
+              <div><span id="nota">De <span id="noteinred">la tabla</span> que se muestra <span id="noteinred">en la parte inferior</span>, Usted <span id="noteinred">debe seleccionar una de las entradas</span> que se muestran <span id="noteinred">para poder completar la incorporación del nuevo registro</span>, esto se debe a que hubo más de una coincidencia. El proceso en sí esta a un 50%, el porcentaje restante, del proceso, lo debe completar Usted, si así lo desea. <span id="noteinred">Considere</span> la opcion de <span id="noteinred">Salir si no esta seguro</span>.<br><span id="noteinred">Para completar el ingreso</span>, posicione el puntero del mouse sobre el dibujo <img src="../../academico/img/png/confirmarque.png" height="18" width="18"> éste cambiará a <img src="../../academico/img/png/confirmarsi.png" height="18" width="18"> y en ese momento puede hacer click para continuar con el proceso de ingreso, pasará a otra pantalla y solamente tiene que seguir la lógica del proceso.<br><span id="noteinred">Tenga presente que, cuando usted selecciona un item, se tomaran los valores de él</span>; es decir, que los valores de: el nombre completo, el tipo de documento presentado, el sexo y la fecha de nacimiento, <span id="noteinred">sustituiran a los valores inicialmente introducidos</span>.<br><span id="noteinred">SI USTED QUIERE EL REGISTRO ACTUAL</span> (el que facilitó en este momento), <span id="noteinred">SELECCIONE EL ÚLTIMO DE LA TABLA</span> o lista presentada abajo.</span></div>
+            </div>
+               ';
           echo '
               <table>
               <caption>Total de Registros Encontrados ['.$numberecords.']</caption>
@@ -180,6 +206,7 @@ if ( is_object($connection) ) {
               </thead>
               <tbody>
               ';
+          mysqli_data_seek($FirstRecorset, 0);
           while ($row = mysqli_fetch_assoc($FirstRecorset)) {
             echo '<input type="hidden" name="txt_id_dat'.$row["id_dat"].'" id="txt_id_dat'.$row["id_dat"].'" value="'.$row["id_dat"].'">';
             echo '<input type="hidden" name="txt_id_doc'.$row["id_dat"].'" id="txt_id_doc'.$row["id_dat"].'" value="'.$row["id_doc"].'">';
@@ -214,17 +241,25 @@ if ( is_object($connection) ) {
         <?php
           echo '<input type="hidden" name="numberecords" value="'.$numberecords.'">';
           if ($numberecords == 1) {
-            echo '<input type="submit" name="btnSdConfirm" value="Procesar Otro">';
+            echo '
+              <div class="tooltipd">
+                <button type="submit" name="btnSdOtro">Otro</button>
+                <span class="tooltiptext">Pulse para procesar Otro registro...</span>
+              </div>
+            ';
+          } else {
+            //
+            echo '
+              <div class="tooltipd">
+                <button type="submit" name="btnSdRegresar">Regresar</button>
+                <span class="tooltiptext">Pulse para Regresar al formulario anterior...</span>
+              </div>
+            ';
           }
         ?>
-        <!-- <input type="submit" name="btnSdCancel" value="Cancelar y Regresar"> -->
         <div class="tooltipd">
-          <button type="button" name="btnSdCancel"><a href="../../academico" target="_top">Cancelar</a></button>
-          <span class="tooltiptext">Pulse para salir de este formulario...</span>
-        </div>
-        <div class="tooltipd">
-          <button type="button" name="btnSdReturn"><a href="../../academico/formulare/datos_personales.php" target="_top">Regresar</a></button>
-          <span class="tooltiptext">Pulse para salir de este formulario...</span>
+          <button type="button" name="btnSdCancel"><a href="../../academico" target="_top">Salir</a></button>
+          <span class="tooltiptext">Pulse para abandonar este formulario y Salir al menú principal...</span>
         </div>
       </div>
     </form>

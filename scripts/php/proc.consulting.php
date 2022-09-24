@@ -45,11 +45,6 @@ function ReturValue($local_connection, $table, $camp, $key, $filter = null) {
 }
 
 function CrtSelect($the_connection, $p_la_tabla = null, $p_el_campo = null, $p_valor_name = null, $p_valor_id = null, $p_valor_onchange = null, $p_valor_onclick = null) {
-  // mysqli_fetch_assoc($el_resultado)
-  // es igual a
-  // mysql_fetch_array($el_resultado, MYSQL_ASSOC)
-  // Este crea asociativo y por número
-  // --> mysql_fetch_array($el_resultado, MYSQLI_BOTH)
   $sql_query = "SELECT column_type AS enumeracion FROM information_schema.COLUMNS WHERE table_schema = '" . constant( "BASEDEDATOS" ) . "' AND TABLE_NAME = '" . $p_la_tabla . "' AND column_name = '" . $p_el_campo . "';";
   $resultado = mysqli_query($the_connection, $sql_query );
   while ( $row = mysqli_fetch_array( $resultado, MYSQLI_BOTH ) )$unica_fila = $row[ "enumeracion" ];
@@ -61,12 +56,6 @@ function CrtSelect($the_connection, $p_la_tabla = null, $p_el_campo = null, $p_v
 }
 
 function ArmSelect($the_connection, $p_la_tabla = null, $p_el_campo = null, $p_valor_name = null, $p_valor_id = null, $p_valor_onchange = null, $p_valor_onclick = null, $p_tercer_campo = null) {
-  // mysqli_fetch_assoc($el_resultado)
-  // es igual a
-  // mysql_fetch_array($el_resultado, MYSQL_ASSOC)
-  // Este crea asociativo y por número
-  // --> mysql_fetch_array($el_resultado, MYSQLI_BOTH)
-  //$sql_query = "SELECT " . $p_el_campo . " FROM " . $p_la_tabla . ";";
   $sql_query = ( is_null($p_tercer_campo) ? ("SELECT " . $p_el_campo . " FROM " . $p_la_tabla . ";") : ("SELECT " . $p_el_campo . "," . $p_tercer_campo . " FROM " . $p_la_tabla . ";") );
   $resultado = mysqli_query($the_connection, $sql_query);
   echo '<select id="' . $p_valor_id . '" name="' . $p_valor_name . '" onchange="' . $p_valor_onchange . '" onclick="'. $p_valor_onclick . '">';
@@ -81,5 +70,11 @@ function ArmSelect($the_connection, $p_la_tabla = null, $p_el_campo = null, $p_v
   echo '</select>';
   mysqli_free_result($resultado);
 }
+
+  // mysqli_fetch_assoc($el_resultado)
+  // es igual a
+  // mysql_fetch_array($el_resultado, MYSQL_ASSOC)
+  // Este crea asociativo y por número
+  // --> mysql_fetch_array($el_resultado, MYSQLI_BOTH)
 
 ?>

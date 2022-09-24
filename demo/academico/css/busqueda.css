@@ -1,0 +1,101 @@
+@import url("../../../css/fuenteslocales.css");
+table {
+  border-collapse: collapse;
+  /*background-color: rgb(250, 155, 177);*/
+  background: url("../../academico/img/svg/capa-05.svg") no-repeat center;
+  background-size: cover;
+  background-clip: padding-box;
+  cursor: pointer;
+  width: 95%;
+  border-radius: 0em 0em .5em .5em;
+  text-align: center;
+}
+table caption {
+  background: url("../../academico/img/svg/capa-05.svg") no-repeat center;
+  background-size: cover;
+  background-clip: padding-box;
+  border-radius: .5em .5em 0em 0em;
+  font-family: "Amarante", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  height: 3em;
+}
+table thead, table tfoot {
+  font-family: "Amarante", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  height: 2.5em;
+}
+tr {
+  height: 2.5em;
+  font-family: "Aleo", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: .73em;
+  transition: color 30ms, font-size 1s;
+}
+tbody tr:nth-child(even) {
+  background-color: rgb(54, 230, 166);
+}
+tbody tr:nth-child(odd) {
+  background-color: rgb(2, 195, 178);
+}
+tbody tr:nth-child(odd):hover {
+  color: rgb(243, 233, 146);
+  font-size: .8em;
+}
+tbody tr:nth-child(even):hover {
+  color: rgb(244, 41, 193);
+  font-size: .8em;
+}
+td button {
+  margin: 0em;
+  padding: 0em;
+  font-family: "Kavoon", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: .625em;
+}
+#Fallido {
+  background: url("../../academico/img/png/fallido.png") no-repeat center;
+  background-size: cover;
+  background-clip: padding-box;
+  height: 2.5em; /* equivalente a 18px */
+  width: 2.5em; /* equivalente a 18px */
+  transition: background 30ms;
+}
+#ChangeIcon {
+  background: url("../../academico/img/png/cancelado.png") no-repeat center;
+  background-size: cover;
+  background-clip: padding-box;
+  height: 2em; /* equivalente a 18px */
+  width: 2em; /* equivalente a 18px */
+  transition: background 30ms;
+}
+#ChangeIcon:hover {
+  background: url("../../academico/img/png/aprobado.png") no-repeat center;
+  background-size: cover;
+  background-clip: padding-box;
+  height: 3em; /* equivalente a 20px */
+  width: 3em; /* equivalente a 20px */
+}
+.ConDiez {
+  width: 10%;
+}
+.ConVeinte {
+  width: 20%;
+}
+.ConTreinta {
+  width: 30%;
+}
+.ConTreintaYCinco {
+  width: 35%;
+}
+.ConCinco {
+  width: 5%;
+}
+.ConQuince {
+  width: 15%;
+}

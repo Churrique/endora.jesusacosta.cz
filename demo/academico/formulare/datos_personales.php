@@ -155,15 +155,15 @@
       <div id="centrado">
         <div class="tooltipd">
           <button type="submit" name="btnEnviar" value="Enviar" formmethod="post">Enviar</button>
-          <span class="tooltiptext">Pulse para enviar la información al siguiente paso...</span>
+          <span class="tooltiptext">Pulse para enviar la información e ir al siguiente paso...</span>
         </div>
         <div class="tooltipd">
           <button type="reset" name="btnLimpiar" value="Limpiar">Limpiar</button>
           <span class="tooltiptext">Pulse para limpiar los campos del formulario...</span>
         </div>
         <div class="tooltipd">
-          <button type="button" name="btnCancelar"><a href="../../academico" target="_top">Cerrar</a></button>
-          <span class="tooltiptext">Pulse para salir de este formulario...</span>
+          <button type="button" name="btnCancelar"><a href="../../academico" target="_top">Salir</a></button>
+          <span class="tooltiptext">Pulse para Salir de este formulario...</span>
         </div>
       </div>
       <div id="div-padre">

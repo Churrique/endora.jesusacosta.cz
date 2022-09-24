@@ -48,6 +48,16 @@ function cUrl(el_objeto) {
     document.getElementById("chUrl").style.margin = "0em -.1875em";
     document.getElementById("chUrl").innerHTML = strLongitud.toString().trim();
 }
+function cIUDatP(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    var strContenn = el_objeto.value;
+    if (strLongitud <= 12) {
+        document.getElementById("chIUDatPer").style.margin = "0em -.1875em";
+        document.getElementById("chIUDatPer").innerHTML = strLongitud.toString().trim();
+    } else {
+        document.getElementById("txtIUDatPer").value = strContenn.substr(0, 12);
+    }
+}
 //var maxLongitud = el_objeto.maxLength;
 //var strRestantes = maxLongitud - strLongitud;
 // Esquema Abierto
