@@ -1,0 +1,20 @@
+@import url("../../../css/fuenteslocales.css");
+div {
+  top: 0em;
+  width: 100%;
+  margin: 0em;
+  left: 0em;
+}
+#div-aLaDerecha {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  position: absolute;
+}
+.usuarioLocal {
+  color: #f70707;
+  text-align: right;
+  padding: .1em .1em 0em 0em;
+}

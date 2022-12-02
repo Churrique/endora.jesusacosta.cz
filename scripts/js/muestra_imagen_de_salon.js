@@ -1,5 +1,5 @@
 function MontaImagenSalonDeClases(min, max) {
-  //* Aleatorio * max -> Da un valor entre 0 y 3 => + min -> Da un valor entre 1 y 4
+  //* Aleatorio * max -> Da un valor entre 0 y 7 => + min -> Da un valor entre 1 y 8
   let vn = Math.floor( ( Math.random() * max ) + min);
   let str_vn = vn.toString();
   let txt_vn = "";

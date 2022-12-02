@@ -36,7 +36,7 @@
     include_once '../scripts/php/proc.connection.php';
     include_once '../scripts/php/proc.consulting.php';
   ?>
-  <div id="div/padre">
+  <div id="div-padre">
     <form id="frmAdmUsuarios" name="frmAdmUsuarios" method="post" autocomplete="off" >
       <h1 id="alcentro">Administración Principal de Usuarios</h1>
       <div id="capados">

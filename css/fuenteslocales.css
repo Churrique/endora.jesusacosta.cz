@@ -1,20 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Amarante&family=Amiko:wght@400;600;700&family=Anaheim&family=Clicker+Script&family=Dancing+Script:wght@500;700&family=Kavoon&family=Lobster&family=Marck+Script&family=Oswald:wght@300;400;700&family=Sacramento&family=Shrikhand&family=Spicy+Rice&family=Arima+Madurai:wght@900&family=Nunito:ital,wght@1,900&family=Alfa+Slab+One:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Amarante&family=Amiko:wght@400;600;700&family=Anaheim&family=Clicker+Script&family=Dancing+Script:wght@500;700&family=Kavoon&family=Lobster&family=Marck+Script&family=Oswald:wght@300;400;700&family=Sacramento&family=Shrikhand&family=Spicy+Rice&family=Arima+Madurai:wght@900&family=Nunito:ital,wght@1,900&family=Alfa+Slab+One:wght@400&display=swap&family=Archivo+Black:wght@400&display=swap");
 
 .fuentes {
   font-family: "Aleo", serif;
-  font-family: 'Alfa Slab One', cursive;
+  font-family: "Alfa Slab One", cursive;
   font-family: "Amarante", cursive;
   font-family: "Amiko", sans-serif;
   font-family: "Anaheim", sans-serif;
+  font-family: "Archivo Black", sans-serif;
+  font-family: "Arima Madurai", cursive;
   font-family: "Clicker Script", cursive;
   font-family: "Dancing Script", cursive;
   font-family: "Kavoon", cursive;
   font-family: "Lobster", cursive;
   font-family: "Marck Script", cursive;
+  font-family: "Nunito", sans-serif;
   font-family: "Oswald", sans-serif;
   font-family: "Sacramento", cursive;
   font-family: "Shrikhand", cursive;
   font-family: "Spicy Rice", cursive;
-  font-family: "Arima Madurai", cursive;
-  font-family: "Nunito", sans-serif;
 }

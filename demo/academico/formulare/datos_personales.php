@@ -167,15 +167,7 @@
         </div>
       </div>
       <div id="div-padre">
-        <footer>
-          <p><span id="logo"><i class="fas fa-info-circle fa-2x"></i></span>Los tapices usados en esta página son cortesía de:</p>
-          <dl>
-            <dt>Papel pintado abstracto blanco</dt>
-            <dd><a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a></dd>
-            <dt>Acuarela pintada amano con forma de cielo y nube</dt>
-            <dd><a href='https://www.freepik.es/fotos/fondo'>Foto de Fondo creado por denamorado - www.freepik.es</a></dd>
-          </dl>
-        </footer>
+        <iframe src="foot_note.html" name="ifootnote"></iframe>
       </div>
     </form>
   </div>

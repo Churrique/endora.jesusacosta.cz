@@ -12,13 +12,6 @@ body {
 h1 {
   font-family: "Shrikhand", cursive;;
 }
-iframe {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 53.7em;
-}
 ul {
   list-style-type: none;
   margin: 0em;
@@ -82,16 +75,22 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.frein {
+  position: relative;
+  top: -.2em;
+  left: 0;
+  width: 80%;
+  height: 53.7em;
+}
 .usuario {
   position: absolute;
   top: 0em;
   left: 0em;
   width: 80%;
+  height: 1.4em;
   border: .1em solid #08c0ee;
-  color: #f70707;
-  background-color: #333333;
-  text-align: right;
   margin-top: 9.05em;
   margin-left: 11.53em;
   padding-right: -.5em;
+  background-color: #252121;
 }

@@ -11,25 +11,26 @@ Usuario: hagovoj792@naymeo.com
 Pass: 0123456
 <script src="https://kit.fontawesome.com/82f9d2a72c.js" crossorigin="anonymous"></script>
 
-@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Amarante&family=Amiko:wght@400;600;700&family=Anaheim&family=Clicker+Script&family=Dancing+Script:wght@500;700&family=Kavoon&family=Lobster&family=Marck+Script&family=Oswald:wght@300;400;700&family=Sacramento&family=Shrikhand&family=Spicy+Rice&family=Arima+Madurai:wght@900&family=Nunito:ital,wght@1,900&family=Alfa+Slab+One:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Amarante&family=Amiko:wght@400;600;700&family=Anaheim&family=Clicker+Script&family=Dancing+Script:wght@500;700&family=Kavoon&family=Lobster&family=Marck+Script&family=Oswald:wght@300;400;700&family=Sacramento&family=Shrikhand&family=Spicy+Rice&family=Arima+Madurai:wght@900&family=Nunito:ital,wght@1,900&family=Alfa+Slab+One:wght@400&display=swap&family=Archivo+Black:wght@400&display=swap");
 
 .fuentes {
   font-family: "Aleo", serif;
-  font-family: 'Alfa Slab One', cursive;
+  font-family: "Alfa Slab One", cursive;
   font-family: "Amarante", cursive;
   font-family: "Amiko", sans-serif;
   font-family: "Anaheim", sans-serif;
+  font-family: "Archivo Black", sans-serif;
+  font-family: "Arima Madurai", cursive;
   font-family: "Clicker Script", cursive;
   font-family: "Dancing Script", cursive;
   font-family: "Kavoon", cursive;
   font-family: "Lobster", cursive;
   font-family: "Marck Script", cursive;
+  font-family: "Nunito", sans-serif;
   font-family: "Oswald", sans-serif;
   font-family: "Sacramento", cursive;
   font-family: "Shrikhand", cursive;
   font-family: "Spicy Rice", cursive;
-  font-family: "Arima Madurai", cursive;
-  font-family: "Nunito", sans-serif;
 }
 
 Tapices
@@ -40,10 +41,12 @@ Armonia Rectangular
 {capa-01.svg}Papel pintado abstracto blanco
 <a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por freepik - www.freepik.es</a>
 
-{capa-02.svg}Acuarela pintada amano con forma de cielo y nube
+{capa-02.svg}Acuarela pintada a mano con forma de cielo y nube
 <a href='https://www.freepik.es/fotos/fondo'>Foto de Fondo creado por denamorado - www.freepik.es</a>
 ó
 https://www.freepik.es/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_9728603.htm
+
+{capa-04.svg}<a href="https://www.freepik.es/foto-gratis/fondo-pinceladas-azules_13568384.htm">Imagen de Vectonauta</a> en Freepik
 
 {capa-05.svg}<a href="https://www.freepik.es/vectores/fondo-minimalista">Vector de fondo minimalista creado por kjpargeter - www.freepik.es</a>
 
@@ -68,6 +71,21 @@ https://www.freepik.es/vector-gratis/fondo-invierno-azul-abstracto-acuarela_1996
 
 https://www.freepik.es/vector-gratis/diseno-banner-fondo-abstracto-multiproposito_23641821.htm
 <a href='https://www.freepik.es/vectores/cartel'>Vector de cartel creado por Sketchepedia - www.freepik.es</a>
+
+FOTOS
+{foto5}
+Photo credit: cinderellasg on Visualhunt.com
+Photo credit: <a href="https://visualhunt.co/a7/ab45d9d3">cinderellasg</a> on <a href="https://visualhunt.com/re10/16a2b2de">Visualhunt.com</a>
+
+{foto6}
+Imagen de <a href="https://pixabay.com/es/users/prebengammelmark-3833040/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1854416">Preben Gammelmark</a> en <a href="https://pixabay.com/es/photos/antiguo-aula-consola-escuela-1854416/">Pixabay</a>
+
+{foto7}
+Imagen de <a href="https://pixabay.com/es/users/jarmoluk-143740/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=436498">Michal Jarmoluk</a> en <a href="https://pixabay.com/es/photos/libros-viejos-libro-viejo-436498/">Pixabay</a>
+
+{foto8}
+Imagen de <a href="https://pixabay.com/es/users/ninocare-3266770/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1655783">Nino Carè</a> en <a href="https://pixabay.com/es/photos/libros-estantes-puerta-entrada-1655783/">Pixabay</a>
+
 
 Basic Syntax (Referencias)
 The Markdown elements outlined in John Gruber's design document.

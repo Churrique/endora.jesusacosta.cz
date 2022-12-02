@@ -26,7 +26,7 @@
     <script src="../../scripts/js/muestra_imagen_de_salon.js"></script>
 </head>
 
-<body id="backgroundimage" onload="MontaImagenSalonDeClases(1, 4);">
+<body id="backgroundimage" onload="MontaImagenSalonDeClases(1, 8);">
     <h1>Modelo de Esquema Académico</h1>
     <ul>
         <li><a href="../../demo/academico/">Home</a></li>
@@ -52,12 +52,12 @@
             <a href="javascript:void(0)" class="dropbtn">Configuración</a>
             <div class="dropdown-content">
                 <a href="#" target="area_d_form">Personalización del Reporte</a>
-                <a href="#" target="area_d_form">Usuarios</a>
+                <a href="../../formulare/UsersManagement.php" target="area_d_form">Usuarios</a>
             </div>
         </li>
     </ul>
-    <div id="user_area" class="usuario">USUARIO: ElNombre ElApellido # CONECTADO DESDE: 18:43 # PERMISOS: [ C.R.U.D ]</div>
-    <iframe id="seccion" name="area_d_form"></iframe>
+    <iframe id="user_area" name="area_d_user" class="usuario" src="../academico/formulare/UsersManagement-Academico.php"></iframe>
+    <iframe id="seccion" name="area_d_form" class="frein"></iframe>
 </body>
 
 </html>

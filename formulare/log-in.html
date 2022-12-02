@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="language" content="es-es" />
+  <meta name="viewport" content="width=max-device-width, initial-scale=1.0, user-scalable=yes/zoom" />
+  <meta name="author" content="Jesús Acosta" />
+  <meta name="copyright" content="Jesús Acosta" />
+  <meta name="keywords" content="html, css, académico, identificación, contabilidad, contable, diseño web, utilidades, crear páginas, curriculum vitae, foro" />
+  <meta name="description" content="Página principal del sitio Web" />
+  <meta name="revisit-after" content="1 month" />
+  <meta name="robots" content="index, follow" />
+  <meta name="REPLY-TO" content="kontakt@jesusacosta.cz">
+  <meta name="Resource-type" content="Document">
+  <meta name="DateCreated" content="Tue, 31 March 2020 14:00:00 GMT+1">
+  <meta http-equiv="expires" content="86400" /> <!-- Equivalente a 24 horas -->
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <title>&laquo;&nbsp;Iniciar Sesion&nbsp;&raquo;&nbsp;&laquo;&nbsp;jesusacosta.cz&copy;&nbsp;&raquo;&nbsp;&nbsp;&nbsp;</title>
+  <link rev="made" href="mailto:kontakt@jesusacosta.cz">
+  <link rel="StyleSheet" href="../css/_normalizar.css" type="text/css" />
+  <link rel="StyleSheet" href="../css/tooltip_der_blue.css" type="text/css" />
+  <link rel="StyleSheet" href="../css/log-in.css" type="text/css" />
+  <link rel="shortcut icon" href="../img/_logo_nube.ico" type="image/x-icon" />
+  <script src="../scripts/js/titulo.js"></script>
+  <script src="../scripts/js/cuenta_caracteres.js"></script>
+  <script src="../scripts/js/muestra_clave.js"></script>
+  <script src="../scripts/js/send_and_close.js"></script>
+</head>
+<body>
+  <div id="div-padre">
+    <form name="frmLogIn" id="frmLogIn" autocomplete="off" method="post" action="">
+      <h1 id="alcentro">Entrada de Usuario</h1>
+      <div id="capados">
+        <div><label for="txtUsuario">Usuario:</labe></div>
+        <div><input type="text" name="txtUsuario" id="txtUsuario" value="" placeholder="Usuario" maxlength="20" onkeyup="cUsuario(this);" data-role="input" ></div>
+        <div id="aladerecha" class="lineadegradada margenderecho">
+          <span id="chUsuario" style="margin: 0em -.1875em;">
+            <script>
+              document.getElementById("chUsuario").innerHTML = document.getElementById("txtUsuario").maxLength.toString().trim();
+            </script>
+          </span>
+          <span>/</span><span id="strUsuario">
+            <script>
+              document.getElementById("strUsuario").innerHTML = document.getElementById("txtUsuario").maxLength;
+            </script>
+          </span>
+        </div>
+      </div>
+      <div id="capados">
+        <div><label for="txtPass">Contraseña:</labe></div>
+        <div id="flex-padre">
+          <div><input type="password" name="txtPass" id="txtPass" value="" placeholder="Contraseña" maxlength="20" onkeyup="cPass(this);"></div>
+          <div><img id="imgCambio" src="../demo/academico/img/frm/eye-fill.svg" alt="Ver" onclick="MostrarClave(this);"></div>
+        </div>
+        <div id="aladerecha" class="lineadegradada margenderecho">
+          <span id="chPass" style="margin: 0em -.1875em;">
+            <script>
+              document.getElementById("chPass").innerHTML = document.getElementById("txtPass").maxLength.toString().trim();
+            </script>
+          </span>
+          <span>/</span><span id="strPass">
+            <script>
+              document.getElementById("strPass").innerHTML = document.getElementById("txtPass").maxLength;
+            </script>
+          </span>
+        </div>
+      </div>
+      <div id="div-padre">
+        <div class="tooltipd">
+          <button type="submit" name="btnEnviar" value="Enviar" formmethod="post">Enviar</button>
+          <span class="tooltiptext">Pulse para enviar la información e ir al siguiente paso...</span>
+        </div>
+        <div class="tooltipd">
+          <button type="button" name="btnLimpiar" value="Limpiar">Limpiar</button>
+          <span class="tooltiptext">Pulse para limpiar los campos del formulario...</span>
+        </div>
+        <div class="tooltipd">
+          <button type="button" name="btnCancelar" onclick="s_and_c();">Salir</button>
+          <span class="tooltiptext">Pulse para Salir de este formulario...</span>
+        </div>
+      </div>
+      <div id="div-padre">
+        <iframe src="../stranky/foot_note.html" name="ifootnote"></iframe>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
