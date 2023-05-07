@@ -33,6 +33,16 @@ function cPass(el_objeto) {
     document.getElementById("chPass").style.margin = "0em -.1875em";
     document.getElementById("chPass").innerHTML = strLongitud.toString().trim();
 }
+function cKeyPass(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    document.getElementById("chKeyPass").style.margin = "0em -.1875em";
+    document.getElementById("chKeyPass").innerHTML = strLongitud.toString().trim();
+}
+function cEMail(el_objeto) {
+    var strLongitud = el_objeto.value.length;
+    document.getElementById("chEMail").style.margin = "0em -.1875em";
+    document.getElementById("chEMail").innerHTML = strLongitud.toString().trim();
+}
 function cItem(el_objeto) {
     var strLongitud = el_objeto.value.length;
     document.getElementById("chItem").style.margin = "0em -.1875em";

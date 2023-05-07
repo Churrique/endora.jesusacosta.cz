@@ -1,0 +1,66 @@
+@import url("../css/fuenteslocales.css");
+table {
+  border-collapse: collapse;
+  background-color: #ff1dde;
+  cursor: pointer;
+  width: 100%;
+  border-radius: .5em;
+  text-align: center;
+}
+table caption {
+  font-family: "Amarante", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  height: 2em;
+}
+table thead, table tfoot {
+  font-family: "Amarante", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  height: 2em;
+}
+table tfoot td {
+  background-color: #ed63d5;
+  border-radius: .5em;
+  height: 2em;
+}
+tr {
+  height: 2em;
+  font-family: "Aleo", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: .73em;
+  transition: color 30ms, font-size 1s;
+}
+tbody tr:nth-child(even) {
+  background-color: #36e6a6;
+}
+tbody tr:nth-child(odd) {
+  background-color: #02c3b2;
+}
+tbody tr:nth-child(odd):hover {
+  color: #f3e992;
+  font-size: .8em;
+}
+tbody tr:nth-child(even):hover {
+  color: #f429c1;
+  font-size: .8em;
+}
+td button {
+  margin: 0em;
+  padding: 0em;
+  font-family: "Kavoon", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: .625em;
+}
+#primer_variante {
+  background-color: #96c8a2;
+  border-top: .15em solid #00ff00;
+  border-bottom: .15em solid #00ff00;
+}
+#segunda_variante {
+  background-color: #bdecb6;
+}

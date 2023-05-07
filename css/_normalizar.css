@@ -2,6 +2,7 @@
 /*! por falta de compatibilidad en ciertas propiedades y eventos,   */
 /*! también por interpretación erronea de determinados navegadores. */
 /*! Archivo original de http://github.com/necolas/normalize.css     */
+@charset "UTF-8";
 /* =============================================================================
    Definiciones de visualización HTML5 / HTML5 display definitions
    ========================================================================== */
@@ -45,6 +46,7 @@ html {
     font-size: 100%; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
+    text-size-adjust: 100%; /* Navegadores Actuales \ Current Internet Browsers */
 }
 /*
  * Aborda la inconsistencia de font-family entre 'textarea' y otros elementos de formulario.

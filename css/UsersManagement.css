@@ -71,34 +71,17 @@ form {
   width: 37.5em;
   margin: 1em;
 }
-footer {
-  color: #000000;
-  background-color: rgba(68, 136, 189, 0.548);
-  position: absolute;
-  bottom: -35em;
+iframe {
   overflow: hidden;
-  width: 38em;
-  height: 3em;
-  border-color: rgba(61, 134, 245, 0.733);
-  border-style: solid;
-  border-width: .090625em;
-  border-radius: .35em;
-  font-family: 'Alfa Slab One', cursive;
-  font-style: normal;
-  font-weight: 400;
-  font-size: .5em;
-  letter-spacing: normal;
-  margin: 0em 0em .5em 0em;
-  padding: 0em .5em 0em .5em;
-  transition-property: background-color, border-color, height, color, letter-spacing;
-  transition-duration: 2s, 1s, 2s, 1s, 1s;
+  width: 100%; /* 38 +1 con respecto al footer */
+  height: 2em; /* 3 +1 con respecto al footer */
+  margin: 0em;
+  border: none;
+  transition-property: height;
+  transition-duration: .5s;
 }
-footer:hover {
-  background-color: #2787f5;
-  border-color: #2acf14;
-  height: 12em;
-  color: rgb(169, 194, 231);
-  letter-spacing: .15em;
+iframe:hover {
+  height: 6em;
 }
 p {
   margin: 0em;

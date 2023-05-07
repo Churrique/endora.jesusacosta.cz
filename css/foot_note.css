@@ -3,10 +3,8 @@ footer {
   color: #000000;
   background-color: rgba(68, 136, 189, 0.548);
   position: relative;
-  /*position: absolute;
-  bottom: -4.7em;*/
   overflow: hidden;
-  width: 38em;
+  width: 41.3em;
   height: 3em;
   border-color: rgba(61, 134, 245, 0.733);
   border-style: solid;
@@ -25,7 +23,6 @@ footer {
 footer:hover {
   background-color: #2787f5;
   border-color: #2acf14;
-  /*height: 12em;*/
   height: 100%;
   color: rgb(169, 194, 231);
   letter-spacing: .15em;

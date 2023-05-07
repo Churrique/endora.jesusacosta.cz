@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="language" content="es-ES" />
-  <meta name="viewport" content="width=max-device-width, initial-scale=1.0, user-scalable=yes/zoom" />
+  <meta name="viewport" content="width=max-device-width, initial-scale=1, maximum-scale=1" />
   <meta name="author" content="Jesús Acosta" />
   <meta name="copyright" content="Jesús Acosta" />
   <meta name="keywords" content="html, css, diseño web, utilidades, crear páginas, curriculum vitae, foro" />
@@ -36,7 +36,7 @@
     include_once '../scripts/php/proc.consulting.php';
   ?>
   <div id="div-padre">
-    <form id="frmAdmUsuarios" name="frmAdmUsuarios" method="post" autocomplete="off" >
+    <form id="frm01Usuarios" name="frm01Usuarios" method="post" autocomplete="off" action="../formulare/PassTwoUsersManagement.php" >
       <h1 id="alcentro">Administración Principal de Usuarios</h1>
       <div id="capados">
         <div><label for="txtNombre">Nombre y Apellido:</labe></div>
@@ -125,7 +125,7 @@
         </div>
       </div>
       <div id="capados">
-        <div><label for="txtExpira">Expira:</labe></div>
+        <div><label for="txtExpira">Cuando Expira?</labe></div>
         <div><input type="datetime-local" name="txtExpira" id="txtExpira" value=""></div>
       </div>
       <div id="capados">
@@ -151,7 +151,7 @@
         </div>
       </div>
       <div id="capados">
-        <div><label for="txtSession">Va a manejar sesión?</labe></div>
+        <div><label for="txtPermiso">Va a manejar sesión?</labe></div>
         <div>
           <div class="select_mate" data-mate-select="active">
             <?php
@@ -206,120 +206,6 @@
           <span>/</span><span id="strEMail">
             <script>
               document.getElementById("strEMail").innerHTML = document.getElementById("txtEMail").maxLength;
-            </script>
-          </span>
-        </div>
-      </div>
-      <hr>
-      <!--
-      //  ? ---------------
-      //  ! Menú Horizontal
-      //  ? ---------------
-      -->
-      <h3 id="alcentro">Elementos del Menú (en Horizontal)</h3>
-      <div id="capados">
-        <div><label for="txtApp">Pertenece a que Aplicación?</labe></div>
-        <div>
-          <div class="select_mate" data-mate-select="active">
-            <?php
-            $connectio = Connection();
-            ArmSelect($connectio, 'usuario_app', 'id_app AS id, detalle_app AS detalle', 'txtApp', 'txtApp', '', 'return false;');
-            mysqli_close($connectio);
-            ?>
-            <p class="selecionado_opcion" onclick="open_select(this)"></p>
-            <span onclick="open_select(this)" class="icon_select_mate">
-              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
-                <path d="M0-.75h24v24H0z" fill="none" />
-              </svg>
-            </span>
-            <div class="cont_list_select_mate">
-              <ul class="cont_select_int"></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="capados">
-        <div><label for="txtItem">Iten:</labe></div>
-        <div><input type="text" name="txtItem" id="txtItem" value="" placeholder="Descripción del Item" maxlength="15" onkeyup="cItem(this);"></div>
-        <div id="aladerecha" class="lineadegradada margenderecho">
-          <span id="chItem" style="margin: 0em -.1875em;">
-            <script>
-              document.getElementById("chItem").innerHTML = document.getElementById("txtItem").maxLength.toString().trim();
-            </script>
-          </span>
-          <span>/</span><span id="strItem">
-            <script>
-              document.getElementById("strItem").innerHTML = document.getElementById("txtItem").maxLength;
-            </script>
-          </span>
-        </div>
-      </div>
-      <div id="capados">
-        <div><label for="txtOrden">Orden/Posición:</labe></div>
-        <div><input type="text" name="txtOrden" id="txtOrden" maxlength="2" placeholder="Máximo dos dígitos" value=""></div>
-      </div>
-      <hr>
-      <!--
-      //  ? ---------------
-      //  ! Menú Vertical
-      //  ? ---------------
-      -->
-      <h5 id="alcentro">Elementos del Sub-Menú (en Vertical)</h5>
-      <div id="capados">
-        <div><label for="txtSubItem">Sub-Iten:</labe></div>
-        <div><input type="text" name="txtSubItem" id="txtSubItem" value="" placeholder="Descripción del Sub-Item" maxlength="15" onkeyup="cSubItem(this);"></div>
-        <div id="aladerecha" class="lineadegradada margenderecho">
-          <span id="chSubItem" style="margin: 0em -.1875em;">
-            <script>
-              document.getElementById("chSubItem").innerHTML = document.getElementById("txtSubItem").maxLength.toString().trim();
-            </script>
-          </span>
-          <span>/</span><span id="strSubItem">
-            <script>
-              document.getElementById("strSubItem").innerHTML = document.getElementById("txtSubItem").maxLength;
-            </script>
-          </span>
-        </div>
-      </div>
-      <div id="capados">
-        <div><label for="txtSubOrden">Orden/Posición:</labe></div>
-        <div><input type="text" name="txtSubOrden" id="txtSubOrden" maxlength="2" placeholder="Máximo dos dígitos" value=""></div>
-      </div>
-      <div id="capados">
-        <div><label for="txtPermiso">Permisología:</labe></div>
-        <div>
-          <div class="select_mate" data-mate-select="active">
-            <?php
-            $connectio = Connection();
-            ArmSelect($connectio, 'usuario_permisos', 'idpermisoitem AS id, detail_permission AS detalle', 'txtPermiso', 'txtPermiso', '', 'return false;', 'permission_item AS titulo');
-            mysqli_close($connectio);
-            ?>
-            <p class="selecionado_opcion" onclick="open_select(this)"></p>
-            <span onclick="open_select(this)" class="icon_select_mate">
-              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
-                <path d="M0-.75h24v24H0z" fill="none" />
-              </svg>
-            </span>
-            <div class="cont_list_select_mate">
-              <ul class="cont_select_int"></ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="capados">
-        <div><label for="txtUrl">Usuario:</labe></div>
-        <div><input type="url" name="txtUrl" id="txtUrl" value="" placeholder="Url a Ejecutar" maxlength="100" onkeyup="cUrl(this);"></div>
-        <div id="aladerecha" class="lineadegradada margenderecho">
-          <span id="chUrl" style="margin: 0em -.1875em;">
-            <script>
-              document.getElementById("chUrl").innerHTML = document.getElementById("txtUrl").maxLength.toString().trim();
-            </script>
-          </span>
-          <span>/</span><span id="strUrl">
-            <script>
-              document.getElementById("strUrl").innerHTML = document.getElementById("txtUrl").maxLength;
             </script>
           </span>
         </div>
