@@ -106,3 +106,29 @@ ul>li*5>a[href="#"]{Item $}
 <a href='https://www.freepik.es/fotos/pizarron-escuela'>Foto de pizarron escuela creado por jcomp - www.freepik.es</a>
 https://www.freepik.es/foto-gratis/libro-fondo-tablero-verde_2244883.htm#page=3&query=classroom&position=30&from_view=search
 
+
+AZURE CLOUD (SERVICE)
+db-academico (poland central)
+operador852023
+cW*-SKDPCAd9Br
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBGX3XWBQ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RBGX3XWBQ0');
+</script>
+Esto fue reemplazado por lo de arriba...
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165417175-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-165417175-1");
+  </script>
