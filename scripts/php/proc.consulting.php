@@ -7,15 +7,30 @@
 function Consulting($local_connection, $camps, $table, $condition = null) {
   if ( is_object( $local_connection ) ) {
     $sentence = "SELECT $camps FROM `" . DATABASE . "`.`" . $table . "` " . ( is_null($condition) ? '' : $condition );
-    if ( $record_set = mysqli_query($local_connection, $sentence) ) {
-      if ( mysqli_fetch_assoc($record_set) > 0 ) {
-        return $record_set;
+    $synopsis = mysqli_query($local_connection, $sentence);
+    if (is_object($synopsis)) {
+      if ( $record_set = mysqli_query($local_connection, $sentence) ) {
+        if ( mysqli_fetch_assoc($record_set) > 0 ) {
+          return $record_set;
+        } else {
+          return FALSE;
+        }
       }
-    }
-    else {
-      header("Location:https://www.jesusacosta.cz/stranky/error.php?cislo=" . mysqli_errno($local_connection) . "&popis=" . mysqli_error($local_connection));
-      mysqli_close($local_connection);
-      return FALSE;
+      else {
+        header("Location:https://www.jesusacosta.cz/stranky/error.php?cislo=" . mysqli_errno($local_connection) . "&popis=" . mysqli_error($local_connection));
+        mysqli_close($local_connection);
+        return FALSE;
+      }
+    } elseif (is_bool($synopsis)) {
+      if ($synopsis) {
+        return TRUE;
+      } else {
+        //? ERROR
+        $verror = error_get_last();
+        header("Location:https://www.jesusacosta.cz/stranky/error.php?cislo=" . $verror['type'] . " / ". 
+        mysqli_errno($local_connection) ."&popis=" . $verror['message'] . " / " . mysqli_error($local_connection));
+        return FALSE;
+      }
     }
   }
   else {

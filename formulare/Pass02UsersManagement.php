@@ -11,6 +11,8 @@ include_once '../scripts/php/proc.insertion.php';
 
 if (isset($_POST['btnOApp'])) {
   //! Se presume que se ejecuta DESPUES de la primera vez.
+  //? It is presumed to be executed AFTER the first time.
+  //* Předpokládá se, že bude provedena PO prvním použití.
 
   $InsertedInTable = null;
   $idApp = $_POST['txtApp'];
@@ -18,6 +20,7 @@ if (isset($_POST['btnOApp'])) {
   $p_User = $_POST['txtUser'];
   $p_Name = $_POST['txtName'];
   $quickmessage = $_POST['txtQuickmessage'];
+  $unicalinea = $_POST['txtUnicaLinea'];
 
   $connect = Connection();
 
@@ -50,56 +53,79 @@ if (isset($_POST['btnOApp'])) {
   }
 
 }else {
-  //! Se presume que se ejecuta la primera vez.
+  if (isset($_POST['btnO3User'])) {
 
-  $quickmessage = $_POST['txtNombre']."<br>".$_POST['txtUsuario']."<br>";       //? Para Uso Informativo
-  $idUser = null;                                                               //! id de Usuario
-  $InsertedInTable = null;
-  $p_Name = $_POST['txtNombre'];                                                //? Nombre del Usuario Cómo Referencia
-  $p_User = $_POST['txtUsuario'];
-  $p_Pass = $_POST['txtPass'];
-  $p_KeyP = $_POST['txtKeyPass'];
-  $p_HExp = $_POST['txtTExpira'];
-  $p_WExp = $_POST['txtExpira'];
-  $p_DExp = $_POST['txtDelUser'];
-  $p_Sess = $_POST['txtSession'];
-  $p_Menu = $_POST['txtMenu'];
-  $p_EMai = $_POST['txtEMail'];
+    //! Viene de la Tercera Pantalla
+    //# Comes from the Third Screen
+    //| Přichází z třetí obrazovky
 
-  $pos = strripos($p_WExp, "T", 0);
-  $len = strlen($p_WExp);
-  $par1 = substr($p_WExp, 0, $pos );
-  $par2 = substr($p_WExp, ($pos + 1), ($len - $pos) );
-  $p_NuevoDateTime = $par1." ".$par2.":00";
+    $idUser = $_POST['txtIdUsuario'];
+    $p_User = $_POST['txtUsuario'];
+    $p_Name = $_POST['txtNombre'];
 
-  $connection = Connection();
+    $quickmessage = 'Entrando por la pantalla tres.<br>';
+    $unicalinea = "Nombre: ".$p_Name."<br>Usuario: ".$p_User."<br>";         //| Para Uso Informativo
 
-  if ( is_object($connection) ) {
+  } else {
 
-    if ( mysqli_query($connection, "CALL SP_CREATE_USERALONG('$p_Pass','$p_KeyP','$p_User','$p_Name','$p_HExp','$p_NuevoDateTime','$p_Sess','$p_Menu','$p_DExp','$p_EMai', @pds_insertado, @pds_identificador);") ) {
+    //! Viene de la Primera Pantalla
+    //# Comes from the First Screen
+    //| Pochází z první obrazovky
 
-      $StoreProcedure = mysqli_query($connection, "SELECT @pds_insertado AS Record_Inserted, @pds_identificador AS Unique_Identifier;");
+    //! Se presume que se ejecuta la primera vez.
+    //# It is presumed to be executed the first time.
+    //| Předpokládá se, že bude provedena poprvé.
 
-      while ( $FirstRow = mysqli_fetch_assoc($StoreProcedure) ) {
-        $InsertedInTable = (($FirstRow["Record_Inserted"] == '1') ? true : false);
-        $idUser = $FirstRow["Unique_Identifier"];
+    $unicalinea = "Nombre: ".$_POST['txtNombre']."<br>Usuario: ".$_POST['txtUsuario']."<br>";         //| Para Uso Informativo
+    $quickmessage = "";                                                                               //? Para Uso Informativo
+    $idUser = null;                                                                                   //! id de Usuario
+    $InsertedInTable = null;
+    $p_Name = $_POST['txtNombre'];                                                                    //? Nombre del Usuario Cómo Referencia
+    $p_User = $_POST['txtUsuario'];
+    $p_Pass = $_POST['txtPass'];
+    $p_KeyP = $_POST['txtKeyPass'];
+    $p_HExp = $_POST['txtTExpira'];
+    $p_WExp = $_POST['txtExpira'];
+    $p_DExp = $_POST['txtDelUser'];
+    $p_Sess = $_POST['txtSession'];
+    $p_Menu = $_POST['txtMenu'];
+    $p_EMai = $_POST['txtEMail'];
+
+    $pos = strripos($p_WExp, "T", 0);
+    $len = strlen($p_WExp);
+    $par1 = substr($p_WExp, 0, $pos );
+    $par2 = substr($p_WExp, ($pos + 1), ($len - $pos) );
+    $p_NuevoDateTime = $par1." ".$par2.":00";
+
+    $connection = Connection();
+
+    if ( is_object($connection) ) {
+
+      if ( mysqli_query($connection, "CALL SP_CREATE_USERALONG('$p_Pass','$p_KeyP','$p_User','$p_Name','$p_HExp','$p_NuevoDateTime','$p_Sess','$p_Menu','$p_DExp','$p_EMai', @pds_insertado, @pds_identificador);") ) {
+
+        $StoreProcedure = mysqli_query($connection, "SELECT @pds_insertado AS Record_Inserted, @pds_identificador AS Unique_Identifier;");
+
+        while ( $FirstRow = mysqli_fetch_assoc($StoreProcedure) ) {
+          $InsertedInTable = (($FirstRow["Record_Inserted"] == '1') ? true : false);
+          $idUser = $FirstRow["Unique_Identifier"];
+        }
+
+        $quickmessage .= ($InsertedInTable ? "Se insertó con éxito...!" : "Hubieron problemas...!")."<br>";
+        $quickmessage .= "Identificador Único: $idUser<br>";
+
+      }else {
+
+        $quickmessage .= "El SP tiene problemas...!<br>" . mysqli_errno($connection) . "<br>" . mysqli_error($connection);
+
       }
 
-      $quickmessage .= ($InsertedInTable ? "Se insertó con éxito...!" : "Hubieron problemas...!")."<br>";
-      $quickmessage .= "Identificador Único: $idUser<br>";
+      mysqli_close($connection);
 
     }else {
 
-      $quickmessage .= "El SP tiene problemas...!<br>" . mysqli_errno($connection) . "<br>" . mysqli_error($connection);
+      $quickmessage .= "No hay conección...!";
 
     }
-
-    mysqli_close($connection);
-
-  }else {
-
-    $quickmessage .= "No hay conección...!";
-
   }
 }
 ?>
@@ -138,23 +164,26 @@ if (isset($_POST['btnOApp'])) {
 </head>
 <body>
   <!--
-  //  ? ---------------
-  //  ! Ingresando App
-  //  ? ---------------
+  //  ? ------------------------------------------
+  //  ! Ingresando App, Aplicación, Módulo o Área
+  // # Entering Application, Module or Area
+  // | Zadání aplikace, modulu nebo oblasti
+  //  ? ------------------------------------------
   -->
   <div id="div-padre">
     <form id="TheForm" name="frmAdmUsuarios" method="post" autocomplete="off" >
       <h1 id="alcentro">Administración Principal de Usuarios</h1>
-      <h3 id="alcentro">Elementos del Menú (en Horizontal)</h3>
+      <h3 id="alcentro">Asociación del Módulo, Área o Aplicación</h3>
       <?php
        echo '<input type="hidden" name="txtIdUser" value="'.$idUser.'" >';
        echo '<input type="hidden" name="txtUser" value="'.$p_User.'" >';
        echo '<input type="hidden" name="txtName" value="'.$p_Name.'" >';
-      ?>
+       echo '<input type="hidden" name="txtQuickmessage" value="'.$quickmessage.'">';
+       echo '<input type="hidden" name="txtUnicaLinea" value="'.$unicalinea.'">';
+    ?>
       <div id="capatres">
         <div><span>Referencia:</span></div>
-        <div><span id="nota"><?php echo $quickmessage ?></span></div>
-        <?php echo '<input type="hidden" name="txtQuickmessage" value="'.$quickmessage.'">'; ?>
+        <div><span id="nota"><?php echo $unicalinea ?></span></div>
       </div>
       <div id="capados">
         <div><label for="txtApp">Qué Aplicación Incorpora?</labe></div>
@@ -178,55 +207,74 @@ if (isset($_POST['btnOApp'])) {
           </div>
         </div>
       </div>
+      <div id="centrado">
+      <!--
+        //! **************************************************************
+        //?  Colocar la Tabla con los Items del Módulo, Área o Aplicación
+        //#  Set up the Table with the Module, Area or Application Items
+        //|  Umístění tabulky s položkami modulu, oblasti nebo aplikace
+        //! ***************************************************************
+      -->
       <?php
         $TheCondition = "WHERE `usuario` = '$p_User'";
         $theconnect = Connection();
         $FirstRecorset = Consulting( $theconnect, "*", "vw_consult_app_x_user", $TheCondition);
-        $TotalItems = mysqli_num_rows($FirstRecorset);
-        if ( $TotalItems > 0 ){
-          echo '
-                <table>
-                <caption>Aplicaciones Registradas</caption>
-                <thead>
-                  <tr>
-                    <th>Aplicación/Módulo</th>
-                  </tr>
-                </thead>
-                <tbody>
-          ';
-          mysqli_data_seek($FirstRecorset, 0);
-          while ( $row = mysqli_fetch_assoc($FirstRecorset) ){
-            //
+        if (is_object($FirstRecorset)) {
+          $TotalItems = mysqli_num_rows($FirstRecorset);
+          if ( $TotalItems > 0 ){
             echo '
-                  <tr>
-                  <td'.$row["modulo"].'</td>
-                  </tr>
+                  <table>
+                  <caption>Aplicaciones Registradas</caption>
+                  <thead>
+                    <tr>
+                      <th colspan="2">Módulo/Área/Aplicación</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+            ';
+            mysqli_data_seek($FirstRecorset, 0);
+            while ( $row = mysqli_fetch_assoc($FirstRecorset) ){
+              echo '
+                    <tr>
+                      <td style="width:80%" >'.$row["modulo"].'</td>
+                      <td style="width:20%" >
+                        <button style="padding: 0%;" type="submit" formaction="../formulare/Pass03UsersManagement.php?id='.$row["idUA"].'&modulo='.$row["modulo"].'">
+                          <img src="../demo/academico/img/png/places.png" alt="places.png" width="24" height="24">
+                        </button>
+                      </td>
+                    </tr>
+              ';
+            }
+            echo '
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="2" >Total: '.$TotalItems.'</td>
+                    </tr>
+                  </tfoot>
+                </table>
             ';
           }
-          echo '
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td>Total: '.$TotalItems.'</td>
-                  </tr>
-                </tfoot>
-              </table>
-          ';
+          mysqli_free_result($FirstRecorset);
+        } else {
+          $FirstRecorset = FALSE;
+          $TotalItems = 0;
         }
-        mysqli_free_result($FirstRecorset);
         mysqli_close($theconnect);
       ?>
+      </div>
       <div id="centrado">
         <div class="tooltipd">
-          <button type="submit" formaction="../formulare/PassOneUsersManagement.php" name="btnOUser">Anterior</button>
+          <button type="submit" formaction="../formulare/Pass01UsersManagement.php" name="btnO2User">Anterior</button>
           <span class="tooltiptext">Pulse para Regresar e Ingresar Otro Usuario...</span>
         </div>
         <div class="tooltipd">
-          <button type="submit" name="btnOApp">Otro</button>
-          <span class="tooltiptext">Pulse para Ingresar Otro Módulo de Aplicación...</span>
+          <button type="submit" name="btnOApp">Adicionar</button>
+          <span class="tooltiptext">Pulse para Ingresar Otro Módulo/Área/Aplicación...</span>
         </div>
         <div class="tooltipd">
-          <button type="button" name="btnCancelar" onclick="s_and_c();">Salir</button>
+        <!-- <button type="button" name="btnCancelar" onclick="s_and_c();">Salir</button> -->
+        <button type="button" name="btnCancelar" onclick="cW();">Salir</button>
           <span class="tooltiptext">Pulse para Salir de este formulario...</span>
         </div>
       </div>
@@ -235,5 +283,12 @@ if (isset($_POST['btnOApp'])) {
       </div>
     </form>
   </div>
+  <script type="text/javascript">
+    function cW() {
+      let nW = open(location, '?self');
+      nW.close();
+      return false;
+    }
+  </script>
 </body>
 </html>

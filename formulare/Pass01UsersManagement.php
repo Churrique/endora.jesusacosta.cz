@@ -36,7 +36,7 @@
     include_once '../scripts/php/proc.consulting.php';
   ?>
   <div id="div-padre">
-    <form id="frm01Usuarios" name="frm01Usuarios" method="post" autocomplete="off" action="../formulare/PassTwoUsersManagement.php" >
+    <form id="frm01Usuarios" name="frm01Usuarios" method="post" autocomplete="off" action="../formulare/Pass02UsersManagement.php" >
       <h1 id="alcentro">Administración Principal de Usuarios</h1>
       <div id="capados">
         <div><label for="txtNombre">Nombre y Apellido:</labe></div>

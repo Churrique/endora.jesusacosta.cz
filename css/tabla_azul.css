@@ -3,21 +3,23 @@ table {
   border-collapse: collapse;
   background-color: #ff7d3e;
   cursor: pointer;
-  width: 100%;
+  width: 90%;
   border-radius: .5em;
   text-align: center;
 }
 table caption {
   font-family: "Amarante", cursive;
   font-style: normal;
-  font-weight: 400;
+  /*font-weight: 400;*/
+  font-weight: 600;
   font-size: 1em;
   height: 2em;
 }
 table thead, table tfoot {
   font-family: "Amarante", cursive;
   font-style: normal;
-  font-weight: 400;
+  /*font-weight: 400;*/
+  font-weight: 600;
   font-size: 1em;
   height: 2em;
 }
@@ -25,6 +27,7 @@ table tfoot td {
   background-color: #ff9966;
   border-radius: .5em;
   height: 2em;
+  font-weight: 600;
 }
 tr {
   height: 2em;
@@ -35,18 +38,38 @@ tr {
   transition: color 30ms, font-size 1s;
 }
 tbody tr:nth-child(even) {
-  background-color: #00a2f1;
+  /*background-color: #00a2f1;*/
+  font-family: "Aleo", serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: .9em;
+  color: #4a9bf7;
+  background-color: #073350;
+  border-top: .15em solid #1974af;
+  border-bottom: .15em solid #1974af;
+  transition: color 30ms, font-size 1s;
 }
 tbody tr:nth-child(odd) {
-  background-color: #00689a;
+  /*background-color: #00689a;*/
+  font-family: "Aleo", serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: .9em;
+  color: #ffffff;
+  background-color: #0f517c;
+  transition: color 30ms, font-size 1s;
 }
 tbody tr:nth-child(odd):hover {
+  /*color: #f3e992;
+  font-size: .8em;*/
   color: #f3e992;
-  font-size: .8em;
+  font-size: .95em;
 }
 tbody tr:nth-child(even):hover {
-  color: #ffffff;
-  font-size: .8em;
+  /*color: #ffffff;
+  font-size: .8em;*/
+  color: #2eb0f1;
+  font-size: .95em;
 }
 td button {
   margin: 0em;

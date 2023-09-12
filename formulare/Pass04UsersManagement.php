@@ -14,24 +14,31 @@ if (isset($_POST['btnOItem'])) {
   //? It is presumed to be executed AFTER the first time.
   //* Předpokládá se, že bude provedena PO prvním použití.
 
-  $IdUsuario = $_POST['txtIdUsuario'];
-  $Usuario = $_POST['txtUsuario'];
-  $Nombre = $_POST['txtNombre'];
+  $IdUsuario = $_POST['txtIdUser'];
+  $Usuario = $_POST['txtUser'];
+  $Nombre = $_POST['txtName'];
 
-  $idUserApp = $_POST['txtIdModulo'];
-  $DetalleApp = $_POST['txtModulo'];
+  $idUserApp = $_POST['txtIdMod'];
+  $DetalleApp = $_POST['txtMENU'];
+  $Modulo = $_POST['txtMODULO'];
 
-  $unicalinea = "Nombre: ".$Nombre."<br>Usuario: ".$Usuario."<br>";         //| Para Uso Informativo
-  $quickmessage = $_POST['txtQuickmessage']."<br>";
+  $quickmessage = $_POST['txtQuickMe'];
+  $First_Line = $_POST['txtFirL'];
+  $Second_Line = $_POST['txtSecL'];
+  $Third_Line = $_POST['txtThiL'];
 
-  $ItemMenu = $_POST['txtItemMenu'];
-  $OrderL = $_POST['numOrderL'];
+  $ItemPerm = $_POST['txtPermisoSM'];
+  $ItemSubMenu = $_POST['txtItemSubMenu'];
+  $ItemURL = $_POST['txtURL'];
+  $SubOrderL = $_POST['numOrderL'];
 
   $connection = Connection();
 
   if ( is_object($connection) ) {
 
-    if ( mysqli_query($connection, "CALL SP_CREATE_UMODULO('$idUserApp', '$ItemMenu', '$OrderL', @pds_insertado, @pds_identificador);") ) {
+    $quickmessage .= "<br><br>CALL SP_CREATE_USUBMODULO('$idUserApp', '$ItemPerm', '$SubOrderL', '$ItemSubMenu', '$ItemURL')<br>";
+
+    if ( mysqli_query($connection, "CALL SP_CREATE_USUBMODULO('$idUserApp', '$ItemPerm', '$SubOrderL', '$ItemSubMenu', '$ItemURL', @pds_insertado, @pds_identificador);") ) {
 
       $StoreProcedure = mysqli_query($connection, "SELECT @pds_insertado AS Record_Inserted, @pds_identificador AS Unique_Identifier;");
 
@@ -57,42 +64,23 @@ if (isset($_POST['btnOItem'])) {
 
   }
 } else {
-  if(isset($_POST['btnO4User'])) {
+  //! Se presume que se ejecuta la primera vez.
+  //# It is presumed to be executed the first time.
+  //| Předpokládá se, že bude provedena poprvé.
 
-    //! Viene de la Cuarta Pantalla
-    //# Comes from the Fourth Screen
-    //| Přichází ze čtvrté obrazovky
+  $IdUsuario = $_POST['txtIdUsuario'];
+  $Usuario = $_POST['txtUsuario'];
+  $Nombre = $_POST['txtNombre'];
 
-    $IdUsuario = $_POST['txtIdUser'];
-    $Usuario = $_POST['txtUser'];
-    $Nombre = $_POST['txtName'];
-    $idUserApp = $_POST['txtIdMod'];
-    $DetalleApp = $_POST['txtMENU'];
+  $idUserApp = $_GET['id'];
+  $DetalleApp = $_GET['menu'];
+  $Modulo = $_GET['modulo'];
 
-    $quickmessage = $_POST['txtQuickMe'];
-    $unicalinea = $_POST['txtFirL'];
+  $quickmessage = "Nombre: ".$Nombre."<br>Usuario: ".$Usuario."<br>Menú: ".$_GET['menu']."<br>";
+  $First_Line = "Nombre: ".$Nombre."<br>Usuario: ".$Usuario."<br>";
+  $Second_Line = "MODULO: ".$Modulo."<br>";
+  $Third_Line = "MENÚ: ".$DetalleApp."<br>";
 
-  } else {
-
-    //! Viene de la Segunda Pantalla
-    //# Comes from the Second Screen
-    //| Z druhé obrazovky
-
-    //! Se presume que se ejecuta la primera vez.
-    //# It is presumed to be executed the first time.
-    //| Předpokládá se, že bude provedena poprvé.
-
-    $IdUsuario = $_POST['txtIdUser'];
-    $Usuario = $_POST['txtUser'];
-    $Nombre = $_POST['txtName'];
-
-    $idUserApp = $_GET['id'];
-    $DetalleApp = $_GET['modulo'];
-
-    $unicalinea = "Nombre: ".$Nombre."<br>Usuario: ".$Usuario."<br>";         //| Para Uso Informativo
-    $quickmessage = "";
-
-  }
 }
 ?>
 <!DOCTYPE html>
@@ -139,36 +127,43 @@ if (isset($_POST['btnOItem'])) {
   <div id="div-padre">
     <form id="TheForm" name="frmAdmUsuarios" method="post" autocomplete="off" >
       <h1 id="alcentro">Administración Principal de Usuarios</h1>
-      <h3 id="alcentro">Elementos del Menú (en Horizontal)</h3>
+      <h3 id="alcentro">Elementos del Sub-Menú (en Vertical)</h3>
       <div id="capatres">
         <div><span>Referencia:</span></div>
-        <div><span id="nota"><?php echo $unicalinea ?></span></div>
+        <div><span id="nota"><?php echo $First_Line ?></span></div>
+        <div><span id="notagruesa"><?php echo $Second_Line ?></span></div>
+        <div><span id="notagruesa"><?php echo $Third_Line ?></span></div>
+        <div><span id="nota">
+          <?php
+            //! Para hacer seguimiento
+            //# echo '<div><span id="nota">'.$quickmessage.'</span></div>';
+          ?>
+        </span></div>
         <?php
-          //! Para hacer seguimiento
-          //# echo '<div><span id="nota">'.$quickmessage.'</span></div>';
-        ?>
-        <div><span id="notagruesa">Módulo/Aplicación/Área: <?php echo $DetalleApp ?></span></div>
-        <?php
-          echo '<input type="hidden" name="txtIdUsuario" value="'.$IdUsuario.'">';
-          echo '<input type="hidden" name="txtUsuario" value="'.$Usuario.'">';
-          echo '<input type="hidden" name="txtNombre" value="'.$Nombre.'">';
-          echo '<input type="hidden" name="txtIdModulo" value="'.$idUserApp.'">';
-          echo '<input type="hidden" name="txtModulo" value="'.$DetalleApp.'">';
-          echo '<input type="hidden" name="txtQuickmessage" value="'.$quickmessage.'">';
+          echo '<input type="hidden" name="txtIdUser" value="'.$IdUsuario.'">';
+          echo '<input type="hidden" name="txtUser" value="'.$Usuario.'">';
+          echo '<input type="hidden" name="txtName" value="'.$Nombre.'">';
+          echo '<input type="hidden" name="txtIdMod" value="'.$idUserApp.'">';
+          echo '<input type="hidden" name="txtMENU" value="'.$DetalleApp.'">';
+          echo '<input type="hidden" name="txtMODULO" value="'.$Modulo.'">';
+          echo '<input type="hidden" name="txtQuickMe" value="'.$quickmessage.'">';
+          echo '<input type="hidden" name="txtFirL" value="'.$First_Line.'">';
+          echo '<input type="hidden" name="txtSecL" value="'.$Second_Line.'">';
+          echo '<input type="hidden" name="txtThiL" value="'.$Third_Line.'">';
         ?>
       </div>
       <div id="capados">
         <div><label for="txtItemMenu">Descripción del Item:</labe></div>
-        <div><input type="text" name="txtItemMenu" id="txtItemMenu" value="" placeholder="Descripción del Item" maxlength="15" onkeyup="cItemMenu(this);"></div>
+        <div><input type="text" name="txtItemSubMenu" id="txtItemSubMenu" value="" placeholder="Descripción del Item" maxlength="15" onkeyup="cItemSubMenu(this);"></div>
         <div id="aladerecha" class="lineadegradada margenderecho">
-          <span id="chItemMenu" style="margin: 0em -.1875em;">
+          <span id="chItemSubMenu" style="margin: 0em -.1875em;">
             <script>
-              document.getElementById("chItemMenu").innerHTML = document.getElementById("txtItemMenu").maxLength.toString().trim();
+              document.getElementById("chItemSubMenu").innerHTML = document.getElementById("txtItemSubMenu").maxLength.toString().trim();
             </script>
           </span>
-          <span>/</span><span id="strItemMenu">
+          <span>/</span><span id="strItemSubMenu">
             <script>
-              document.getElementById("strItemMenu").innerHTML = document.getElementById("txtItemMenu").maxLength;
+              document.getElementById("strItemSubMenu").innerHTML = document.getElementById("txtItemSubMenu").maxLength;
             </script>
           </span>
         </div>
@@ -189,26 +184,65 @@ if (isset($_POST['btnOItem'])) {
           </span>
         </div>
       </div>
+      <div id="capados">
+        <div><label for="txtURL">URL a Ejecutar:</labe></div>
+        <div><textarea name="txtURL" id="txtURL" placeholder="Indique la URL a Ejecutar..." placeholder="Indique la URL a ejecutar..." maxlength="100" onkeyup="cOrderL(this);"></textarea></div>
+        <div id="aladerecha" class="lineadegradada margenderecho">
+          <span id="chOrderL" style="margin: 0em -.1875em;">
+            <script>
+              document.getElementById("chOrderL").innerHTML = document.getElementById("numOrderL").maxLength.toString().trim();
+            </script>
+          </span>
+          <span>/</span><span id="strOrderL">
+            <script>
+              document.getElementById("strOrderL").innerHTML = document.getElementById("numOrderL").maxLength;
+            </script>
+          </span>
+        </div>
+      </div>
+      <div id="capados">
+        <div><label for="txtPermisoSM'">Qué Tipo de Permiso(s) Tendra?</labe></div>
+        <div>
+          <div class="select_mate" data-mate-select="active">
+            <?php
+              $connectio = Connection();
+              ArmSelect($connectio, 'usuario_permisos', 'id_permisoitem AS id, detail_permission AS detalle', 'txtPermisoSM', 'txtPermisoSM', '', 'return false;');
+              mysqli_close($connectio);
+            ?>
+            <p class="selecionado_opcion" onclick="open_select(this)"></p>
+            <span onclick="open_select(this)" class="icon_select_mate">
+              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg>
+            </span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <!--
         //! ****************************************************
-        //?  Colocar la Tabla con los Items del Menú Horizontal
-        //#  Place the Table with Horizontal Menu Items
-        //|  Umístění tabulky s položkami vodorovného menu
+        //?  Colocar la Tabla con los Items del Menú Vertical
+        //#  
+        //|  
         //! ****************************************************
       -->
       <?php
         $TheCondition = "WHERE `usuario` = '$Usuario'";
         $theconnect = Connection();
-        $FirstRecorset = Consulting( $theconnect, "*", "vw_consult_usuario_menuh", $TheCondition);
+        $FirstRecorset = Consulting( $theconnect, "*", "vw_consult_usuario_submenuv", $TheCondition);
         if (is_object($FirstRecorset)) {
           $TotalItems = mysqli_num_rows($FirstRecorset);
           if ( $TotalItems > 0 ){
             echo '
                   <table>
-                  <caption>Módulo/Área/Aplicación {'.$DetalleApp.'}</caption>
+                  <caption>Módulo/Área/Aplicación {'.$Modulo.'} Menú '.$DetalleApp.'</caption>
                   <thead>
                     <tr>
-                      <th colspan="2">Elementos del Menú</th>
+                    <th style="width:50%">Elementos del Sub-Menú</th>
+                    <th style="width:50%">URL a Ejecutar</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -217,9 +251,9 @@ if (isset($_POST['btnOItem'])) {
             while ( $row = mysqli_fetch_assoc($FirstRecorset) ){
               echo '
                     <tr>
-                      <td style="width:80%" >'.$row["menu"].'</td>
-                      <td style="width:20%" >
-                        <button style="padding: 0%;" type="submit" formaction="../formulare/Pass04UsersManagement.php?id='.$row["IdMenu"].'&menu='.$row["menu"].'&modulo='.$DetalleApp.'">
+                      <td style="width:50%">'.$row["submenu"].'</td>
+                      <td style="width:50%">
+                        <button style="padding: 0%;" type="submit" formaction="">
                           <img src="../demo/academico/img/png/places.png" alt="places.png" width="24" height="24">
                         </button>
                       </td>
@@ -245,12 +279,12 @@ if (isset($_POST['btnOItem'])) {
       ?>
       <div id="centrado">
         <div class="tooltipd">
-          <button type="submit" formaction="../formulare/Pass02UsersManagement.php" name="btnO3User">Anterior</button>
-          <span class="tooltiptext">Pulse para Regresar e Ingresar Otro Módulo/Área/Aplicación...</span>
+          <button type="submit" formaction="../formulare/Pass03UsersManagement.php" name="btnO4User">Anterior</button>
+          <span class="tooltiptext">Pulse para Regresar e Ingresar Otro Item al Menu...</span>
         </div>
         <div class="tooltipd">
           <button type="submit" name="btnOItem">Adicionar</button>
-          <span class="tooltiptext">Pulse para Ingresar Otro Item para el Menú Horizontal...</span>
+          <span class="tooltiptext">Pulse para Ingresar Otro Item para el Sub-Menú Vertical...</span>
         </div>
         <div class="tooltipd">
           <button type="button" name="btnCancelar" onclick="s_and_c();">Salir</button>

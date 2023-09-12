@@ -17,7 +17,7 @@ h5 {
   font-weight: 400;
   font-size: 1.2em;
 }
-input {
+textarea, input {
   border: none;
   outline: none;
   background: rgba(151, 211, 245, 0.363);
@@ -30,7 +30,11 @@ input {
   width: 23.13em;
   margin: .3em 0em .3em .3em;
 }
-input:focus {
+textarea {
+  resize: none;
+  overflow: scroll;
+}
+textarea:focus, input:focus {
   background: rgba(247, 142, 124, 0.274);
 }
 button {
@@ -200,6 +204,12 @@ a:visited, a:hover, a:active {
   font-style: normal;
   font-weight: bold;
   font-size: .69em;
+}
+#notagruesa {
+  font-family: 'Aleo', serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1em;
 }
 #noteinred {
   font-family: 'Aleo', serif;
