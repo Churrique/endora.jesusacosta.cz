@@ -10,6 +10,7 @@ dist
 web.config
 test
 _Archivos_Varios
-Códigos Temporales
+_Códigos_Temporales
 dist
 descargas
+*.css.map
