@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="language" content="es-ES" />
-    <meta name="viewport" content="width=max-device-width, initial-scale=1.0, user-scalable=yes/zoom" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <meta name="author" content="Jesús Acosta" />
     <meta name="copyright" content="Jesús Acosta" />
     <meta name="keywords" content="html, css, diseño web, utilidades, crear páginas, curriculum vitae, foro" />
@@ -31,33 +31,37 @@
     <ul>
         <li><a href="../../demo/academico/">Home</a></li>
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Materias</a>
+            <a href="javascript:void(0)" class="dropbtn">Oficina</a>
             <div class="dropdown-content">
-                <a href="#" target="area_d_form">Período Lectivo</a>
                 <a href="#" target="area_d_form">Inscripción</a>
                 <a href="#" target="area_d_form">Lista de Clases</a>
-                <a href="#" target="area_d_form">Planificación de Evaluaciones</a>
+                <a href="#" target="area_d_form">Plan de Evaluación</a>
                 <a href="#" target="area_d_form">Transcripción de Notas</a>
+                <a href="#" target="area_d_form">Acta Final</a>
             </div>
         </li>
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Datos</a>
+            <a href="javascript:void(0)" class="dropbtn">Control de Estudio</a>
             <div class="dropdown-content">
                 <a href="../../demo/academico/formulare/plantilla_busqueda.php" target="area_d_form">Búsqueda</a>
-                <a href="../../demo/academico/formulare/datos_personales.php" target="area_d_form">Personales</a>
-                <a href="../../demo/academico/formulare/datos_adicionales.php" target="area_d_form">Adicionales</a>
+                <a href="../../demo/academico/formulare/datos_personales.php" target="area_d_form">Datos Personales</a>
+                <a href="../../demo/academico/formulare/datos_adicionales.php" target="area_d_form">Datos Adicionales</a>
+                <a href="#" target="area_d_form">Modificar Carga Académica</a>
             </div>
         </li>
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Configuración</a>
             <div class="dropdown-content">
-                <a href="#" target="area_d_form">Personalización del Reporte</a>
-                <a href="../../formulare/UsersManagement.php" target="area_d_form">Usuarios</a>
+                <a href="#" target="area_d_form">Reporte</a>
+                <a href="../../formulare/UsersManagement.php" target="area_d_form">Usuario</a>
+                <a href="#" target="area_d_form">Período Lectivo</a>
+                <a href="#" target="area_d_form">Pénsum | Pensa</a>
+                <a href="#" target="area_d_form">Secciones</a>
             </div>
         </li>
     </ul>
-    <iframe id="user_area" name="area_d_user" class="usuario" src="../academico/formulare/UsersManagement-Academico.php"></iframe>
-    <iframe id="seccion" name="area_d_form" class="frein"></iframe>
+    <iframe title="Área de Usuario" id="user_area" name="area_d_user" class="usuario" src="../academico/formulare/UsersManagement-Academico.php"></iframe>
+    <iframe title="Área de Formulario" id="seccion" name="area_d_form" class="frein"></iframe>
 </body>
 
 </html>
